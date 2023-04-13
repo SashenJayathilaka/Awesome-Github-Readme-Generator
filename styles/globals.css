@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-[#001730] text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-[#43C6DB];
+    }
+}
