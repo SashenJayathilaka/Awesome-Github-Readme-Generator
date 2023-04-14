@@ -6,6 +6,7 @@ import { gitImages } from "@/atom/images";
 import { middleControllers } from "@/atom/middleController";
 import { readmeRows } from "@/atom/readmeRow";
 import { gitImagesSizes } from "@/atom/size";
+import { gitTechStack } from "@/atom/techStack";
 import { useRecoilState } from "recoil";
 
 const MdContent = () => {
@@ -15,6 +16,7 @@ const MdContent = () => {
   const [size] = useRecoilState(gitImagesSizes);
   const [displayBadges] = useRecoilState(gitBadge);
   const [controllers] = useRecoilState(middleControllers);
+  const [gitHubTechStack] = useRecoilState(gitTechStack);
 
   const CenterStart = () => {
     return (
@@ -374,6 +376,122 @@ const MdContent = () => {
     return null;
   };
 
+  const TechStackClient = () => {
+    const clientData = gitHubTechStack.client;
+
+    if (clientData.length > 0) {
+      return (
+        <>
+          <br />
+          {`### :space_invader: Tech Stack`}
+          <br />
+          {`<details>
+              <summary>Client</summary>
+              <ul>`}
+          {clientData.map((client: any, index) => (
+            <div key={index}>
+              {`<li><a href="${client.clientUrl}">${client.clientName}</a></li>`}
+            </div>
+          ))}
+          {`</ul>
+            </details>`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const TechStackServer = () => {
+    const teachData = gitHubTechStack.server;
+
+    if (teachData.length > 0) {
+      return (
+        <>
+          <br />
+          {`<details>
+              <summary>Server</summary>
+              <ul>`}
+          {teachData.map((server: any, index) => (
+            <div key={index}>
+              {`<li><a href="${server.serverUrl}">${server.serverName}</a></li>`}
+            </div>
+          ))}
+          {`</ul>
+            </details>`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const TechStackDatabase = () => {
+    const teachData = gitHubTechStack.database;
+
+    if (teachData.length > 0) {
+      return (
+        <>
+          <br />
+          {`<details>
+              <summary>Database</summary>
+              <ul>`}
+          {teachData.map((database: any, index) => (
+            <div key={index}>
+              {`<li><a href="${database.databaseUrl}">${database.databaseName}</a></li>`}
+            </div>
+          ))}
+          {`</ul>
+            </details>`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const TechStackDevOps = () => {
+    const teachData = gitHubTechStack.devOps;
+
+    if (teachData.length > 0) {
+      return (
+        <>
+          <br />
+          {`<details>
+              <summary>DevOps</summary>
+              <ul>`}
+          {teachData.map((devOps: any, index) => (
+            <div key={index}>
+              {`<li><a href="${devOps.devOpsUrl}">${devOps.devOpsName}</a></li>`}
+            </div>
+          ))}
+          {`</ul>
+            </details>`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Features = () => {
+    const featuresData = gitHubTechStack.features;
+
+    if (featuresData.length > 0) {
+      return (
+        <>
+          <br />
+          {`### :dart: Features`}
+          <br />
+          {featuresData.map((feature: any, index) => (
+            <div key={index}>{`- ${feature.featuresValue}`}</div>
+          ))}
+        </>
+      );
+    }
+    return null;
+  };
+
   return {
     MainImage,
     MainTopic,
@@ -391,6 +509,11 @@ const MdContent = () => {
     startTable,
     endTable,
     DemoProjectAssets,
+    TechStackClient,
+    TechStackServer,
+    TechStackDatabase,
+    TechStackDevOps,
+    Features,
   };
 };
 

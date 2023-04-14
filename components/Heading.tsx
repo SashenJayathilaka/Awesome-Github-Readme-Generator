@@ -12,7 +12,7 @@ function Heading({ icon: Icon, label }: Props) {
   return (
     <div className="py-2 flex justify-start gap-3 font-medium items-center">
       <Icon size={20} />
-      <p className="text-xl">{label}</p>
+      <p className="text-xl text-[#43C6DB]">{label}</p>
     </div>
   );
 }

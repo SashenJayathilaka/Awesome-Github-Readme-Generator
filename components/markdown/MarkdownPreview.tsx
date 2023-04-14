@@ -19,6 +19,11 @@ function MarkdownPreview({}: Props) {
     PDocumentation,
     PLanguages,
     PDemoProjectAssets,
+    MdTechStackClient,
+    MdTechStackServer,
+    MdTechStackDatabase,
+    MdTechStackDevOps,
+    MdFeatures,
   } = MdPreview();
   return (
     <>
@@ -37,8 +42,16 @@ function MarkdownPreview({}: Props) {
         <PDocumentation />
       </div>
       <PDemoProjectAssets />
+      <div className="py-2 gap-1">
+        <MdTechStackClient />
+        <MdTechStackServer />
+        <MdTechStackDatabase />
+        <MdTechStackDevOps />
+      </div>
+      <div className="py-2">
+        <MdFeatures />
+      </div>
       <div
-        // className="grid gap-1 col-span-full"
         style={{
           display: "grid",
           gridTemplateColumns:
