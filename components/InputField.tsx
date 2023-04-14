@@ -8,10 +8,18 @@ type Props = {
   type: string;
   name: string;
   value?: string | number;
+  defaultValue?: string;
   onChange: (value: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-function InputField({ label, type, name, onChange, value }: Props) {
+function InputField({
+  label,
+  type,
+  name,
+  onChange,
+  value,
+  defaultValue,
+}: Props) {
   return (
     <div className="w-full space-y-2">
       <TextField
@@ -39,6 +47,7 @@ function InputField({ label, type, name, onChange, value }: Props) {
           },
         }}
         fullWidth
+        defaultValue={defaultValue}
       />
     </div>
   );
