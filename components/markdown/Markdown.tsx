@@ -22,6 +22,11 @@ function Markdown({}: Props) {
     startTable: StartTable,
     endTable: EndTable,
     DemoProjectAssets,
+    TechStackClient,
+    TechStackServer,
+    TechStackDatabase,
+    TechStackDevOps,
+    Features,
   } = MdContent();
 
   return (
@@ -42,6 +47,11 @@ function Markdown({}: Props) {
       <StartTable />
       <MKLanguages />
       <EndTable />
+      <TechStackClient />
+      <TechStackServer />
+      <TechStackDatabase />
+      <TechStackDevOps />
+      <Features />
     </div>
   );
 }

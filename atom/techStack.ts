@@ -5,6 +5,7 @@ export type gitHubTechStack = {
   server: string[];
   database: string[];
   devOps: string[];
+  features: string[];
 };
 
 const defaultPostState: gitHubTechStack = {
@@ -12,6 +13,7 @@ const defaultPostState: gitHubTechStack = {
   server: [],
   database: [],
   devOps: [],
+  features: [],
 };
 
 export const gitTechStack = atom<gitHubTechStack>({

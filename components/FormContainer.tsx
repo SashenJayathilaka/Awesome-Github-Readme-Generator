@@ -8,6 +8,7 @@ import { TbWorldWww } from "react-icons/tb";
 
 import AboutProject from "./AboutProject";
 import Badges from "./Badges";
+import Features from "./Features";
 import Heading from "./Heading";
 import InputField from "./InputField";
 import TechStack from "./TechStack";
@@ -236,7 +237,31 @@ function FormContainer({
             marginY: "10px",
           }}
         />
+        {/*  Tech Stack */}
+        {/*  Features */}
+        <Features />
+        <Divider
+          orientation="horizontal"
+          variant="fullWidth"
+          flexItem
+          sx={{
+            backgroundColor: "#3795BD",
+            marginY: "10px",
+          }}
+        />
+        {/*  Features */}
+        {/*  Technologies */}
         <TechnologiesContent />
+        <Divider
+          orientation="horizontal"
+          variant="fullWidth"
+          flexItem
+          sx={{
+            backgroundColor: "#3795BD",
+            marginY: "10px",
+          }}
+        />
+        {/*  Technologies */}
       </form>
     </div>
   );

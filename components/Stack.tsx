@@ -3,7 +3,7 @@
 import React from "react";
 import { IconType } from "react-icons";
 import InputField from "./InputField";
-import { FaHourglassEnd } from "react-icons/fa";
+import { IoIosAddCircle } from "react-icons/io";
 
 type Props = {
   stackValue: string;
@@ -67,8 +67,8 @@ function Stack({
             onClick={(e: any) => onAddValue(e, strandedLabel)}
             className="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
           >
-            <FaHourglassEnd size={15} />
             <span>Add</span>
+            <IoIosAddCircle size={15} />
           </button>
         </div>
         <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
