@@ -8,6 +8,7 @@ import { TbWorldWww } from "react-icons/tb";
 
 import AboutProject from "./AboutProject";
 import Badges from "./Badges";
+import ColorReference from "./ColorReference";
 import Features from "./Features";
 import Heading from "./Heading";
 import InputField from "./InputField";
@@ -250,6 +251,18 @@ function FormContainer({
           }}
         />
         {/*  Features */}
+        {/* ColorReference */}
+        <ColorReference />
+        <Divider
+          orientation="horizontal"
+          variant="fullWidth"
+          flexItem
+          sx={{
+            backgroundColor: "#3795BD",
+            marginY: "10px",
+          }}
+        />
+        {/* ColorReference */}
         {/*  Technologies */}
         <TechnologiesContent />
         <Divider

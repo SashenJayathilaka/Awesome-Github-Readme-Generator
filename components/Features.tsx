@@ -1,3 +1,5 @@
+"use client";
+
 import { gitTechStack } from "@/atom/techStack";
 import { useEffect, useState } from "react";
 import { GiDart } from "react-icons/gi";
