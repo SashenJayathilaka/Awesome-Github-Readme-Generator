@@ -24,6 +24,8 @@ function MarkdownPreview({}: Props) {
     MdTechStackDatabase,
     MdTechStackDevOps,
     MdFeatures,
+    ColorReference,
+    EnvironmentVariables,
   } = MdPreview();
   return (
     <>
@@ -51,7 +53,14 @@ function MarkdownPreview({}: Props) {
       <div className="py-2">
         <MdFeatures />
       </div>
+      <div className="py-2">
+        <ColorReference />
+      </div>
+      <div className="py-2">
+        <EnvironmentVariables />
+      </div>
       <div
+        className="py-2"
         style={{
           display: "grid",
           gridTemplateColumns:

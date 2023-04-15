@@ -377,6 +377,109 @@ const MdPreview = () => {
     return null;
   };
 
+  const ColorReference = () => {
+    const primaryColor = readmeRow.primaryColor;
+    const secondaryColor = readmeRow.secondaryColor;
+    const accentColor = readmeRow.accentColor;
+    const textColor = readmeRow.textColor;
+
+    if (primaryColor || secondaryColor || accentColor || textColor) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🎨 Color Reference</h1>
+          <table className="table-auto">
+            <thead>
+              <tr>
+                <th>Color</th>
+                <th>Hex</th>
+              </tr>
+            </thead>
+            <tbody>
+              {primaryColor && (
+                <tr>
+                  <td>Primary Color</td>
+                  <td>
+                    <img
+                      src={`https://via.placeholder.com/10/${primaryColor.replace(
+                        "#",
+                        ""
+                      )}?text=+`}
+                    />
+                  </td>
+                </tr>
+              )}
+              {secondaryColor && (
+                <tr>
+                  <td>Secondary Color</td>
+                  <td>
+                    <img
+                      src={`https://via.placeholder.com/10/${secondaryColor.replace(
+                        "#",
+                        ""
+                      )}?text=+`}
+                    />
+                  </td>
+                </tr>
+              )}
+              {accentColor && (
+                <tr>
+                  <td>Accent Color</td>
+                  <td>
+                    <img
+                      src={`https://via.placeholder.com/10/${accentColor.replace(
+                        "#",
+                        ""
+                      )}?text=+`}
+                    />
+                  </td>
+                </tr>
+              )}
+              {textColor && (
+                <tr>
+                  <td>Text Color</td>
+                  <td>
+                    <img
+                      src={`https://via.placeholder.com/10/${textColor.replace(
+                        "#",
+                        ""
+                      )}?text=+`}
+                    />
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </>
+      );
+    }
+    return null;
+  };
+
+  const EnvironmentVariables = () => {
+    const environmentVariables = gitHubTechStack.environmentVariables;
+
+    if (environmentVariables.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🔑 Environment Variables</h1>
+          <p>
+            To run this project, you will need to add the following environment
+            variables to your .env file
+          </p>
+          <br />
+          <div className="grid grid-cols-1">
+            {environmentVariables.map((envData: any, index) => (
+              <div key={index} className="bg-gray-50 px-2 py-2 rounded-md">
+                `{`${envData.envVariables}`}`
+              </div>
+            ))}
+          </div>
+        </>
+      );
+    }
+    return null;
+  };
+
   return {
     PMainImage,
     PMainTopic,
@@ -395,6 +498,8 @@ const MdPreview = () => {
     MdTechStackDatabase,
     MdTechStackDevOps,
     MdFeatures,
+    ColorReference,
+    EnvironmentVariables,
   };
 };
 
