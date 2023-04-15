@@ -34,7 +34,7 @@ function FormContainer({
   setDisplayBadges,
   displayBadges,
 }: Props) {
-  /*   const onChangeReadmeRow = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeReadmeRow = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsReadmeRow((prev: string | any) => ({
       ...prev,
       [event.target.name]: event.target.value,
@@ -108,12 +108,12 @@ function FormContainer({
     document.body.appendChild(tempElement);
     tempElement.click();
     document.body.removeChild(tempElement);
-  }; */
+  };
 
   return (
     <div className="px-14 py-14 bg-[#051622] rounded-md">
       <form className="">
-        {/*  <div>
+        <div>
           <Heading
             icon={FaGithubAlt}
             label="Your GitHub & GitHub Repository Details"
@@ -209,7 +209,7 @@ function FormContainer({
             }}
           />
           <Badges onChangeGitHubBadges={onChangeGitHubBadges} />
-        </div> */}
+        </div>
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -219,7 +219,7 @@ function FormContainer({
             marginY: "10px",
           }}
         />
-        {/*         <AboutProject />
+        <AboutProject />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -228,9 +228,9 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Tech Stack */}
-        {/*         <TechStack />
+        <TechStack />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -239,10 +239,10 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Tech Stack */}
         {/*  Features */}
-        {/*         <Features />
+        <Features />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -251,10 +251,10 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Features */}
         {/* ColorReference */}
-        {/*         <ColorReference />
+        <ColorReference />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -263,10 +263,10 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/* ColorReference */}
         {/* EnvironmentVariables */}
-        {/*         <EnvironmentVariables />
+        <EnvironmentVariables />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -275,7 +275,7 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/* EnvironmentVariables */}
         {/* GettingStarted */}
         <GettingStarted />
@@ -290,7 +290,7 @@ function FormContainer({
         />
         {/* GettingStarted */}
         {/*  Technologies */}
-        {/*         <TechnologiesContent />
+        <TechnologiesContent />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -299,7 +299,7 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Technologies */}
       </form>
     </div>

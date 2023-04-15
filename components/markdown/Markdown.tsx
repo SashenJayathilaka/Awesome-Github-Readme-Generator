@@ -27,6 +27,14 @@ function Markdown({}: Props) {
     TechStackDatabase,
     TechStackDevOps,
     Features,
+    ColorReference,
+    PrimaryColor,
+    SecondaryColor,
+    AccentColor,
+    TextColor,
+    EnvironmentVariables,
+    GettingStarted,
+    Prerequisites,
   } = MdContent();
 
   return (
@@ -52,6 +60,14 @@ function Markdown({}: Props) {
       <TechStackDatabase />
       <TechStackDevOps />
       <Features />
+      <ColorReference />
+      <PrimaryColor />
+      <SecondaryColor />
+      <AccentColor />
+      <TextColor />
+      <EnvironmentVariables />
+      <GettingStarted />
+      <Prerequisites />
     </div>
   );
 }

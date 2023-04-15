@@ -301,7 +301,7 @@ const MdContent = () => {
               {languageLabel.map((language, index) => (
                 <div key={index}>
                   {`<td>
-                    <img src=${language} alt="name" width="30" />
+                    <a href="#"><img src=${language} alt="name" width="30" /></a>
                     </td>`}
                   <br />
                 </div>
@@ -315,7 +315,7 @@ const MdContent = () => {
               <br />
               {languageLabel.map((language, index) => (
                 <div key={index}>
-                  {`<img src=${language} alt="name" width="30" />`}
+                  {`<a href="#"><img src=${language} alt="name" width="30" /></a>`}
                   <br />
                 </div>
               ))}
@@ -329,7 +329,7 @@ const MdContent = () => {
             <br />
             {languageLabel.map((language, index) => (
               <div key={index}>
-                {`<img src=${language} alt="name" width="30" />`}
+                {`<a href="#"><img src=${language} alt="name" width="30" /></a>`}
                 <br />
               </div>
             ))}
@@ -481,10 +481,186 @@ const MdContent = () => {
       return (
         <>
           <br />
+          <br />
           {`### :dart: Features`}
           <br />
           {featuresData.map((feature: any, index) => (
             <div key={index}>{`- ${feature.featuresValue}`}</div>
+          ))}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const ColorReference = () => {
+    const primaryColor = readmeRow.primaryColor;
+    const secondaryColor = readmeRow.secondaryColor;
+    const accentColor = readmeRow.accentColor;
+    const textColor = readmeRow.textColor;
+
+    if (primaryColor || secondaryColor || accentColor || textColor) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :art: Color Reference`}
+          <br />
+          {`| Color           | Hex                                                              |`}
+          <br />
+          {`| --------------- | ---------------------------------------------------------------- |`}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const PrimaryColor = () => {
+    const primaryColor = readmeRow.primaryColor;
+
+    if (primaryColor) {
+      return (
+        <>
+          <br />
+          {`| Primary Color   | ![${primaryColor}](https://via.placeholder.com/10/${primaryColor.replace(
+            "#",
+            ""
+          )}?text=+) ${primaryColor} |`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const SecondaryColor = () => {
+    const secondaryColor = readmeRow.secondaryColor;
+
+    if (secondaryColor) {
+      return (
+        <>
+          <br />
+          {`| Secondary Color   | ![${secondaryColor}](https://via.placeholder.com/10/${secondaryColor.replace(
+            "#",
+            ""
+          )}?text=+) ${secondaryColor} |`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const AccentColor = () => {
+    const accentColor = readmeRow.accentColor;
+
+    if (accentColor) {
+      return (
+        <>
+          <br />
+          {`| Accent Color   | ![${accentColor}](https://via.placeholder.com/10/${accentColor.replace(
+            "#",
+            ""
+          )}?text=+) ${accentColor} |`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const TextColor = () => {
+    const textColor = readmeRow.textColor;
+
+    if (textColor) {
+      return (
+        <>
+          <br />
+          {`| Text Color   | ![${textColor}](https://via.placeholder.com/10/${textColor.replace(
+            "#",
+            ""
+          )}?text=+) ${textColor} |`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const EnvironmentVariables = () => {
+    const environmentVariables = gitHubTechStack.environmentVariables;
+
+    if (environmentVariables.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :key: Environment Variables`}
+          <br />
+          {`To run this project, you will need to add the following environment variables to your .env file`}
+          <br />
+          {environmentVariables.map((envData: any, index) => (
+            <div key={index}>
+              `{`${envData.envVariables}`}`
+              <br />
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const GettingStarted = () => {
+    const prerequisitesValues = gitHubTechStack.prerequisites;
+
+    if (prerequisitesValues) {
+      return (
+        <>
+          <br />
+          <br />
+          {`## 	:toolbox: Getting Started`}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const Prerequisites = () => {
+    const prerequisitesValues = gitHubTechStack.prerequisites;
+
+    if (prerequisitesValues.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :bangbang: Prerequisites`}
+          <br />
+          {prerequisitesValues.map((prerequisite: any, index) => (
+            <div key={index}>
+              {prerequisite.prerequisitesValue && (
+                <>
+                  -{" "}
+                  {`${prerequisite.prerequisitesValue}${
+                    prerequisite.url && (
+                      <>{`<a href="${prerequisite.url}"> HERE</a>`}</>
+                    )
+                  }`}
+                </>
+              )}
+              {prerequisite.code && (
+                <>
+                  <br />
+                  ```bash
+                  <br />
+                  {`${prerequisite.code}`}
+                  <br />
+                  ```
+                </>
+              )}
+              <br />
+            </div>
           ))}
         </>
       );
@@ -514,6 +690,14 @@ const MdContent = () => {
     TechStackDatabase,
     TechStackDevOps,
     Features,
+    ColorReference,
+    PrimaryColor,
+    SecondaryColor,
+    AccentColor,
+    TextColor,
+    EnvironmentVariables,
+    GettingStarted,
+    Prerequisites,
   };
 };
 

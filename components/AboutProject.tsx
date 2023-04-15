@@ -81,42 +81,36 @@ function AboutProject({}: Props) {
           label="Your Screenshot URL here"
           type="text"
           name="screenShortOne"
-          placeholder="Enter Your ScreenShort URL here"
         />
         <InputField
           onChange={onChangeSize}
           label="Your Screenshot URL here"
           type="text"
           name="screenShortTwo"
-          placeholder="Enter Your ScreenShort URL here"
         />
         <InputField
           onChange={onChangeSize}
           label="Your Screenshot URL here"
           type="text"
           name="screenShortThree"
-          placeholder="Enter Your ScreenShort URL here"
         />
         <InputField
           onChange={onChangeSize}
           label="Your Screenshot URL here"
           type="text"
           name="screenShortFour"
-          placeholder="Enter Your ScreenShort URL here"
         />
         <InputField
           onChange={onChangeSize}
           label="Your Screenshot URL here"
           type="text"
           name="screenShortFive"
-          placeholder="Enter Your ScreenShort URL here"
         />
         <InputField
           onChange={onChangeSize}
           label="Your Screenshot URL here"
           type="text"
           name="screenShortSix"
-          placeholder="Enter Your ScreenShort URL here"
         />
       </div>
     </div>
