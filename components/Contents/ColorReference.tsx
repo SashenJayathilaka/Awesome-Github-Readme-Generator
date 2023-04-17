@@ -6,7 +6,7 @@ import { HexColorPicker } from "react-colorful";
 import { IoMdColorPalette } from "react-icons/io";
 import { useRecoilState } from "recoil";
 
-import Heading from "./Heading";
+import Heading from "../Heading";
 
 type Props = {};
 

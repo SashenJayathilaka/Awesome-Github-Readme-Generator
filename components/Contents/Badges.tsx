@@ -3,7 +3,8 @@
 import { Divider } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { SlBadge } from "react-icons/sl";
-import Heading from "./Heading";
+
+import Heading from "../Heading";
 
 type Props = {
   onChangeGitHubBadges: (value: React.ChangeEvent<HTMLInputElement>) => void;

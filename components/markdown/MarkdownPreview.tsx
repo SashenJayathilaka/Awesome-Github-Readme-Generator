@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import MdPreview from "../content/MdPreview";
+import MdPreview from "../process/MdPreview";
 
 type Props = {};
 
@@ -26,6 +25,10 @@ function MarkdownPreview({}: Props) {
     MdFeatures,
     ColorReference,
     EnvironmentVariables,
+    GettingStarted,
+    Prerequisites,
+    Installation,
+    RunningTests,
   } = MdPreview();
   return (
     <>
@@ -58,6 +61,18 @@ function MarkdownPreview({}: Props) {
       </div>
       <div className="py-2">
         <EnvironmentVariables />
+      </div>
+      <div className="py-2">
+        <GettingStarted />
+        <div className="py-2">
+          <Prerequisites />
+          <div className="py-2">
+            <Installation />
+          </div>
+          <div className="py-2">
+            <RunningTests />
+          </div>
+        </div>
       </div>
       <div
         className="py-2"

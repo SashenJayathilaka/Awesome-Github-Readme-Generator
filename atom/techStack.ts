@@ -8,6 +8,8 @@ export type gitHubTechStack = {
   features: string[];
   environmentVariables: string[];
   prerequisites: string[];
+  installation: string[];
+  runningTests: string[];
 };
 
 const defaultPostState: gitHubTechStack = {
@@ -18,6 +20,8 @@ const defaultPostState: gitHubTechStack = {
   features: [],
   environmentVariables: [],
   prerequisites: [],
+  installation: [],
+  runningTests: [],
 };
 
 export const gitTechStack = atom<gitHubTechStack>({

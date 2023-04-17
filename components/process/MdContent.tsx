@@ -615,7 +615,7 @@ const MdContent = () => {
   const GettingStarted = () => {
     const prerequisitesValues = gitHubTechStack.prerequisites;
 
-    if (prerequisitesValues) {
+    if (prerequisitesValues.length > 0) {
       return (
         <>
           <br />
@@ -637,16 +637,23 @@ const MdContent = () => {
           <br />
           {`### :bangbang: Prerequisites`}
           <br />
+          <br />
           {prerequisitesValues.map((prerequisite: any, index) => (
             <div key={index}>
-              {prerequisite.prerequisitesValue && (
+              {prerequisite.url ? (
                 <>
-                  -{" "}
-                  {`${prerequisite.prerequisitesValue}${
-                    prerequisite.url && (
-                      <>{`<a href="${prerequisite.url}"> HERE</a>`}</>
-                    )
-                  }`}
+                  {prerequisite.prerequisitesValue && (
+                    <>
+                      - {`${prerequisite.prerequisitesValue}`}
+                      {`<a href="${prerequisite.url}"> Here</a>`}
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  {prerequisite.prerequisitesValue && (
+                    <>- {`${prerequisite.prerequisitesValue}`}</>
+                  )}
                 </>
               )}
               {prerequisite.code && (
@@ -665,6 +672,80 @@ const MdContent = () => {
         </>
       );
     }
+    return null;
+  };
+
+  const Installation = () => {
+    const installation = gitHubTechStack.installation;
+
+    if (installation.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :gear: Installation`}
+          <br />
+          <br />
+          {installation.map((install: any, index) => (
+            <>
+              <div key={index}>
+                {install.installationValue && (
+                  <>{`${install.installationValue}`}</>
+                )}
+                {install.installationCommand && (
+                  <>
+                    <br />
+                    ```bash
+                    <br />
+                    {`${install.installationCommand}`}
+                    <br />
+                    ```
+                  </>
+                )}
+                <br />
+              </div>
+            </>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const RunningTests = () => {
+    const runningTests = gitHubTechStack.runningTests;
+
+    if (runningTests.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :test_tube: Running Tests`}
+          <br />
+          <br />
+          {runningTests.map((data: any, index) => (
+            <>
+              <div key={index}>
+                {data.runningTestsValue && <>{`${data.runningTestsValue}`}</>}
+                {data.runningTestsCommand && (
+                  <>
+                    <br />
+                    ```bash
+                    <br />
+                    {`${data.runningTestsCommand}`}
+                    <br />
+                    ```
+                  </>
+                )}
+                <br />
+              </div>
+            </>
+          ))}
+        </>
+      );
+    }
+
     return null;
   };
 
@@ -698,6 +779,8 @@ const MdContent = () => {
     EnvironmentVariables,
     GettingStarted,
     Prerequisites,
+    Installation,
+    RunningTests,
   };
 };
 

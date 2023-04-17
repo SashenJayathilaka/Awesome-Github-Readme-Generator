@@ -1,6 +1,6 @@
 "use client";
 
-import MdContent from "../content/MdContent";
+import MdContent from "../process/MdContent";
 
 type Props = {};
 
@@ -35,6 +35,8 @@ function Markdown({}: Props) {
     EnvironmentVariables,
     GettingStarted,
     Prerequisites,
+    Installation,
+    RunningTests,
   } = MdContent();
 
   return (
@@ -68,6 +70,8 @@ function Markdown({}: Props) {
       <EnvironmentVariables />
       <GettingStarted />
       <Prerequisites />
+      <Installation />
+      <RunningTests />
     </div>
   );
 }
