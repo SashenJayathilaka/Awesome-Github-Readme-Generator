@@ -8,8 +8,8 @@ import { MdImportantDevices } from "react-icons/md";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
-import Heading from "./Heading";
-import InputField from "./InputField";
+import Heading from "../Heading";
+import InputField from "../InputField";
 
 type Props = {};
 
@@ -87,7 +87,7 @@ function Prerequisites({}: Props) {
   }, [listOfPrerequisites]);
 
   return (
-    <div className="py-6 h-full">
+    <div className="py-6 h-full mb-12">
       <Heading label="Prerequisites" icon={MdImportantDevices} />
       <div className="flex flex-col justify-between gap-4">
         <div className="py-4 flex justify-between gap-4">
@@ -121,7 +121,7 @@ function Prerequisites({}: Props) {
           </button>
         </div>
         <div className="inline-block md:flex justify-start gap-36">
-          <div className="flex flex-col justify-between gap-2 max-h-36">
+          <div className="hidden md:flex flex-col justify-between gap-2 max-h-36">
             <div className="flex gap-2">
               <p className="text-lg font-medium">Example</p>
             </div>
@@ -136,7 +136,6 @@ function Prerequisites({}: Props) {
                 HERE
               </a>
             </p>
-
             <p className="flex gap-2 items-center">
               <FaBowlingBall size={8} />
               Sign up for a Google Cloud Platform
@@ -155,7 +154,7 @@ function Prerequisites({}: Props) {
               </p>
             </div>
           </div>
-          {gitHubTechStack.prerequisites && (
+          {gitHubTechStack.prerequisites.length > 0 && (
             <div className="flex flex-col justify-between gap-2 h-full">
               <div className="flex gap-2">
                 <p className="text-lg font-medium">Your Prerequisites</p>

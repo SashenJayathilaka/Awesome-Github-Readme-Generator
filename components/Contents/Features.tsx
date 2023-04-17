@@ -6,8 +6,8 @@ import { GiDart } from "react-icons/gi";
 import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
 
-import Heading from "./Heading";
-import InputField from "./InputField";
+import Heading from "../Heading";
+import InputField from "../InputField";
 
 type Props = {};
 

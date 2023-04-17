@@ -7,8 +7,8 @@ import { AiFillStar } from "react-icons/ai";
 import { HiPhotograph } from "react-icons/hi";
 import { useRecoilState } from "recoil";
 
-import Heading from "./Heading";
-import InputField from "./InputField";
+import Heading from "../Heading";
+import InputField from "../InputField";
 
 type Props = {};
 

@@ -8,8 +8,8 @@ import { SiMongodb } from "react-icons/si";
 import { TbBrandGolang } from "react-icons/tb";
 import { useRecoilState } from "recoil";
 
-import Heading from "./Heading";
-import Stack from "./Stack";
+import Heading from "../Heading";
+import Stack from "../Stack";
 
 type Props = {};
 

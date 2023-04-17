@@ -480,6 +480,132 @@ const MdPreview = () => {
     return null;
   };
 
+  const GettingStarted = () => {
+    const prerequisitesValues = gitHubTechStack.prerequisites;
+
+    if (prerequisitesValues.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🧰 Getting Started</h1>
+          <br />
+          <br />
+        </>
+      );
+    }
+    return null;
+  };
+
+  const Prerequisites = () => {
+    const prerequisitesValues = gitHubTechStack.prerequisites;
+
+    if (prerequisitesValues.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">‼️ Prerequisites</h1>
+          <br />
+          {prerequisitesValues.map((prerequisite: any, index) => (
+            <div key={index}>
+              {prerequisite.url ? (
+                <>
+                  {prerequisite.prerequisitesValue && (
+                    <>
+                      <p>
+                        {prerequisite.prerequisitesValue}
+                        <a href={prerequisite.url}> Here</a>
+                      </p>
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  {prerequisite.prerequisitesValue && (
+                    <p>{prerequisite.prerequisitesValue}</p>
+                  )}
+                </>
+              )}
+              {prerequisite.code && (
+                <>
+                  <p className="bg-gray-500 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+                    {prerequisite.code}
+                  </p>
+                </>
+              )}
+            </div>
+          ))}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const Installation = () => {
+    const installation = gitHubTechStack.installation;
+
+    if (installation.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">⚙️ Installation</h1>
+          <br />
+          {installation.map((install: any, index) => (
+            <div key={index}>
+              {install.installationValue && (
+                <>
+                  <p>{install.installationValue}</p>
+                </>
+              )}
+              {install.installationCommand && (
+                <div className="flex justify-start gap-2 items-center">
+                  <p className="bg-gray-500 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+                    {install.installationCommand}
+                  </p>
+                </div>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const RunningTests = () => {
+    const runningTests = gitHubTechStack.runningTests;
+
+    if (runningTests.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🧪 Running Tests</h1>
+          <br />
+          {runningTests.map((data: any, index) => (
+            <>
+              <div key={index}>
+                {data.runningTestsValue && (
+                  <>
+                    <p>{data.runningTestsValue}</p>
+                  </>
+                )}
+                {data.runningTestsCommand && (
+                  <>
+                    <div className="flex justify-start gap-2 items-center">
+                      <p className="bg-gray-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+                        {data.runningTestsCommand}
+                      </p>
+                    </div>
+                  </>
+                )}
+                <br />
+              </div>
+            </>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
   return {
     PMainImage,
     PMainTopic,
@@ -500,6 +626,10 @@ const MdPreview = () => {
     MdFeatures,
     ColorReference,
     EnvironmentVariables,
+    GettingStarted,
+    Prerequisites,
+    Installation,
+    RunningTests,
   };
 };
 

@@ -6,8 +6,8 @@ import { FaKey } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
 
-import Heading from "./Heading";
-import InputField from "./InputField";
+import Heading from "../Heading";
+import InputField from "../InputField";
 
 type Props = {};
 

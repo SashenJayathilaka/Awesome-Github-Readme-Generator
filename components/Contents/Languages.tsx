@@ -1,6 +1,5 @@
 "use client";
 
-import { middleControllers } from "@/atom/middleController";
 import { gitTechnologies } from "@/atom/technology";
 import updateState from "@/hook/updateState";
 import { Checkbox } from "@mui/material";

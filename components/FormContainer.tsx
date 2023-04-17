@@ -6,16 +6,16 @@ import React from "react";
 import { FaGithubAlt } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 
-import AboutProject from "./AboutProject";
-import Badges from "./Badges";
-import ColorReference from "./ColorReference";
-import EnvironmentVariables from "./EnvironmentVariables";
-import Features from "./Features";
+import AboutProject from "./Contents/AboutProject";
+import Badges from "./Contents/Badges";
+import ColorReference from "./Contents/ColorReference";
+import EnvironmentVariables from "./Contents/EnvironmentVariables";
+import Features from "./Contents/Features";
 import Heading from "./Heading";
 import InputField from "./InputField";
-import TechStack from "./TechStack";
+import TechStack from "./Contents/TechStack";
 import TechnologiesContent from "./TechnologiesContent";
-import GettingStarted from "./GettingStarted";
+import GettingStarted from "./Contents/GettingStarted";
 
 type Props = {
   setIsReadmeRow: (value: any) => void;
