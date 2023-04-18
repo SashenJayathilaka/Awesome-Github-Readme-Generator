@@ -7,20 +7,21 @@ import { useRecoilState } from "recoil";
 
 import Heading from "../Heading";
 import InputField from "../InputField";
+import { toast } from "react-toastify";
 
 type Props = {};
 
 function RunLocally({}: Props) {
-  const [runningTestsValues, setRunningTestsValue] = useState({
-    runningTestsValue: "",
-    runningTestsCommand: "",
+  const [runLocallyValues, setRunLocallyValues] = useState({
+    runningValue: "",
+    runningCommand: "",
   });
-  const [listOfRunningTests, setListOfRunningTests] = useState([]);
+  const [listOfRunLocallyValues, setListOfRunLocallyValues] = useState([]);
   const [gitHubDetail] = useRecoilState(gitHubDetails);
   const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRunningTestsValue((prev) => ({
+    setRunLocallyValues((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }));
@@ -29,17 +30,21 @@ function RunLocally({}: Props) {
   const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const runningTestsValue = runningTestsValues.runningTestsValue;
-    const runningTestsCommand = runningTestsValues.runningTestsCommand;
+    const runningValue = runLocallyValues.runningValue;
+    const runningCommand = runLocallyValues.runningCommand;
 
-    if (runningTestsValue || runningTestsCommand) {
-      const element = { runningTestsValue, runningTestsCommand };
-      setListOfRunningTests((ls) => [...ls, element] as any);
-      setRunningTestsValue((prev) => ({
-        ...prev,
-        runningTestsValue: "",
-        runningTestsCommand: "",
-      }));
+    if (gitHubDetail.gitRepoUrl) {
+      if (runningValue || runningCommand) {
+        const element = { runningValue, runningCommand };
+        setListOfRunLocallyValues((ls) => [...ls, element] as any);
+        setRunLocallyValues((prev) => ({
+          ...prev,
+          runningValue: "",
+          runningCommand: "",
+        }));
+      }
+    } else {
+      toast.warn("Please fill your gitHub repository details first");
     }
   };
 
@@ -48,32 +53,32 @@ function RunLocally({}: Props) {
 
     setGitHubTechStack((prev) => ({
       ...prev,
-      runningTests: value,
+      runLocally: value,
     }));
   };
 
   const removeElement = (value: string, label: string) => {
     if (value) {
-      const removeCurrentState = listOfRunningTests.filter(
+      const removeCurrentState = listOfRunLocallyValues.filter(
         (element: any) => element[label] !== value
       );
 
-      setListOfRunningTests(removeCurrentState);
+      setListOfRunLocallyValues(removeCurrentState);
 
-      const removeItem = gitHubTechStack.runningTests.filter(
+      const removeItem = gitHubTechStack.runLocally.filter(
         (element: any) => element[label] !== value
       );
 
       setGitHubTechStack((prev) => ({
         ...prev,
-        runningTests: removeItem,
+        runLocally: removeItem,
       }));
     }
   };
 
   useEffect(() => {
-    updateState(listOfRunningTests);
-  }, [listOfRunningTests]);
+    updateState(listOfRunLocallyValues);
+  }, [listOfRunLocallyValues]);
 
   return (
     <div className="py-8">
@@ -91,15 +96,15 @@ function RunLocally({}: Props) {
             onChange={onChange}
             label="Topic"
             type="text"
-            name="runningTestsValue"
-            value={runningTestsValues.runningTestsValue}
+            name="runningValue"
+            value={runLocallyValues.runningValue}
           />
           <InputField
             onChange={onChange}
             label="Running Tests command"
             type="text"
-            name="runningTestsCommand"
-            value={runningTestsValues.runningTestsCommand}
+            name="runningCommand"
+            value={runLocallyValues.runningCommand}
           />
           <button
             onClick={(e: any) => onAddValue(e)}
@@ -113,13 +118,6 @@ function RunLocally({}: Props) {
           <div className="hidden md:flex flex-col justify-between gap-2 h-auto">
             <div className="flex gap-2">
               <p className="text-lg font-medium">Example</p>
-            </div>
-            <div className="flex flex-col gap-1">
-              <p>Clone the project</p>
-              <p className="bg-[#161748] px-3 py-2 rounded-md w-auto items-center">
-                {gitHubDetail.gitRepoUrl ||
-                  "git clone https://github.com/Louis3797/awesome-readme-template.git"}
-              </p>
             </div>
             <div className="flex flex-col gap-1">
               <p>Go to the project directory</p>
@@ -140,6 +138,43 @@ function RunLocally({}: Props) {
               </p>
             </div>
           </div>
+          {gitHubTechStack.runLocally.length > 0 && (
+            <div className="flex flex-col justify-between gap-2 h-full">
+              <div className="flex gap-2">
+                <p className="text-lg font-medium">Your Details</p>
+              </div>
+              {gitHubTechStack.runLocally.map((data: any, index) => (
+                <div key={index}>
+                  {data.runningValue && (
+                    <div className="flex flex-col gap-2 items-start py-1">
+                      <p
+                        className="flex gap-2 items-center cursor-pointer text-center"
+                        onClick={() =>
+                          removeElement(data.runningValue, "runningValue")
+                        }
+                      >
+                        {data.runningValue}
+                      </p>
+                    </div>
+                  )}
+                  {data.runningCommand && (
+                    <div className="flex flex-col gap-2 items-start">
+                      <div className="flex justify-start gap-2 items-center">
+                        <p
+                          className="bg-[#161748] px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center"
+                          onClick={() =>
+                            removeElement(data.runningCommand, "runningCommand")
+                          }
+                        >
+                          {data.runningCommand}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

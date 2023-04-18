@@ -1,7 +1,9 @@
-import Container from "@/components/Container";
-import "../styles/globals.css";
-import ToastContainerBar from "@/provider/ToastContainerBar";
 import Bot from "@/components/Bot";
+import Container from "@/components/Container";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import ToastContainerBar from "@/provider/ToastContainerBar";
+import "../styles/globals.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,9 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Container>
+          <Navbar />
           <ToastContainerBar />
           <Bot />
           {children}
+          <Footer />
         </Container>
       </body>
     </html>

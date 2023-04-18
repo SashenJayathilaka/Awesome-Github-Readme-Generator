@@ -7,6 +7,8 @@ import { readmeRows } from "@/atom/readmeRow";
 import { gitImagesSizes } from "@/atom/size";
 import { gitTechStack } from "@/atom/techStack";
 import { gitTechnologies } from "@/atom/technology";
+import { boxLabel } from "@/lib/boxLabel";
+import { Checkbox } from "@mui/material";
 import { useRecoilState } from "recoil";
 
 const MdPreview = () => {
@@ -15,7 +17,6 @@ const MdPreview = () => {
   const [images] = useRecoilState(gitImages);
   const [size] = useRecoilState(gitImagesSizes);
   const [displayBadges] = useRecoilState(gitBadge);
-  const [technology] = useRecoilState(gitTechnologies);
   const [gitHubTechStack] = useRecoilState(gitTechStack);
 
   const PMainImage = () => {
@@ -579,25 +580,141 @@ const MdPreview = () => {
           <h1 className="text-xl font-medium">🧪 Running Tests</h1>
           <br />
           {runningTests.map((data: any, index) => (
-            <>
-              <div key={index}>
-                {data.runningTestsValue && (
-                  <>
-                    <p>{data.runningTestsValue}</p>
-                  </>
-                )}
-                {data.runningTestsCommand && (
-                  <>
-                    <div className="flex justify-start gap-2 items-center">
-                      <p className="bg-gray-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
-                        {data.runningTestsCommand}
-                      </p>
-                    </div>
-                  </>
-                )}
-                <br />
-              </div>
-            </>
+            <div key={index}>
+              {data.runningTestsValue && (
+                <>
+                  <p>{data.runningTestsValue}</p>
+                </>
+              )}
+              {data.runningTestsCommand && (
+                <>
+                  <div className="flex justify-start gap-2 items-center">
+                    <p className="bg-gray-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+                      {data.runningTestsCommand}
+                    </p>
+                  </div>
+                </>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const RunLocally = () => {
+    const runningLocally = gitHubTechStack.runLocally;
+    const repoUrl = gitHubDetail.gitRepoUrl;
+
+    if (runningLocally.length > 0 && repoUrl) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🏃 Run Locally</h1>
+          <br />
+          <p>Clone the project</p>
+          <br />
+          <div className="flex justify-start gap-2 items-center">
+            <p className="bg-gray-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+              {`${repoUrl}`}
+            </p>
+          </div>
+          <br />
+          {runningLocally.map((data: any, index) => (
+            <div key={index}>
+              {data.runningValue && (
+                <>
+                  <p>{data.runningValue}</p>
+                </>
+              )}
+              {data.runningCommand && (
+                <>
+                  <div className="flex justify-start gap-2 items-center">
+                    <p className="bg-gray-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+                      {data.runningCommand}
+                    </p>
+                  </div>
+                </>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Deployment = () => {
+    const deployment = gitHubTechStack.deployment;
+
+    if (deployment.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🚩 Deployment</h1>
+          <br />
+          {deployment.map((data: any, index) => (
+            <div key={index}>
+              {data.deploymentValue && (
+                <>
+                  <p>{data.deploymentValue}</p>
+                </>
+              )}
+              {data.deploymentCommand && (
+                <>
+                  <div className="flex justify-start gap-2 items-center">
+                    <p className="bg-gray-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+                      {data.deploymentCommand}
+                    </p>
+                  </div>
+                </>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const RoadMap = () => {
+    const roadMap = gitHubTechStack.roadMap;
+
+    if (roadMap.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🧭 Roadmap</h1>
+          <br />
+          {roadMap.map((data: any, index) => (
+            <div key={index}>
+              {data.roadMapCheck === "do" ? (
+                <div className="flex justify-start gap-2">
+                  <Checkbox
+                    {...boxLabel}
+                    color="default"
+                    disabled
+                    checked
+                    sx={{ color: "#fff" }}
+                  />
+                  <p>{data.roadMapValue}</p>
+                </div>
+              ) : (
+                <div className="flex justify-start gap-2">
+                  <Checkbox
+                    {...boxLabel}
+                    color="default"
+                    disabled
+                    sx={{ color: "#fff" }}
+                  />
+                  <p>{data.roadMapValue}</p>
+                </div>
+              )}
+            </div>
           ))}
         </>
       );
@@ -630,6 +747,9 @@ const MdPreview = () => {
     Prerequisites,
     Installation,
     RunningTests,
+    RunLocally,
+    Deployment,
+    RoadMap,
   };
 };
 

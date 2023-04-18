@@ -687,24 +687,22 @@ const MdContent = () => {
           <br />
           <br />
           {installation.map((install: any, index) => (
-            <>
-              <div key={index}>
-                {install.installationValue && (
-                  <>{`${install.installationValue}`}</>
-                )}
-                {install.installationCommand && (
-                  <>
-                    <br />
-                    ```bash
-                    <br />
-                    {`${install.installationCommand}`}
-                    <br />
-                    ```
-                  </>
-                )}
-                <br />
-              </div>
-            </>
+            <div key={index}>
+              {install.installationValue && (
+                <>{`${install.installationValue}`}</>
+              )}
+              {install.installationCommand && (
+                <>
+                  <br />
+                  ```bash
+                  <br />
+                  {`${install.installationCommand}`}
+                  <br />
+                  ```
+                </>
+              )}
+              <br />
+            </div>
           ))}
         </>
       );
@@ -725,22 +723,125 @@ const MdContent = () => {
           <br />
           <br />
           {runningTests.map((data: any, index) => (
-            <>
-              <div key={index}>
-                {data.runningTestsValue && <>{`${data.runningTestsValue}`}</>}
-                {data.runningTestsCommand && (
-                  <>
-                    <br />
-                    ```bash
-                    <br />
-                    {`${data.runningTestsCommand}`}
-                    <br />
-                    ```
-                  </>
-                )}
-                <br />
-              </div>
-            </>
+            <div key={index}>
+              {data.runningTestsValue && <>{`${data.runningTestsValue}`}</>}
+              {data.runningTestsCommand && (
+                <>
+                  <br />
+                  ```bash
+                  <br />
+                  {`${data.runningTestsCommand}`}
+                  <br />
+                  ```
+                </>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const RunLocally = () => {
+    const runningLocally = gitHubTechStack.runLocally;
+    const repoUrl = gitHubDetail.gitRepoUrl;
+
+    if (runningLocally.length > 0 && repoUrl) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :running: Run Locally`}
+          <br />
+          <br />
+          {`Clone the project`}
+          <br />
+          <br />
+          ```bash
+          <br />
+          {`${repoUrl}`}
+          <br />
+          ```
+          <br />
+          {runningLocally.map((data: any, index) => (
+            <div key={index}>
+              {data.runningValue && <>{`${data.runningValue}`}</>}
+              {data.runningCommand && (
+                <>
+                  <br />
+                  ```bash
+                  <br />
+                  {`${data.runningCommand}`}
+                  <br />
+                  ```
+                </>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Deployment = () => {
+    const deployment = gitHubTechStack.deployment;
+
+    if (deployment.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :triangular_flag_on_post: Deployment`}
+          <br />
+          <br />
+          {deployment.map((data: any, index) => (
+            <div key={index}>
+              {data.deploymentValue && <>{`${data.deploymentValue}`}</>}
+              {data.deploymentCommand && (
+                <>
+                  <br />
+                  ```bash
+                  <br />
+                  {`${data.deploymentCommand}`}
+                  <br />
+                  ```
+                </>
+              )}
+              <br />
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const RoadMap = () => {
+    const roadMap = gitHubTechStack.roadMap;
+
+    if (roadMap.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`## :compass: Roadmap`}
+          <br />
+          <br />
+          {roadMap.map((data: any, index) => (
+            <div key={index}>
+              {data.roadMapCheck === "do" ? (
+                <> {`* [x] ${data.roadMapValue}`}</>
+              ) : (
+                <> {`* [ ] ${data.roadMapValue}`}</>
+              )}
+            </div>
           ))}
         </>
       );
@@ -781,6 +882,9 @@ const MdContent = () => {
     Prerequisites,
     Installation,
     RunningTests,
+    RunLocally,
+    Deployment,
+    RoadMap,
   };
 };
 

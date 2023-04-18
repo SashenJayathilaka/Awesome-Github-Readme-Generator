@@ -34,7 +34,7 @@ function InputField({
         sx={{
           [`& .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]:
             {
-              borderColor: "#0F2557",
+              borderColor: "#000080",
             },
           [`&:hover .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]:
             {
