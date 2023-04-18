@@ -4,6 +4,6 @@
 
 @layer base {
     body {
-        @apply bg-[#001730] text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-[#43C6DB];
+        @apply bg-[#0A1929] text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-[#43C6DB];
     }
 }

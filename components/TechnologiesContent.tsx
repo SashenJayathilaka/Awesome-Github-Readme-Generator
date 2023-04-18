@@ -15,7 +15,7 @@ import { SiGtk } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 
 import Heading from "./Heading";
-import Languages from "./Languages";
+import Languages from "./Contents/Languages";
 import ControlSwitch from "./Switch";
 
 type Props = {};

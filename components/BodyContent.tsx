@@ -30,10 +30,10 @@ function BodyContent({}: Props) {
         setDisplayBadges={setDisplayBadges}
         displayBadges={displayBadges}
       />
-      <div className="px-12 py-8 bg-gray-600 mt-8">
+      <div className="px-12 py-8 bg-[#1f2937] mt-8 rounded-xl border-double border-4 border-[#001e3c]">
         <Markdown />
       </div>
-      <div className="px-12 py-8 bg-[#DCDCDC] text-black mt-8">
+      <div className="px-12 py-8 bg-[#1a2027] mt-8 rounded-xl border-double border-4 border-[#001e3c]">
         <MarkdownPreview />
       </div>
     </div>

@@ -10,6 +10,9 @@ export type gitHubTechStack = {
   prerequisites: string[];
   installation: string[];
   runningTests: string[];
+  runLocally: string[];
+  deployment: string[];
+  roadMap: string[];
 };
 
 const defaultPostState: gitHubTechStack = {
@@ -22,6 +25,9 @@ const defaultPostState: gitHubTechStack = {
   prerequisites: [],
   installation: [],
   runningTests: [],
+  runLocally: [],
+  deployment: [],
+  roadMap: [],
 };
 
 export const gitTechStack = atom<gitHubTechStack>({

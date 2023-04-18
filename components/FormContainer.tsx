@@ -111,7 +111,7 @@ function FormContainer({
   }; */
 
   return (
-    <div className="px-14 py-14 bg-[#051622] rounded-md">
+    <div className="px-14 py-14 bg-[#001e3c] rounded-md">
       <form className="">
         {/*  <div>
           <Heading
@@ -300,6 +300,7 @@ function FormContainer({
             marginY: "10px",
           }}
         /> */}
+        <TechnologiesContent />
         {/*  Technologies */}
       </form>
     </div>

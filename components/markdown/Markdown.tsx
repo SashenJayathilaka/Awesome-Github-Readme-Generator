@@ -37,6 +37,9 @@ function Markdown({}: Props) {
     Prerequisites,
     Installation,
     RunningTests,
+    RunLocally,
+    Deployment,
+    RoadMap,
   } = MdContent();
 
   return (
@@ -72,6 +75,9 @@ function Markdown({}: Props) {
       <Prerequisites />
       <Installation />
       <RunningTests />
+      <RunLocally />
+      <Deployment />
+      <RoadMap />
     </div>
   );
 }
