@@ -693,7 +693,7 @@ const MdPreview = () => {
           {roadMap.map((data: any, index) => (
             <div key={index}>
               {data.roadMapCheck === "do" ? (
-                <div className="flex justify-start gap-2">
+                <div className="flex justify-start gap-2 items-center">
                   <Checkbox
                     {...boxLabel}
                     color="default"
@@ -704,7 +704,7 @@ const MdPreview = () => {
                   <p>{data.roadMapValue}</p>
                 </div>
               ) : (
-                <div className="flex justify-start gap-2">
+                <div className="flex justify-start gap-2 items-center">
                   <Checkbox
                     {...boxLabel}
                     color="default"
@@ -716,6 +716,49 @@ const MdPreview = () => {
               )}
             </div>
           ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Contributing = () => {
+    const contributing = readmeRow.contributing;
+    const repoUrl = gitHubDetail.gitRepoUrl;
+
+    if (contributing === "do" && repoUrl) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">👋 Contributing</h1>
+          <br />
+          <a href={`${repoUrl}/graphs/contributors`}>
+            <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
+          </a>
+          <br />
+          <p>Contributions are always welcome!</p>
+          <br />
+          <p>see contributing.md for ways to get started</p>
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const CodeOfConduct = () => {
+    const contributing = readmeRow.codeOfConduct;
+    const repoUrl = gitHubDetail.gitRepoUrl;
+
+    if (contributing === "do" && repoUrl) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">📜 Code of Conduct</h1>
+          <br />
+          <p>
+            Please read the
+            <a href={`${repoUrl}/blob/master/CODE_OF_CONDUCT.md`}> Here</a>
+          </p>
         </>
       );
     }
@@ -750,6 +793,8 @@ const MdPreview = () => {
     RunLocally,
     Deployment,
     RoadMap,
+    Contributing,
+    CodeOfConduct,
   };
 };
 

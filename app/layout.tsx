@@ -1,4 +1,5 @@
 import Bot from "@/components/Bot";
+import ClientOnly from "@/components/ClientOnly";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -19,11 +20,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Container>
-          <Navbar />
-          <ToastContainerBar />
-          <Bot />
-          {children}
-          <Footer />
+          <ClientOnly>
+            <Navbar />
+            <ToastContainerBar />
+            <Bot />
+            {children}
+            <Footer />
+          </ClientOnly>
         </Container>
       </body>
     </html>

@@ -28,7 +28,7 @@ function TechnologiesContent({}: Props) {
         <ControlSwitch />
       </div>
       <Heading label="Programming Languages" icon={FaJava} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {languages.map((language, index) => (
           <Languages
             key={index}
@@ -39,7 +39,7 @@ function TechnologiesContent({}: Props) {
         ))}
       </div>
       <Heading label="Style Components" icon={FaCss3Alt} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {styleComponents.map((technology, index) => (
           <Languages
             key={index}
@@ -50,7 +50,7 @@ function TechnologiesContent({}: Props) {
         ))}
       </div>
       <Heading label="Frontend Development FrameWork" icon={FaReact} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {frontendDevelopment.map((technology, index) => (
           <Languages
             key={index}
@@ -61,7 +61,7 @@ function TechnologiesContent({}: Props) {
         ))}
       </div>
       <Heading label="Backend Development" icon={GrNode} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {backendFrameWork.map((technology, index) => (
           <Languages
             key={index}
@@ -72,7 +72,7 @@ function TechnologiesContent({}: Props) {
         ))}
       </div>
       <Heading label="Other Development FrameWork" icon={SiGtk} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {otherFrameWork.map((technology, index) => (
           <Languages
             key={index}
@@ -83,7 +83,7 @@ function TechnologiesContent({}: Props) {
         ))}
       </div>
       <Heading label="Development Editors / IDE" icon={TbBrandVscode} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {developmentEditors.map((technology, index) => (
           <Languages
             key={index}
@@ -94,7 +94,7 @@ function TechnologiesContent({}: Props) {
         ))}
       </div>
       <Heading label="Other" icon={FaLinux} />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-8 gap-12 mb-8">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
         {others.map((technology, index) => (
           <Languages
             key={index}

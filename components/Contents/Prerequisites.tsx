@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaBowlingBall } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
@@ -114,7 +115,7 @@ function Prerequisites({}: Props) {
           />
           <button
             onClick={(e: any) => onAddValue(e)}
-            className="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
+            className="bg-[#265D97] hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
           >
             <span>Add</span>
             <IoIosAddCircle size={15} />
@@ -123,9 +124,9 @@ function Prerequisites({}: Props) {
         <div className="inline-block md:flex justify-start gap-36">
           <div className="hidden md:flex flex-col justify-between gap-2 max-h-36">
             <div className="flex gap-2">
-              <p className="text-lg font-medium">Example</p>
+              <p className="text-lg font-medium text-gray-300">Example</p>
             </div>
-            <p className="flex gap-2 items-center">
+            <p className="flex gap-2 items-center text-sm font-normal text-[#7c8691]">
               <FaBowlingBall size={8} />
               Install Node JS in your computer
               <a
@@ -136,7 +137,7 @@ function Prerequisites({}: Props) {
                 HERE
               </a>
             </p>
-            <p className="flex gap-2 items-center">
+            <p className="flex gap-2 items-center text-sm font-normal text-[#7c8691]">
               <FaBowlingBall size={8} />
               Sign up for a Google Cloud Platform
               <a
@@ -148,23 +149,43 @@ function Prerequisites({}: Props) {
               </a>
             </p>
             <div className="flex flex-col gap-1 py-5">
-              <p>This project uses Yarn as package manager</p>
-              <p className="bg-[#161748] px-2.5 py-2 rounded-md w-[200px] items-center">
+              <p className="text-sm font-normal text-[#7c8691]">
+                This project uses Yarn as package manager
+              </p>
+              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
                 npm install --global yarn
               </p>
             </div>
           </div>
           {gitHubTechStack.prerequisites.length > 0 && (
-            <div className="flex flex-col justify-between gap-2 h-full">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+              className="flex flex-col justify-between gap-2 h-full"
+            >
               <div className="flex gap-2">
                 <p className="text-lg font-medium">Your Prerequisites</p>
               </div>
               {gitHubTechStack.prerequisites.map((data: any, index) => (
                 <div key={index}>
                   {data.prerequisitesValue && (
-                    <div className="flex flex-col gap-2 items-start">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.5,
+                        ease: [0, 0.71, 0.2, 1.01],
+                      }}
+                      className="flex flex-col gap-2 items-start"
+                    >
                       <p
-                        className="flex gap-2 items-center cursor-pointer text-center"
+                        className="flex gap-2 items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
                         onClick={() =>
                           removeElement(
                             data.prerequisitesValue,
@@ -184,14 +205,14 @@ function Prerequisites({}: Props) {
                           </a>
                         )}
                       </p>
-                    </div>
+                    </motion.div>
                   )}
                   {data.code && (
                     <div className="flex flex-col gap-2 items-start">
                       <div className="flex justify-start gap-2 items-center">
                         {!data.prerequisitesValue && <FaBowlingBall size={8} />}
                         <p
-                          className="bg-[#161748] px-2.5 py-2 rounded-md w-[200px] items-center cursor-pointer text-center"
+                          className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
                           onClick={() => removeElement(data.code, "code")}
                         >
                           {data.code}
@@ -201,7 +222,7 @@ function Prerequisites({}: Props) {
                   )}
                 </div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

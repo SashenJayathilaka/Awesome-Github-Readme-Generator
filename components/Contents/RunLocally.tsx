@@ -1,13 +1,14 @@
 import { gitHubDetails } from "@/atom/gitHubDetails";
 import { gitTechStack } from "@/atom/techStack";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BiRun } from "react-icons/bi";
 import { IoIosAddCircle } from "react-icons/io";
+import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
 import Heading from "../Heading";
 import InputField from "../InputField";
-import { toast } from "react-toastify";
 
 type Props = {};
 
@@ -86,7 +87,7 @@ function RunLocally({}: Props) {
       <div className="flex flex-col justify-between gap-4">
         <div className="flex flex-col gap-1 mt-5 justify-start items-start">
           <p className="text-lg font-medium">Clone the project</p>
-          <p className="bg-[#161748] px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center">
+          <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
             {gitHubDetail.gitRepoUrl ||
               "git clone https://github.com/Louis3797/awesome-readme-template.git"}
           </p>
@@ -108,7 +109,7 @@ function RunLocally({}: Props) {
           />
           <button
             onClick={(e: any) => onAddValue(e)}
-            className="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
+            className="bg-[#265D97] hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
           >
             <span>Add</span>
             <IoIosAddCircle size={15} />
@@ -120,35 +121,59 @@ function RunLocally({}: Props) {
               <p className="text-lg font-medium">Example</p>
             </div>
             <div className="flex flex-col gap-1">
-              <p>Go to the project directory</p>
-              <p className="bg-[#161748] px-3 py-2 rounded-md w-[120px] items-center">
+              <p className="text-sm font-normal text-[#7c8691]">
+                Go to the project directory
+              </p>
+              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
                 cd my-project
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p>Install dependencies</p>
-              <p className="bg-[#161748] px-3 py-2 rounded-md w-[100px] items-center">
+              <p className="text-sm font-normal text-[#7c8691]">
+                Install dependencies
+              </p>
+              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
                 yarn install
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p>Start the server</p>
-              <p className="bg-[#161748] px-3 py-2 rounded-md w-[100px] items-center">
+              <p className="text-sm font-normal text-[#7c8691]">
+                Start the server
+              </p>
+              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
                 yarn start
               </p>
             </div>
           </div>
           {gitHubTechStack.runLocally.length > 0 && (
-            <div className="flex flex-col justify-between gap-2 h-full">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+              className="flex flex-col justify-between gap-2 h-full"
+            >
               <div className="flex gap-2">
                 <p className="text-lg font-medium">Your Details</p>
               </div>
               {gitHubTechStack.runLocally.map((data: any, index) => (
-                <div key={index}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01],
+                  }}
+                  key={index}
+                >
                   {data.runningValue && (
                     <div className="flex flex-col gap-2 items-start py-1">
                       <p
-                        className="flex gap-2 items-center cursor-pointer text-center"
+                        className="flex gap-2 items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
                         onClick={() =>
                           removeElement(data.runningValue, "runningValue")
                         }
@@ -161,7 +186,7 @@ function RunLocally({}: Props) {
                     <div className="flex flex-col gap-2 items-start">
                       <div className="flex justify-start gap-2 items-center">
                         <p
-                          className="bg-[#161748] px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center"
+                          className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
                           onClick={() =>
                             removeElement(data.runningCommand, "runningCommand")
                           }
@@ -171,9 +196,9 @@ function RunLocally({}: Props) {
                       </div>
                     </div>
                   )}
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

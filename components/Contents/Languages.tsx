@@ -35,8 +35,8 @@ function Languages({ label, image, index }: Props) {
     <div>
       <Tooltip title={label}>
         <div
-          className={`flex justify-between items-center border border-[#0F2557] w-full overflow-hidden rounded-xl px-4 py-4 space-y-2 hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover-shadow-xl hover:text-black cursor-pointer ${
-            images.updatedStateTechnology.includes(image) && "bg-[#161748]"
+          className={`flex justify-between items-center border border-[#0F2557] w-full overflow-hidden rounded-xl px-4 py-4 space-y-2 hover:bg-[#161748] hover-shadow-xl hover:text-black cursor-pointer ${
+            images.updatedStateTechnology.includes(image) && "bg-[#04082b]"
           }`}
           onClick={onChangeTechnology}
         >

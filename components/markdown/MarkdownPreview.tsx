@@ -32,6 +32,8 @@ function MarkdownPreview({}: Props) {
     RunLocally,
     Deployment,
     RoadMap,
+    Contributing,
+    CodeOfConduct,
   } = MdPreview();
   return (
     <>
@@ -83,6 +85,12 @@ function MarkdownPreview({}: Props) {
           </div>
           <div className="py-2">
             <RoadMap />
+          </div>
+          <div className="py-2">
+            <Contributing />
+          </div>
+          <div className="py-2">
+            <CodeOfConduct />
           </div>
         </div>
       </div>

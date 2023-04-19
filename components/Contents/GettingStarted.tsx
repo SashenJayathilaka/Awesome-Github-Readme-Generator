@@ -1,12 +1,19 @@
+"use client";
+
 import { Divider } from "@mui/material";
 import { BsFillBagCheckFill } from "react-icons/bs";
 
+import Acknowledgements from "./Acknowledgements";
+import Contact from "./Contact";
+import Contributing from "./Contributing";
 import Deployment from "./Deployment";
+import FaqSection from "./Faq";
 import Installation from "./Installation";
+import License from "./License";
 import Prerequisites from "./Prerequisites";
+import Roadmap from "./Roadmap";
 import RunLocally from "./RunLocally";
 import RunningTests from "./RunningTests";
-import Roadmap from "./Roadmap";
 
 type Props = {};
 
@@ -17,7 +24,7 @@ function GettingStarted({}: Props) {
         <BsFillBagCheckFill size={25} />
         <p className="text-2xl">Getting Started</p>
       </div>
-      {/*     <Prerequisites />
+      {/*       <Prerequisites />
       <Divider
         orientation="horizontal"
         variant="fullWidth"
@@ -26,8 +33,8 @@ function GettingStarted({}: Props) {
           backgroundColor: "#3795BD",
           marginY: "10px",
         }}
-      /> */}
-      {/*       <Installation />
+      />
+      <Installation />
       <Divider
         orientation="horizontal"
         variant="fullWidth"
@@ -36,8 +43,8 @@ function GettingStarted({}: Props) {
           backgroundColor: "#3795BD",
           marginY: "10px",
         }}
-      /> */}
-      {/*       <RunningTests />
+      />
+      <RunningTests />
       <Divider
         orientation="horizontal"
         variant="fullWidth"
@@ -46,8 +53,8 @@ function GettingStarted({}: Props) {
           backgroundColor: "#3795BD",
           marginY: "10px",
         }}
-      /> */}
-      {/*       <RunLocally />
+      />
+      <RunLocally />
       <Divider
         orientation="horizontal"
         variant="fullWidth"
@@ -56,8 +63,8 @@ function GettingStarted({}: Props) {
           backgroundColor: "#3795BD",
           marginY: "10px",
         }}
-      /> */}
-      {/*       <Deployment />
+      />
+      <Deployment />
       <Divider
         orientation="horizontal"
         variant="fullWidth"
@@ -66,8 +73,22 @@ function GettingStarted({}: Props) {
           backgroundColor: "#3795BD",
           marginY: "10px",
         }}
-      /> */}
+      />
       <Roadmap />
+      <Divider
+        orientation="horizontal"
+        variant="fullWidth"
+        flexItem
+        sx={{
+          backgroundColor: "#3795BD",
+          marginY: "10px",
+        }}
+      /> */}
+      <Contributing />
+      <FaqSection />
+      <License />
+      <Contact />
+      <Acknowledgements />
     </div>
   );
 }

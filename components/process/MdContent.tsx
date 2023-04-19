@@ -850,6 +850,54 @@ const MdContent = () => {
     return null;
   };
 
+  const Contributing = () => {
+    const contributing = readmeRow.contributing;
+    const repoUrl = gitHubDetail.gitRepoUrl;
+
+    if (contributing === "do" && repoUrl) {
+      return (
+        <>
+          <br />
+          <br />
+          {`## :wave: Contributing`}
+          <br />
+          <br />
+          {`<a href="${repoUrl}/graphs/contributors">
+              <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
+            </a>`}
+          <br />
+          <br />
+          {`Contributions are always welcome!`}
+          <br />
+          <br />
+          {`see`} `{`contributing.md`}`{` for ways to get started`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const CodeOfConduct = () => {
+    const contributing = readmeRow.codeOfConduct;
+    const repoUrl = gitHubDetail.gitRepoUrl;
+
+    if (contributing === "do" && repoUrl) {
+      return (
+        <>
+          <br />
+          <br />
+          {`### :scroll: Code of Conduct`}
+          <br />
+          <br />
+          {`Please read the [Code of Conduct](${repoUrl}/blob/master/CODE_OF_CONDUCT.md)`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
   return {
     MainImage,
     MainTopic,
@@ -885,6 +933,8 @@ const MdContent = () => {
     RunLocally,
     Deployment,
     RoadMap,
+    Contributing,
+    CodeOfConduct,
   };
 };
 
