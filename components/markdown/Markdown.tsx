@@ -40,6 +40,8 @@ function Markdown({}: Props) {
     RunLocally,
     Deployment,
     RoadMap,
+    Contributing,
+    CodeOfConduct,
   } = MdContent();
 
   return (
@@ -78,6 +80,8 @@ function Markdown({}: Props) {
       <RunLocally />
       <Deployment />
       <RoadMap />
+      <Contributing />
+      <CodeOfConduct />
     </div>
   );
 }

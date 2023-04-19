@@ -34,6 +34,15 @@ function FormContainer({
   setDisplayBadges,
   displayBadges,
 }: Props) {
+  const onChangeGitHubDetails = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setGitHubDetails((prev: string | any) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
   /*   const onChangeReadmeRow = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsReadmeRow((prev: string | any) => ({
       ...prev,
@@ -111,8 +120,14 @@ function FormContainer({
   }; */
 
   return (
-    <div className="px-14 py-14 bg-[#001e3c] rounded-md">
+    <div className="px-14 py-14 bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] shadow-2xl rounded-md">
       <form className="">
+        <InputField
+          onChange={onChangeGitHubDetails}
+          label="GitHub Repository Url"
+          type="text"
+          name="gitRepoUrl"
+        />
         {/*  <div>
           <Heading
             icon={FaGithubAlt}
@@ -300,8 +315,6 @@ function FormContainer({
             marginY: "10px",
           }}
         /> */}
-        <TechnologiesContent />
-        {/*  Technologies */}
       </form>
     </div>
   );
