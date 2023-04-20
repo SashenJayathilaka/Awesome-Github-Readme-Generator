@@ -9,6 +9,7 @@ export type ReadmeRow = {
   textColor: string;
   contributing: string;
   codeOfConduct: string;
+  licenseValue: string;
 };
 
 const defaultPostState: ReadmeRow = {
@@ -20,6 +21,7 @@ const defaultPostState: ReadmeRow = {
   textColor: "",
   contributing: "",
   codeOfConduct: "",
+  licenseValue: "",
 };
 
 export const readmeRows = atom<ReadmeRow>({

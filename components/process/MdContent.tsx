@@ -19,23 +19,191 @@ const MdContent = () => {
   const [gitHubTechStack] = useRecoilState(gitTechStack);
 
   const CenterStart = () => {
-    return (
-      <>
-        {`<div align='center'>`}
-        <br />
-        <br />
-      </>
-    );
+    const image = images.mainImage;
+    const mainTopic = readmeRow.firstRow;
+    const subTopic = readmeRow.secondRow;
+    const maintained = displayBadges.maintained;
+    const upDown = displayBadges.websiteUpDown;
+    const link = displayBadges.websiteLink;
+    const isFork = displayBadges.forks;
+
+    if (
+      image ||
+      mainTopic ||
+      subTopic ||
+      maintained ||
+      upDown ||
+      link ||
+      isFork
+    ) {
+      return (
+        <>
+          {`<div align='center'>`}
+          <br />
+          <br />
+        </>
+      );
+    }
+    return null;
   };
 
   const CenterEnd = () => {
-    return (
-      <>
-        <br />
-        <br />
-        {`</div>`}
-      </>
-    );
+    const image = images.mainImage;
+    const mainTopic = readmeRow.firstRow;
+    const subTopic = readmeRow.secondRow;
+    const maintained = displayBadges.maintained;
+    const upDown = displayBadges.websiteUpDown;
+    const link = displayBadges.websiteLink;
+    const isFork = displayBadges.forks;
+
+    if (
+      image ||
+      mainTopic ||
+      subTopic ||
+      maintained ||
+      upDown ||
+      link ||
+      isFork
+    ) {
+      return (
+        <>
+          <br />
+          <br />
+          {`</div>`}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const TableOfContents = () => {
+    const clientData = gitHubTechStack.client;
+    const teachDataO = gitHubTechStack.server;
+    const teachDataT = gitHubTechStack.database;
+    const teachData = gitHubTechStack.devOps;
+    const featuresData = gitHubTechStack.features;
+    const primaryColor = readmeRow.primaryColor;
+    const secondaryColor = readmeRow.secondaryColor;
+    const accentColor = readmeRow.accentColor;
+    const textColor = readmeRow.textColor;
+    const environmentVariables = gitHubTechStack.environmentVariables;
+    const prerequisitesValues = gitHubTechStack.prerequisites;
+    const installation = gitHubTechStack.installation;
+    const runningTests = gitHubTechStack.runningTests;
+    const runningLocally = gitHubTechStack.runLocally;
+    const deployment = gitHubTechStack.deployment;
+    const roadMap = gitHubTechStack.roadMap;
+    const contributingO = readmeRow.contributing;
+    const contributing = readmeRow.codeOfConduct;
+    const faqSection = gitHubTechStack.faqSection;
+    const license = readmeRow.licenseValue;
+    const name = gitHubDetail.name;
+    const twitter = gitHubDetail.twitter;
+    const email = gitHubDetail.email;
+    const acknowledgements = gitHubTechStack.acknowledgements;
+
+    var projectImageLink = images.demoImage;
+    projectImageLink = projectImageLink.filter(function (element) {
+      return element !== "";
+    });
+
+    if (
+      projectImageLink.length > 0 ||
+      clientData.length > 0 ||
+      teachData.length > 0 ||
+      featuresData.length > 0 ||
+      teachDataO.length > 0 ||
+      teachDataT.length > 0 ||
+      featuresData.length > 0 ||
+      primaryColor ||
+      secondaryColor ||
+      accentColor ||
+      textColor ||
+      environmentVariables.length > 0 ||
+      prerequisitesValues.length > 0 ||
+      installation.length > 0 ||
+      runningTests.length > 0 ||
+      runningLocally.length > 0 ||
+      deployment.length > 0 ||
+      roadMap.length > 0 ||
+      contributing === "do" ||
+      contributingO === "do" ||
+      faqSection.length > 0 ||
+      license === "do" ||
+      name ||
+      twitter ||
+      email ||
+      acknowledgements.length > 0
+    ) {
+      return (
+        <>
+          <br />
+          <br />
+          {`# :notebook_with_decorative_cover: Table of Contents`}
+          <br />
+          <br />
+          {`- [About the Project](#star2-about-the-project)`}
+          <br />
+          {prerequisitesValues.length > 0 ||
+            installation.length > 0 ||
+            runningTests.length > 0 ||
+            runningLocally.length > 0 ||
+            (deployment.length > 0 && (
+              <>
+                {`- [Getting Started](#toolbox-getting-started)`}
+                <br />
+              </>
+            ))}
+
+          {roadMap.length > 0 && (
+            <>
+              {`- [Roadmap](#compass-roadmap)`}
+              <br />
+            </>
+          )}
+
+          {contributing === "do" ||
+            (contributingO === "do" && (
+              <>
+                {`- [Contributing](#wave-contributing)`}
+                <br />
+              </>
+            ))}
+
+          {faqSection.length > 0 && (
+            <>
+              {`- [FAQ](#grey_question-faq)`}
+              <br />
+            </>
+          )}
+
+          {license === "do" && (
+            <>
+              {`- [License](#warning-license)`}
+              <br />
+            </>
+          )}
+
+          {name ||
+            twitter ||
+            (email && (
+              <>
+                {`- [Contact](#handshake-contact)`}
+                <br />
+              </>
+            ))}
+
+          {acknowledgements.length > 0 && (
+            <>
+              {`- [Acknowledgements](#gem-acknowledgements)`}
+              <br />
+            </>
+          )}
+        </>
+      );
+    }
+
+    return null;
   };
 
   const startTable = () => {
@@ -337,11 +505,19 @@ const MdContent = () => {
           </>
         );
       }
-    } else {
-      return null;
     }
 
     return null;
+  };
+
+  const AboutProject = () => {
+    return (
+      <>
+        <br />
+        <br />
+        {`## :star2: About the Project`}
+      </>
+    );
   };
 
   const DemoProjectAssets = () => {
@@ -356,8 +532,6 @@ const MdContent = () => {
       return (
         <>
           <br />
-          <br />
-          {`## :star2: About the Project`}
           <br />
           {`### :camera: Screenshots`}
           <br />
@@ -614,8 +788,18 @@ const MdContent = () => {
 
   const GettingStarted = () => {
     const prerequisitesValues = gitHubTechStack.prerequisites;
+    const installation = gitHubTechStack.installation;
+    const runningTests = gitHubTechStack.runningTests;
+    const runningLocally = gitHubTechStack.runLocally;
+    const deployment = gitHubTechStack.deployment;
 
-    if (prerequisitesValues.length > 0) {
+    if (
+      prerequisitesValues.length > 0 ||
+      installation.length > 0 ||
+      runningTests.length > 0 ||
+      runningLocally.length > 0 ||
+      deployment.length > 0
+    ) {
       return (
         <>
           <br />
@@ -880,17 +1064,122 @@ const MdContent = () => {
 
   const CodeOfConduct = () => {
     const contributing = readmeRow.codeOfConduct;
+    const contributingUpper = readmeRow.contributing;
     const repoUrl = gitHubDetail.gitRepoUrl;
 
     if (contributing === "do" && repoUrl) {
       return (
         <>
+          {!contributingUpper && (
+            <>
+              <br />
+              <br />
+              {`## :wave: Contributing`}
+            </>
+          )}
           <br />
           <br />
           {`### :scroll: Code of Conduct`}
           <br />
           <br />
           {`Please read the [Code of Conduct](${repoUrl}/blob/master/CODE_OF_CONDUCT.md)`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const FaqSection = () => {
+    const faqSection = gitHubTechStack.faqSection;
+
+    if (faqSection.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`## :grey_question: FAQ`}
+          <br />
+          <br />
+          {faqSection.map((data: any, index) => (
+            <div key={index}>
+              - {`${data.question}`}
+              <br />
+              {` - `}
+              {`${data.answers}`}
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const License = () => {
+    const license = readmeRow.licenseValue;
+
+    if (license === "do") {
+      return (
+        <>
+          <br />
+          <br />
+          {`## :warning: License`}
+          <br />
+          <br />
+          {`Distributed under the no License. See LICENSE.txt for more information.`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Contact = () => {
+    const name = gitHubDetail.name;
+    const twitter = gitHubDetail.twitter;
+    const email = gitHubDetail.email;
+    const projectLink = gitHubDetail.gitRepoUrl;
+
+    if (name || twitter || email) {
+      return (
+        <>
+          <br />
+          <br />
+          {`## :handshake: Contact`}
+          <br />
+          <br />
+          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${
+            email && email
+          }`}
+          <br />
+          {`${projectLink && `Project Link: [${projectLink}](${projectLink})`}`}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Acknowledgements = () => {
+    const acknowledgements = gitHubTechStack.acknowledgements;
+
+    if (acknowledgements.length > 0) {
+      return (
+        <>
+          <br />
+          <br />
+          {`## :gem: Acknowledgements`}
+          <br />
+          <br />
+          {`Use this section to mention useful resources and libraries that you have used in your projects.`}
+          <br />
+          <br />
+          {acknowledgements.map((data: any, index) => (
+            <div
+              key={index}
+            >{`- [${data.acknowledgementsValue}](${data.url})`}</div>
+          ))}
         </>
       );
     }
@@ -935,6 +1224,12 @@ const MdContent = () => {
     RoadMap,
     Contributing,
     CodeOfConduct,
+    FaqSection,
+    License,
+    Contact,
+    Acknowledgements,
+    TableOfContents,
+    AboutProject,
   };
 };
 

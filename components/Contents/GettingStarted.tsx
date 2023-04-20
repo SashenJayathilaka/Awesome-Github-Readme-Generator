@@ -84,10 +84,10 @@ function GettingStarted({}: Props) {
           marginY: "10px",
         }}
       /> */}
-      <Contributing />
-      <FaqSection />
-      <License />
-      <Contact />
+      {/*  <Contributing /> */}
+      {/* <FaqSection /> */}
+      {/* <License /> */}
+      {/* <Contact /> */}
       <Acknowledgements />
     </div>
   );
