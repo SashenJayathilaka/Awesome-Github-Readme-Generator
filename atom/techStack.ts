@@ -13,6 +13,8 @@ export type gitHubTechStack = {
   runLocally: string[];
   deployment: string[];
   roadMap: string[];
+  faqSection: string[];
+  acknowledgements: string[];
 };
 
 const defaultPostState: gitHubTechStack = {
@@ -28,6 +30,8 @@ const defaultPostState: gitHubTechStack = {
   runLocally: [],
   deployment: [],
   roadMap: [],
+  faqSection: [],
+  acknowledgements: [],
 };
 
 export const gitTechStack = atom<gitHubTechStack>({

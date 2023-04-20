@@ -766,6 +766,101 @@ const MdPreview = () => {
     return null;
   };
 
+  const FaqSection = () => {
+    const faqSection = gitHubTechStack.faqSection;
+
+    if (faqSection.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">❔ Code of Conduct</h1>
+          <br />
+          {faqSection.map((data: any, index) => (
+            <div key={index}>
+              <p>{data.question}</p>
+              <p className="text-sm font-normal px-4">{data.answers}</p>
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const License = () => {
+    const license = readmeRow.licenseValue;
+
+    if (license === "do") {
+      return (
+        <>
+          <h1 className="text-xl font-medium">⚠️ License</h1>
+          <br />
+          <p>
+            Distributed under the no License. See LICENSE.txt for more
+            information.
+          </p>
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Contact = () => {
+    const name = gitHubDetail.name;
+    const twitter = gitHubDetail.twitter;
+    const email = gitHubDetail.email;
+    const projectLink = gitHubDetail.gitRepoUrl;
+
+    if (name || twitter || email) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">🤝 Contact</h1>
+          <br />
+          <p>
+            {name && name} -{" "}
+            {twitter && (
+              <a className="text-blue-600" href={twitter}>
+                @twitter_handle
+              </a>
+            )}{" "}
+            - {email && <p className="text-blue-600">{email}</p>}
+          </p>
+          {projectLink && (
+            <p>{`Project Link: [${projectLink}](${projectLink})`}</p>
+          )}
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const Acknowledgements = () => {
+    const acknowledgements = gitHubTechStack.acknowledgements;
+
+    if (acknowledgements.length > 0) {
+      return (
+        <>
+          <h1 className="text-xl font-medium">💎 Acknowledgements</h1>
+          <br />
+          <p>
+            Use this section to mention useful resources and libraries that you
+            have used in your projects.
+          </p>
+          <br />
+          {acknowledgements.map((data: any, index) => (
+            <div key={index}>
+              <p>{data.acknowledgementsValue}</p>
+            </div>
+          ))}
+        </>
+      );
+    }
+
+    return null;
+  };
+
   return {
     PMainImage,
     PMainTopic,
@@ -795,6 +890,10 @@ const MdPreview = () => {
     RoadMap,
     Contributing,
     CodeOfConduct,
+    FaqSection,
+    License,
+    Contact,
+    Acknowledgements,
   };
 };
 

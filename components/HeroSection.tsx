@@ -1,15 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { AiFillGithub } from "react-icons/ai";
+type Props = {
+  setIsShow: (value: boolean) => void;
+};
 
-type Props = {};
-
-function HeroSection({}: Props) {
-  const [menu, setMenu] = useState(false);
+function HeroSection({ setIsShow }: Props) {
   return (
     <div className="py-12 bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] overflow-y-hidden">
-      {/* Code block starts */}
       <div className="w-full px-6">
         <div className="mt-8 relative rounded-lg bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <img
@@ -28,7 +25,10 @@ function HeroSection({}: Props) {
             </h1>
           </div>
           <div className="flex justify-center items-center mb-8 sm:mb-8">
-            <button className="hover:text-white hover:bg-transparent lg:text-xl hover:border-white border bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700	focus:ring-white rounded text-indigo-700 px-4 sm:px-8 py-1 sm:py-3 text-sm">
+            <button
+              className="hover:text-white hover:bg-transparent lg:text-xl hover:border-white border bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700	focus:ring-white rounded text-indigo-700 px-4 sm:px-8 py-1 sm:py-3 text-sm"
+              onClick={() => setIsShow(false)}
+            >
               Get Started
             </button>
             <button className="hover:bg-white hover:text-indigo-600 lg:text-xl hover:border-indigo-600 ml-3 sm:ml-6 bg-transparent transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-sm">
@@ -57,7 +57,6 @@ function HeroSection({}: Props) {
           </div>
         </div>
       </div>
-      {/* Code block ends */}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import ClientOnly from "../ClientOnly";
 import MdPreview from "../process/MdPreview";
 
 type Props = {};
@@ -34,9 +35,13 @@ function MarkdownPreview({}: Props) {
     RoadMap,
     Contributing,
     CodeOfConduct,
+    FaqSection,
+    License,
+    Contact,
+    Acknowledgements,
   } = MdPreview();
   return (
-    <>
+    <ClientOnly>
       <div className="hidden md:flex flex-col items-center justify-center text-center">
         <PMainImage />
         <PMainTopic />
@@ -92,6 +97,18 @@ function MarkdownPreview({}: Props) {
           <div className="py-2">
             <CodeOfConduct />
           </div>
+          <div className="py-2">
+            <FaqSection />
+          </div>
+          <div className="py-2">
+            <License />
+          </div>
+          <div className="py-2">
+            <Contact />
+          </div>
+          <div className="py-2">
+            <Acknowledgements />
+          </div>
         </div>
       </div>
       <div
@@ -105,7 +122,7 @@ function MarkdownPreview({}: Props) {
       >
         <PLanguages />
       </div>
-    </>
+    </ClientOnly>
   );
 }
 
