@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { motion } from "framer-motion";
@@ -35,10 +36,11 @@ function Roadmap({}: Props) {
 
     const roadMapValue = roadMapValues.roadMapValue;
     const roadMapCheck = roadMapValues.roadMapCheck;
+    const currentValue = gitHubTechStack.roadMap;
 
     if (roadMapValue && roadMapCheck) {
       const element = { roadMapValue, roadMapCheck };
-      setListOfRoadMap((ls) => [...ls, element] as any);
+      setListOfRoadMap((ls) => [...ls, ...currentValue, element] as any);
       setRoadMapValue((prev) => ({
         ...prev,
         roadMapValue: "",
@@ -52,9 +54,11 @@ function Roadmap({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      roadMap: value,
+      roadMap: unique,
     }));
   };
 

@@ -1,20 +1,20 @@
 import { atom } from "recoil";
 
 export type gitHubTechStack = {
-  client: string[];
-  server: string[];
-  database: string[];
-  devOps: string[];
-  features: string[];
-  environmentVariables: string[];
-  prerequisites: string[];
-  installation: string[];
-  runningTests: string[];
-  runLocally: string[];
-  deployment: string[];
-  roadMap: string[];
-  faqSection: string[];
-  acknowledgements: string[];
+  client: string[]; // done
+  server: string[]; // done
+  database: string[]; // done
+  devOps: string[]; // done
+  features: string[]; // done
+  environmentVariables: string[]; //done
+  prerequisites: string[]; // done
+  installation: string[]; // done
+  runningTests: string[]; // done
+  runLocally: string[]; // done
+  deployment: string[]; // done
+  roadMap: string[]; // done
+  faqSection: string[]; //done
+  acknowledgements: string[]; // done
 };
 
 const defaultPostState: gitHubTechStack = {

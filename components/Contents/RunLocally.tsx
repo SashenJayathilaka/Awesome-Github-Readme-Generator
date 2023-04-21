@@ -1,5 +1,6 @@
 import { gitHubDetails } from "@/atom/gitHubDetails";
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BiRun } from "react-icons/bi";
@@ -33,11 +34,14 @@ function RunLocally({}: Props) {
 
     const runningValue = runLocallyValues.runningValue;
     const runningCommand = runLocallyValues.runningCommand;
+    const currentValue = gitHubTechStack.runLocally;
 
     if (gitHubDetail.gitRepoUrl) {
       if (runningValue || runningCommand) {
         const element = { runningValue, runningCommand };
-        setListOfRunLocallyValues((ls) => [...ls, element] as any);
+        setListOfRunLocallyValues(
+          (ls) => [...ls, ...currentValue, element] as any
+        );
         setRunLocallyValues((prev) => ({
           ...prev,
           runningValue: "",
@@ -52,9 +56,11 @@ function RunLocally({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      runLocally: value,
+      runLocally: unique,
     }));
   };
 

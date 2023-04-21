@@ -1,11 +1,13 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AiFillSetting } from "react-icons/ai";
 import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
+
 import Heading from "../Heading";
 import InputField from "../InputField";
 
@@ -31,10 +33,11 @@ function Installation({}: Props) {
 
     const installationValue = installationValues.installationValue;
     const installationCommand = installationValues.installationCommand;
+    const currentValue = gitHubTechStack.installation;
 
     if (installationValue || installationCommand) {
       const element = { installationValue, installationCommand };
-      setListOfInstallation((ls) => [...ls, element] as any);
+      setListOfInstallation((ls) => [...ls, ...currentValue, element] as any);
       setInstallationValue((prev) => ({
         ...prev,
         installationValue: "",
@@ -46,9 +49,11 @@ function Installation({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      installation: value,
+      installation: unique,
     }));
   };
 

@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 
 import Heading from "../Heading";
 import InputField from "../InputField";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 
 type Props = {};
 
@@ -23,18 +24,22 @@ function EnvironmentVariables({}: Props) {
   const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const currentValue = gitHubTechStack.environmentVariables;
+
     if (envVariables) {
       const element = { envVariables };
-      setListOfEnvVariables((ls) => [...ls, element] as any);
+      setListOfEnvVariables((ls) => [...ls, ...currentValue, element] as any);
       setEnvVariables("");
     }
   };
 
   const updateCurrentState = (value: string[]) => {
     if (value) {
+      const unique = value.filter(onlyUnique).flat();
+
       setGitHubTechStack((prev) => ({
         ...prev,
-        environmentVariables: value,
+        environmentVariables: unique,
       }));
     }
   };

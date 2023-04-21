@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { useEffect, useState } from "react";
 import { FaChalkboardTeacher, FaDocker } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
@@ -55,11 +56,16 @@ function TechStack({}: Props) {
     const devOpsName = techStackValue.devOpsName;
     const devOpsUrl = techStackValue.devOpsUrl;
 
+    const currentClient = gitHubTechStack.client;
+    const currentName = gitHubTechStack.server;
+    const currentDb = gitHubTechStack.database;
+    const currentDevOp = gitHubTechStack.devOps;
+
     setCurrentStateLabel(strandedLabel);
 
     if (clientName && strandedLabel === "client") {
       const element = { clientName, clientUrl };
-      setListOfClient((ls) => [...ls, element] as any);
+      setListOfClient((ls) => [...ls, ...currentClient, element] as any);
       setTechStackValue((prev) => ({
         ...prev,
         clientName: "",
@@ -67,7 +73,7 @@ function TechStack({}: Props) {
       }));
     } else if (serverName && strandedLabel === "server") {
       const element = { serverName, serverUrl };
-      setListOfServer((ls) => [...ls, element] as any);
+      setListOfServer((ls) => [...ls, ...currentName, element] as any);
       setTechStackValue((prev) => ({
         ...prev,
         serverName: "",
@@ -75,7 +81,7 @@ function TechStack({}: Props) {
       }));
     } else if (databaseName && strandedLabel === "database") {
       const element = { databaseName, databaseUrl };
-      setListOfDatabase((ls) => [...ls, element] as any);
+      setListOfDatabase((ls) => [...ls, ...currentDb, element] as any);
       setTechStackValue((prev) => ({
         ...prev,
         databaseName: "",
@@ -83,7 +89,7 @@ function TechStack({}: Props) {
       }));
     } else if (devOpsName && strandedLabel === "devOps") {
       const element = { devOpsName, devOpsUrl };
-      setListOfDevOps((ls) => [...ls, element] as any);
+      setListOfDevOps((ls) => [...ls, ...currentDevOp, element] as any);
       setTechStackValue((prev) => ({
         ...prev,
         devOpsName: "",
@@ -94,24 +100,32 @@ function TechStack({}: Props) {
 
   const updateStateValue = (strandedLabel: string) => {
     if (listOfClient && strandedLabel === "client") {
+      const unique = listOfClient.filter(onlyUnique).flat();
+
       setGitHubTechStack((prev) => ({
         ...prev,
-        client: listOfClient,
+        client: unique,
       }));
     } else if (listOfServer && strandedLabel === "server") {
+      const unique = listOfServer.filter(onlyUnique).flat();
+
       setGitHubTechStack((prev) => ({
         ...prev,
-        server: listOfServer,
+        server: unique,
       }));
     } else if (listOfDatabase && strandedLabel === "database") {
+      const unique = listOfDatabase.filter(onlyUnique).flat();
+
       setGitHubTechStack((prev) => ({
         ...prev,
-        database: listOfDatabase,
+        database: unique,
       }));
     } else if (listOfDevOps && strandedLabel === "devOps") {
+      const unique = listOfDevOps.filter(onlyUnique).flat();
+
       setGitHubTechStack((prev) => ({
         ...prev,
-        devOps: listOfDevOps,
+        devOps: unique,
       }));
     }
   };
