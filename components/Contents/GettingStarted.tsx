@@ -24,7 +24,7 @@ function GettingStarted({}: Props) {
         <BsFillBagCheckFill size={25} />
         <p className="text-2xl">Getting Started</p>
       </div>
-      {/*       <Prerequisites />
+         <Prerequisites />
       <Divider
         orientation="horizontal"
         variant="fullWidth"
@@ -83,11 +83,47 @@ function GettingStarted({}: Props) {
           backgroundColor: "#3795BD",
           marginY: "10px",
         }}
-      /> */}
-      {/*  <Contributing /> */}
-      {/* <FaqSection /> */}
-      {/* <License /> */}
-      {/* <Contact /> */}
+      />
+      <Contributing />
+      <Divider
+        orientation="horizontal"
+        variant="fullWidth"
+        flexItem
+        sx={{
+          backgroundColor: "#3795BD",
+          marginY: "10px",
+        }}
+      />
+      <FaqSection />
+      <Divider
+        orientation="horizontal"
+        variant="fullWidth"
+        flexItem
+        sx={{
+          backgroundColor: "#3795BD",
+          marginY: "10px",
+        }}
+      />
+      <License />
+      <Divider
+        orientation="horizontal"
+        variant="fullWidth"
+        flexItem
+        sx={{
+          backgroundColor: "#3795BD",
+          marginY: "10px",
+        }}
+      />
+      <Contact />
+      <Divider
+        orientation="horizontal"
+        variant="fullWidth"
+        flexItem
+        sx={{
+          backgroundColor: "#3795BD",
+          marginY: "10px",
+        }}
+      />
       <Acknowledgements />
     </div>
   );

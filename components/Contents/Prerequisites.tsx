@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaBowlingBall } from "react-icons/fa";
@@ -38,11 +39,14 @@ function Prerequisites({}: Props) {
     const prerequisitesValue = prerequisitesValues.prerequisitesValue;
     const url = prerequisitesValues.prerequisitesUrl;
     const code = prerequisitesValues.codeLine;
+    const currentValue = gitHubTechStack.prerequisites;
 
     if (prerequisitesValue || code) {
       if (prerequisitesValue || url || code) {
         const element = { prerequisitesValue, url, code };
-        setListOfPrerequisites((ls) => [...ls, element] as any);
+        setListOfPrerequisites(
+          (ls) => [...ls, ...currentValue, element] as any
+        );
         setPrerequisitesValue((prev) => ({
           ...prev,
           prerequisitesValue: "",
@@ -58,9 +62,11 @@ function Prerequisites({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      prerequisites: value,
+      prerequisites: unique,
     }));
   };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BiTestTube } from "react-icons/bi";
@@ -32,10 +33,11 @@ function RunningTests({}: Props) {
 
     const runningTestsValue = runningTestsValues.runningTestsValue;
     const runningTestsCommand = runningTestsValues.runningTestsCommand;
+    const currentValue = gitHubTechStack.runningTests;
 
     if (runningTestsValue || runningTestsCommand) {
       const element = { runningTestsValue, runningTestsCommand };
-      setListOfRunningTests((ls) => [...ls, element] as any);
+      setListOfRunningTests((ls) => [...ls, ...currentValue, element] as any);
       setRunningTestsValue((prev) => ({
         ...prev,
         runningTestsValue: "",
@@ -47,9 +49,11 @@ function RunningTests({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      runningTests: value,
+      runningTests: unique,
     }));
   };
 

@@ -34,7 +34,7 @@ function FormContainer({
   setDisplayBadges,
   displayBadges,
 }: Props) {
-  /*   const onChangeReadmeRow = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeReadmeRow = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsReadmeRow((prev: string | any) => ({
       ...prev,
       [event.target.name]: event.target.value,
@@ -81,39 +81,10 @@ function FormContainer({
     }
   };
 
-  const handleCopyToClipboard = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const range = document.createRange();
-    range.selectNode(document.getElementById("markdown-content") as any);
-    window.getSelection()?.removeAllRanges();
-    window.getSelection()?.addRange(range);
-    document.execCommand("copy");
-    window.getSelection()?.removeAllRanges();
-  };
-
-  const handleDownloadMarkdown = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const markdownContent: any = document.getElementById("markdown-content");
-    const tempElement = document.createElement("a");
-    tempElement.setAttribute(
-      "href",
-      `data:text/markdown;charset=utf-8,${encodeURIComponent(
-        markdownContent.innerText
-      )}`
-    );
-    tempElement.setAttribute("download", "README.md");
-    tempElement.style.display = "none";
-    document.body.appendChild(tempElement);
-    tempElement.click();
-    document.body.removeChild(tempElement);
-  }; */
-
   return (
     <div className="px-14 py-14 bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] shadow-2xl rounded-md">
-      <form className="">
-        {/*  <div>
+      <form>
+        <div>
           <Heading
             icon={FaGithubAlt}
             label="Your GitHub & GitHub Repository Details"
@@ -209,7 +180,7 @@ function FormContainer({
             }}
           />
           <Badges onChangeGitHubBadges={onChangeGitHubBadges} />
-        </div> */}
+        </div>
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -219,7 +190,7 @@ function FormContainer({
             marginY: "10px",
           }}
         />
-        {/*         <AboutProject />
+        <AboutProject />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -228,9 +199,9 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Tech Stack */}
-        {/*         <TechStack />
+        <TechStack />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -239,10 +210,10 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Tech Stack */}
         {/*  Features */}
-        {/*         <Features />
+        <Features />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -251,10 +222,10 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/*  Features */}
         {/* ColorReference */}
-        {/*         <ColorReference />
+        <ColorReference />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -263,10 +234,10 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/* ColorReference */}
         {/* EnvironmentVariables */}
-        {/*         <EnvironmentVariables />
+        <EnvironmentVariables />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -275,7 +246,7 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
         {/* EnvironmentVariables */}
         {/* GettingStarted */}
         <GettingStarted />
@@ -290,7 +261,7 @@ function FormContainer({
         />
         {/* GettingStarted */}
         {/*  Technologies */}
-        {/*         <TechnologiesContent />
+        <TechnologiesContent />
         <Divider
           orientation="horizontal"
           variant="fullWidth"
@@ -299,7 +270,7 @@ function FormContainer({
             backgroundColor: "#3795BD",
             marginY: "10px",
           }}
-        /> */}
+        />
       </form>
     </div>
   );

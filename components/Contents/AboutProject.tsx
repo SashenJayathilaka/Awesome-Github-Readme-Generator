@@ -34,6 +34,7 @@ function AboutProject({}: Props) {
     ];
     const updatedArray: string[] = [];
     var unique: string[];
+    const currentValue = images.demoImage;
 
     function onlyUnique(
       value: string | number,
@@ -45,7 +46,7 @@ function AboutProject({}: Props) {
 
     for (let index = 0; index < dataArray.length; index++) {
       const element = values[dataArray[index]];
-      updatedArray.push(element);
+      updatedArray.push(...currentValue, element);
     }
 
     if (updatedArray.length > 0) {

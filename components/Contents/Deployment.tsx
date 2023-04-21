@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BsFillFlagFill } from "react-icons/bs";
@@ -32,10 +33,11 @@ function Deployment({}: Props) {
 
     const deploymentValue = deploymentValues.deploymentValue;
     const deploymentCommand = deploymentValues.deploymentCommand;
+    const currentValue = gitHubTechStack.deployment;
 
     if (deploymentValue || deploymentCommand) {
       const element = { deploymentValue, deploymentCommand };
-      setListOfDeployment((ls) => [...ls, element] as any);
+      setListOfDeployment((ls) => [...ls, ...currentValue, element] as any);
       setDeploymentValue((prev) => ({
         ...prev,
         deploymentValue: "",
@@ -47,9 +49,11 @@ function Deployment({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      deployment: value,
+      deployment: unique,
     }));
   };
 

@@ -2,8 +2,8 @@ import { atom } from "recoil";
 
 export type gitHubImages = {
   mainImage: string;
-  demoImage: string[];
-  updatedStateTechnology: string[];
+  demoImage: string[]; // done
+  updatedStateTechnology: string[]; // done
 };
 
 const defaultPostState: gitHubImages = {

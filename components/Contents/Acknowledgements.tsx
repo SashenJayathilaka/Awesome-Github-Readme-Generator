@@ -1,11 +1,13 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { useEffect, useState } from "react";
 import { DiMagento } from "react-icons/di";
 import { IoIosAddCircle } from "react-icons/io";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
+
 import Heading from "../Heading";
 import InputField from "../InputField";
 
@@ -31,11 +33,15 @@ function Acknowledgements({}: Props) {
 
     const acknowledgementsValue = acknowledgementsValues.acknowledgementsValue;
     const url = acknowledgementsValues.acknowledgementsUrl;
+    const currentValue = gitHubTechStack.acknowledgements;
 
     if (acknowledgementsValue) {
       if (acknowledgementsValue || url) {
         const element = { acknowledgementsValue, url };
-        setListOfAcknowledgements((ls) => [...ls, element] as any);
+
+        setListOfAcknowledgements(
+          (ls) => [...ls, ...currentValue, element] as any
+        );
         setAcknowledgementsValue((prev) => ({
           ...prev,
           acknowledgementsValue: "",
@@ -50,9 +56,11 @@ function Acknowledgements({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      acknowledgements: value,
+      acknowledgements: unique,
     }));
   };
 

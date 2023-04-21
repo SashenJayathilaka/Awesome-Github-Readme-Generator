@@ -1,6 +1,7 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { useEffect, useState } from "react";
 import { GiDart } from "react-icons/gi";
 import { IoIosAddCircle } from "react-icons/io";
@@ -25,18 +26,22 @@ function Features({}: Props) {
   const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const currentValue = gitHubTechStack.features;
+
     if (featuresValue) {
       const element = { featuresValue };
-      setListOfFeatures((ls) => [...ls, element] as any);
+      setListOfFeatures((ls) => [...ls, ...currentValue, element] as any);
       setFeaturesValue("");
     }
   };
 
   const updateCurrentState = (value: string[]) => {
     if (value) {
+      const unique = value.filter(onlyUnique).flat();
+
       setGitHubTechStack((prev) => ({
         ...prev,
-        features: value,
+        features: unique,
       }));
     }
   };

@@ -1,8 +1,8 @@
+import { gitImages } from "@/atom/images";
 import { gitTechnologies } from "@/atom/technology";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import languageArr from "./languageArr";
-import { useEffect } from "react";
-import { gitImages } from "@/atom/images";
 
 const updateState = () => {
   const [technology] = useRecoilState(gitTechnologies);
@@ -20,12 +20,14 @@ const updateState = () => {
   }
 
   const filterOneByOne = () => {
+    const currentValue = images.updatedStateTechnology;
+
     for (let index = 0; index < languageArr.length; index++) {
       // @ts-ignore
       const element = technology[languageArr[index]];
 
       if (element) {
-        updatingLanguageArray.push(element);
+        updatingLanguageArray.push(...currentValue, element);
       }
     }
 

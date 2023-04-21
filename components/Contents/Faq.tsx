@@ -1,11 +1,13 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BsQuestionCircle } from "react-icons/bs";
 import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
+
 import Heading from "../Heading";
 import InputField from "../InputField";
 
@@ -31,10 +33,11 @@ function FaqSection({}: Props) {
 
     const question = faqValues.question;
     const answers = faqValues.answers;
+    const currentValue = gitHubTechStack.faqSection;
 
     if (question || answers) {
       const element = { question, answers };
-      setListOfFaq((ls) => [...ls, element] as any);
+      setListOfFaq((ls) => [...ls, ...currentValue, element] as any);
       setFaqValue((prev) => ({
         ...prev,
         question: "",
@@ -46,9 +49,11 @@ function FaqSection({}: Props) {
   const updateState = (value: string[]) => {
     if (!value) return;
 
+    const unique = value.filter(onlyUnique).flat();
+
     setGitHubTechStack((prev) => ({
       ...prev,
-      faqSection: value,
+      faqSection: unique,
     }));
   };
 
