@@ -10,7 +10,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
   <img src="https://user-images.githubusercontent.com/99184393/232021800-8e2d8151-7484-451c-a194-ced6ab249b00.png" alt="logo" width="200" height="auto" />
   <h1>
-Github Readme File Generator
+Github Readme File Generator.
 </h1>
   
   <p>
