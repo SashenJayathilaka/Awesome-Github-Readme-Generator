@@ -1,9 +1,14 @@
-import React from "react";
+import ClientOnly from "@/components/ClientOnly";
+import ProfileContent from "@/components/profile/ProfileContent";
 
 type Props = {};
 
 function ProfilePage({}: Props) {
-  return <div>ProfilePage</div>;
+  return (
+    <ClientOnly>
+      <ProfileContent />
+    </ClientOnly>
+  );
 }
 
 export default ProfilePage;

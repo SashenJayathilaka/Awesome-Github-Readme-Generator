@@ -8,6 +8,7 @@ import {
   AiOutlineSave,
 } from "react-icons/ai";
 import { BiArrowBack, BiCopy } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 type Props = {
   setIsShow: (value: boolean) => void;
@@ -21,36 +22,44 @@ function ButtonActions({ setIsShow, setIsMdPreview, isMdPreview }: Props) {
   const handleDownloadMarkdown = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const markdownContent: any = document.getElementById("markdown-content");
-    const tempElement = document.createElement("a");
-    tempElement.setAttribute(
-      "href",
-      `data:text/markdown;charset=utf-8,${encodeURIComponent(
-        markdownContent.innerText
-      )}`
-    );
-    tempElement.setAttribute("download", "README.md");
-    tempElement.style.display = "none";
-    document.body.appendChild(tempElement);
-    tempElement.click();
-    document.body.removeChild(tempElement);
+    if (isMdPreview) {
+      const markdownContent: any = document.getElementById("markdown-content");
+      const tempElement = document.createElement("a");
+      tempElement.setAttribute(
+        "href",
+        `data:text/markdown;charset=utf-8,${encodeURIComponent(
+          markdownContent.innerText
+        )}`
+      );
+      tempElement.setAttribute("download", "README.md");
+      tempElement.style.display = "none";
+      document.body.appendChild(tempElement);
+      tempElement.click();
+      document.body.removeChild(tempElement);
+    } else {
+      toast.warn("Please Switch Preview Mode");
+    }
   };
 
   const handleCopyToClipboard = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    setIsCopy(true);
+    if (isMdPreview) {
+      setIsCopy(true);
 
-    const range = document.createRange();
-    range.selectNode(document.getElementById("markdown-content") as any);
-    window.getSelection()?.removeAllRanges();
-    window.getSelection()?.addRange(range);
-    document.execCommand("copy");
-    window.getSelection()?.removeAllRanges();
+      const range = document.createRange();
+      range.selectNode(document.getElementById("markdown-content") as any);
+      window.getSelection()?.removeAllRanges();
+      window.getSelection()?.addRange(range);
+      document.execCommand("copy");
+      window.getSelection()?.removeAllRanges();
 
-    setTimeout(() => {
-      setIsCopy(false);
-    }, 1000);
+      setTimeout(() => {
+        setIsCopy(false);
+      }, 1000);
+    } else {
+      toast.warn("Please Switch Preview Mode");
+    }
   };
 
   return (

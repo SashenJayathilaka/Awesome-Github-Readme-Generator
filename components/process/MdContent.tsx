@@ -429,7 +429,7 @@ const MdContent = () => {
       return (
         <>
           {`<h4>
-            {link && <a href=${link}>View Demo</a>}
+            ${link && `<a href=${link}>View Demo</a>`}
             <span> · </span>
             <a href="https://github.com/${user}/${repoName}/blob/master/README.md">
               Documentation

@@ -1,9 +1,17 @@
 "use client";
 
-import { GitBadges } from "@/atom/displayBadges";
+import {
+  GitBadges,
+  GitHubDetail,
+  GitHubImages,
+  GitHubImagesSize,
+  ReadmeRow,
+} from "@/type";
 import { Divider } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { AiOutlineReload } from "react-icons/ai";
 import { FaGithubAlt } from "react-icons/fa";
+import { MdRestore } from "react-icons/md";
 import { TbWorldWww } from "react-icons/tb";
 
 import AboutProject from "./Contents/AboutProject";
@@ -11,11 +19,11 @@ import Badges from "./Contents/Badges";
 import ColorReference from "./Contents/ColorReference";
 import EnvironmentVariables from "./Contents/EnvironmentVariables";
 import Features from "./Contents/Features";
+import GettingStarted from "./Contents/GettingStarted";
+import TechStack from "./Contents/TechStack";
 import Heading from "./Heading";
 import InputField from "./InputField";
-import TechStack from "./Contents/TechStack";
 import TechnologiesContent from "./TechnologiesContent";
-import GettingStarted from "./Contents/GettingStarted";
 
 type Props = {
   setIsReadmeRow: (value: any) => void;
@@ -23,7 +31,13 @@ type Props = {
   setSize: (value: any) => void;
   setGitHubDetails: (value: any) => void;
   setDisplayBadges: (value: any) => void;
+  updateCurrentValue: () => void;
+  updateAtom: () => void;
   displayBadges: GitBadges;
+  gitHubDetail: GitHubDetail;
+  readmeRow: ReadmeRow;
+  images: GitHubImages;
+  size: GitHubImagesSize;
 };
 
 function FormContainer({
@@ -32,8 +46,16 @@ function FormContainer({
   setSize,
   setGitHubDetails,
   setDisplayBadges,
+  updateCurrentValue,
+  updateAtom,
   displayBadges,
+  gitHubDetail,
+  readmeRow,
+  images,
+  size,
 }: Props) {
+  const [isStore, setIsStore] = useState(false);
+
   const onChangeReadmeRow = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsReadmeRow((prev: string | any) => ({
       ...prev,
@@ -81,78 +103,136 @@ function FormContainer({
     }
   };
 
+  useEffect(() => {
+    updateCurrentValue();
+    updateAtom();
+  }, [isStore]);
+
   return (
-    <div className="px-14 py-14 bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] shadow-2xl rounded-md">
-      <form>
-        <div>
-          <Heading
-            icon={FaGithubAlt}
-            label="Your GitHub & GitHub Repository Details"
-          />
-          <div className="flex justify-between gap-12 py-2">
-            <InputField
-              onChange={onChangeGitHubDetails}
-              label="GitHub UserName"
-              type="text"
-              name="gitUserName"
+    <div>
+      <div className="flex justify-start gap-4 py-6">
+        <button
+          onClick={() => setIsStore(true)}
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+        >
+          <MdRestore size={20} />
+          Restore Previous values
+        </button>
+        <button
+          onClick={() => window.location.reload()}
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+        >
+          <AiOutlineReload size={20} />
+          Clear Form
+        </button>
+      </div>
+      <div className="px-14 py-14 bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] shadow-2xl rounded-md">
+        <form>
+          <div>
+            <Heading
+              icon={FaGithubAlt}
+              label="Your GitHub & GitHub Repository Details"
             />
-            <InputField
-              onChange={onChangeGitHubDetails}
-              label="GitHub Repository Name"
-              type="text"
-              name="gitRepoName"
-            />
-            <InputField
-              onChange={onChangeGitHubDetails}
-              label="GitHub Repository Url"
-              type="text"
-              name="gitRepoUrl"
-            />
-          </div>
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
-          <div className="flex justify-between gap-12 py-2">
-            <InputField
-              onChange={onChangeReadmeRow}
-              label="Main Topic"
-              type="text"
-              name="firstRow"
-            />
-            <InputField
-              onChange={onChangeReadmeRow}
-              label="Description"
-              type="text"
-              name="secondRow"
-            />
-          </div>
-          <div className="flex justify-between gap-12 py-2">
-            <InputField
-              onChange={onChangeImages}
-              label="Main Image Link"
-              type="text"
-              name="mainImage"
-            />
-            <div className="w-full flex justify-between gap-6">
+            <div className="flex justify-between gap-12 py-2">
               <InputField
-                onChange={onChangeSize}
-                label="Main Image Width"
-                type="number"
-                name="mainImageWidth"
+                onChange={onChangeGitHubDetails}
+                label="GitHub UserName"
+                type="text"
+                name="gitUserName"
+                value={gitHubDetail.gitUserName}
               />
               <InputField
-                onChange={onChangeSize}
-                label="Main Image Height"
-                type="number"
-                name="mainImageHeight"
+                onChange={onChangeGitHubDetails}
+                label="GitHub Repository Name"
+                type="text"
+                name="gitRepoName"
+                value={gitHubDetail.gitRepoName}
+              />
+              <InputField
+                onChange={onChangeGitHubDetails}
+                label="GitHub Repository Url"
+                type="text"
+                name="gitRepoUrl"
+                value={gitHubDetail.gitRepoUrl}
               />
             </div>
+            <Divider
+              orientation="horizontal"
+              variant="fullWidth"
+              flexItem
+              sx={{
+                backgroundColor: "#3795BD",
+                marginY: "10px",
+              }}
+            />
+            <div className="flex justify-between gap-12 py-2">
+              <InputField
+                onChange={onChangeReadmeRow}
+                label="Main Topic"
+                type="text"
+                name="firstRow"
+                value={readmeRow.firstRow}
+              />
+              <InputField
+                onChange={onChangeReadmeRow}
+                label="Description"
+                type="text"
+                name="secondRow"
+                value={readmeRow.secondRow}
+              />
+            </div>
+            <div className="flex justify-between gap-12 py-2">
+              <InputField
+                onChange={onChangeImages}
+                label="Main Image Link"
+                type="text"
+                name="mainImage"
+                value={images.mainImage}
+              />
+              <div className="w-full flex justify-between gap-6">
+                <InputField
+                  onChange={onChangeSize}
+                  label="Main Image Width"
+                  type="number"
+                  name="mainImageWidth"
+                  value={size.mainImageWidth}
+                />
+                <InputField
+                  onChange={onChangeSize}
+                  label="Main Image Height"
+                  type="number"
+                  name="mainImageHeight"
+                  value={size.mainImageHeight}
+                />
+              </div>
+            </div>
+            <Divider
+              orientation="horizontal"
+              variant="fullWidth"
+              flexItem
+              sx={{
+                backgroundColor: "#3795BD",
+                marginY: "10px",
+              }}
+            />
+            <Heading icon={TbWorldWww} label="Live Demo" />
+            <InputField
+              onChange={onChangeGitHubBadges}
+              label="Live Demo"
+              type="text"
+              name="websiteLink"
+              value={displayBadges.websiteLink}
+            />
+            <Divider
+              orientation="horizontal"
+              variant="fullWidth"
+              flexItem
+              sx={{
+                backgroundColor: "#3795BD",
+                marginY: "10px",
+              }}
+            />
+            <Badges onChangeGitHubBadges={onChangeGitHubBadges} />
           </div>
           <Divider
             orientation="horizontal"
@@ -163,13 +243,7 @@ function FormContainer({
               marginY: "10px",
             }}
           />
-          <Heading icon={TbWorldWww} label="Live Demo" />
-          <InputField
-            onChange={onChangeGitHubBadges}
-            label="Live Demo"
-            type="text"
-            name="websiteLink"
-          />
+          <AboutProject />
           <Divider
             orientation="horizontal"
             variant="fullWidth"
@@ -179,99 +253,79 @@ function FormContainer({
               marginY: "10px",
             }}
           />
-          <Badges onChangeGitHubBadges={onChangeGitHubBadges} />
-        </div>
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        <AboutProject />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        {/*  Tech Stack */}
-        <TechStack />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        {/*  Tech Stack */}
-        {/*  Features */}
-        <Features />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        {/*  Features */}
-        {/* ColorReference */}
-        <ColorReference />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        {/* ColorReference */}
-        {/* EnvironmentVariables */}
-        <EnvironmentVariables />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        {/* EnvironmentVariables */}
-        {/* GettingStarted */}
-        <GettingStarted />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-        {/* GettingStarted */}
-        {/*  Technologies */}
-        <TechnologiesContent />
-        <Divider
-          orientation="horizontal"
-          variant="fullWidth"
-          flexItem
-          sx={{
-            backgroundColor: "#3795BD",
-            marginY: "10px",
-          }}
-        />
-      </form>
+          {/*  Tech Stack */}
+          <TechStack />
+          <Divider
+            orientation="horizontal"
+            variant="fullWidth"
+            flexItem
+            sx={{
+              backgroundColor: "#3795BD",
+              marginY: "10px",
+            }}
+          />
+          {/*  Tech Stack */}
+          {/*  Features */}
+          <Features />
+          <Divider
+            orientation="horizontal"
+            variant="fullWidth"
+            flexItem
+            sx={{
+              backgroundColor: "#3795BD",
+              marginY: "10px",
+            }}
+          />
+          {/*  Features */}
+          {/* ColorReference */}
+          <ColorReference />
+          <Divider
+            orientation="horizontal"
+            variant="fullWidth"
+            flexItem
+            sx={{
+              backgroundColor: "#3795BD",
+              marginY: "10px",
+            }}
+          />
+          {/* ColorReference */}
+          {/* EnvironmentVariables */}
+          <EnvironmentVariables />
+          <Divider
+            orientation="horizontal"
+            variant="fullWidth"
+            flexItem
+            sx={{
+              backgroundColor: "#3795BD",
+              marginY: "10px",
+            }}
+          />
+          {/* EnvironmentVariables */}
+          {/* GettingStarted */}
+          <GettingStarted />
+          <Divider
+            orientation="horizontal"
+            variant="fullWidth"
+            flexItem
+            sx={{
+              backgroundColor: "#3795BD",
+              marginY: "10px",
+            }}
+          />
+          {/* GettingStarted */}
+          {/*  Technologies */}
+          <TechnologiesContent />
+          <Divider
+            orientation="horizontal"
+            variant="fullWidth"
+            flexItem
+            sx={{
+              backgroundColor: "#3795BD",
+              marginY: "10px",
+            }}
+          />
+        </form>
+      </div>
     </div>
   );
 }
