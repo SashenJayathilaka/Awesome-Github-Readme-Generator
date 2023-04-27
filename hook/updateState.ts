@@ -7,6 +7,7 @@ import languageArr from "./languageArr";
 const updateState = () => {
   const [technology] = useRecoilState(gitTechnologies);
   const [images, setImages] = useRecoilState(gitImages);
+  const { languageArray } = languageArr();
   const updatedLanguageArray: string[] = [];
   const updatingLanguageArray: string[] = [];
   var unique: string | any;
@@ -20,9 +21,9 @@ const updateState = () => {
   }
 
   const filterOneByOne = () => {
-    for (let index = 0; index < languageArr.length; index++) {
+    for (let index = 0; index < languageArray.flat().length; index++) {
       // @ts-ignore
-      const element = technology[languageArr[index]];
+      const element = technology[languageArray.flat()[index]];
 
       if (element) {
         updatingLanguageArray.push(element);

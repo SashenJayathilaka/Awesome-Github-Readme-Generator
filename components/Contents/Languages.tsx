@@ -8,10 +8,9 @@ import { useRecoilState } from "recoil";
 type Props = {
   label: string;
   image: string;
-  index: number | string;
 };
 
-function Languages({ label, image, index }: Props) {
+function Languages({ label, image }: Props) {
   const [technology, setTechnology] = useRecoilState(gitTechnologies);
   const { images } = updateState();
 

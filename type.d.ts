@@ -62,3 +62,88 @@ export interface MiddleController {
   limitError: string;
   fieldEmptyError: string;
 }
+
+export interface Technologies {
+  label: string;
+  image: string;
+}
+
+export interface SkillsType {
+  automation: Technologies[];
+  backend: Technologies[];
+  backendService: Technologies[];
+  database: Technologies[];
+  devops: Technologies[];
+  engines: Technologies[];
+  framework: Technologies[];
+  frontend: Technologies[];
+  languages: Technologies[];
+  mL: Technologies[];
+  mobile: Technologies[];
+  other: Technologies[];
+  software: Technologies[];
+  static: Technologies[];
+  testing: Technologies[];
+  visualization: Technologies[];
+}
+
+export interface ProfileAtomDetails {
+  profileTitle: string;
+  profileName: string;
+  profileSubTitle: string;
+  working: string;
+  workingName: string;
+  workingLink: string;
+  collaborate: string;
+  collaborateName: string;
+  collaborateLink: string;
+  learning: string;
+  learningName: string;
+  about: string;
+  aboutName: string;
+  reach: string;
+  reachName: string;
+  myProjects: string;
+  myProjectsName: string;
+  articles: string;
+  articlesName: string;
+  experiences: string;
+  experiencesName: string;
+  fact: string;
+  factName: string;
+  help: string;
+  helpName: string;
+  helpLink: string;
+  skills: string[];
+  github: string;
+  dev: string;
+  codeSandbox: string;
+  linkedin: string;
+  facebook: string;
+  dribbble: string;
+  hashnode: string;
+  youtube: string;
+  hackerrank: string;
+  leetCode: string;
+  hackerearth: string;
+  discord: string;
+  twitter: string;
+  codePen: string;
+  stackoverflow: string;
+  kaggle: string;
+  instagram: string;
+  behance: string;
+  medium: string;
+  codeChef: string;
+  codeforces: string;
+  topCoder: string;
+  GFG: string;
+  RSS: string;
+  visitors: boolean;
+  trophy: boolean;
+  stats: boolean;
+  skillsCard: boolean;
+  streak: boolean;
+  buymeacoffee: string;
+  koFi: string;
+}

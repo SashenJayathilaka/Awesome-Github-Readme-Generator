@@ -29,7 +29,7 @@ function SocialInput({
   return (
     <div className="flex justify-start gap-6 py-2">
       <div className="flex justify-center gap-2 items-center">
-        <Icon size={20} />
+        <Icon size={30} />
         <InputField
           onChange={onChange}
           label={label}
@@ -39,7 +39,7 @@ function SocialInput({
         />
       </div>
       <div className="flex justify-center gap-2 items-center">
-        <SecondIcon size={20} />
+        <SecondIcon size={30} />
         <InputField
           onChange={onChange}
           label={secondLabel}

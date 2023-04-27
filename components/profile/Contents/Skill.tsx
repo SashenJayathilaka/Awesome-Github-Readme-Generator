@@ -1,41 +1,62 @@
 "use client";
 
-import { gitTechnologies } from "@/atom/technology";
-import profileUpdateState from "@/hook/profileUpdateState";
 import { Checkbox, Tooltip } from "@mui/material";
-import { useRecoilState } from "recoil";
+import { useEffect, useState } from "react";
 
 type Props = {
   label: string;
   image: string;
+  stateSkill: string[];
+  listOfSkills: string[];
+  setListOfSkills: (value: any) => void;
+  setStateSkill: (value: any) => void;
 };
 
-function Skill({ label, image }: Props) {
-  const [technology, setTechnology] = useRecoilState(gitTechnologies);
-  const { images } = profileUpdateState();
+function Skill({
+  label,
+  image,
+  stateSkill,
+  listOfSkills,
+  setListOfSkills,
+  setStateSkill,
+}: Props) {
+  const [isAtomValueExits, setIsAtomValueExits] = useState(false);
 
   const boxLabel = { inputProps: { "aria-label": "Checkbox demo" } };
 
   const onChangeTechnology = () => {
-    if (images.skills.includes(image)) {
-      setTechnology((prev) => ({
+    if (isAtomValueExits) {
+      const removeCurrentState = listOfSkills.filter(
+        (element: any) => element.label !== label
+      );
+      setListOfSkills(removeCurrentState);
+
+      const removeItem = stateSkill.filter(
+        (element: any) => element.label !== label
+      );
+      setStateSkill((prev: any) => ({
         ...prev,
-        [label]: "",
+        skills: removeItem,
       }));
     } else {
-      setTechnology((prev) => ({
-        ...prev,
-        [label]: image,
-      }));
+      const element = { label, image };
+      setListOfSkills((ls: any) => [...ls, ...stateSkill, element]);
     }
   };
+
+  useEffect(() => {
+    const isExits = stateSkill.some(function (el: any) {
+      return el.label === label;
+    });
+    setIsAtomValueExits(isExits);
+  }, [stateSkill]);
 
   return (
     <div>
       <Tooltip title={label}>
         <div
           className={`flex justify-between items-center border border-[#0F2557] w-full overflow-hidden rounded-xl px-4 py-4 space-y-2 hover:bg-[#161748] hover-shadow-xl hover:text-black cursor-pointer ${
-            images.skills.includes(image) && "bg-[#04082b]"
+            isAtomValueExits && "bg-[#04082b]"
           }`}
           onClick={onChangeTechnology}
         >
@@ -45,9 +66,9 @@ function Skill({ label, image }: Props) {
             name={label}
             sx={{ color: "#fff" }}
             color="default"
-            checked={images.skills.includes(image)}
+            checked={isAtomValueExits}
           />
-          {images.skills.includes(image) ? (
+          {isAtomValueExits ? (
             <img
               src={image}
               alt={label}

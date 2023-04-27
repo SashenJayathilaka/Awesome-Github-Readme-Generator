@@ -1,6 +1,7 @@
 import { atom } from "recoil";
 
 export type profileAtomDetails = {
+  [x: string]: any;
   profileTitle: string;
   profileName: string;
   profileSubTitle: string;
@@ -52,6 +53,13 @@ export type profileAtomDetails = {
   topCoder: string;
   GFG: string;
   RSS: string;
+  visitors: boolean;
+  trophy: boolean;
+  stats: boolean;
+  skillsCard: boolean;
+  streak: boolean;
+  buymeacoffee: string;
+  koFi: string;
 };
 
 const defaultPostState: profileAtomDetails = {
@@ -106,6 +114,13 @@ const defaultPostState: profileAtomDetails = {
   topCoder: "",
   GFG: "",
   RSS: "",
+  visitors: false,
+  trophy: false,
+  stats: false,
+  skillsCard: false,
+  streak: false,
+  buymeacoffee: "",
+  koFi: "",
 };
 
 export const profileAtomDetail = atom<profileAtomDetails>({

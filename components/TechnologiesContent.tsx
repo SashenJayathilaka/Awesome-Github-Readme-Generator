@@ -1,26 +1,30 @@
 "use client";
 
-import {
-  backendFrameWork,
-  developmentEditors,
-  frontendDevelopment,
-  languages,
-  otherFrameWork,
-  others,
-  styleComponents,
-} from "@/lib/store";
-import { FaCss3Alt, FaJava, FaLinux, FaReact } from "react-icons/fa";
+import request from "@/lib/request";
+import { AiFillAndroid } from "react-icons/ai";
+import { BiTestTube } from "react-icons/bi";
+import { DiPhotoshop } from "react-icons/di";
+import { FaDocker, FaJava, FaLinux, FaReact, FaUnity } from "react-icons/fa";
 import { GrNode } from "react-icons/gr";
-import { SiGtk } from "react-icons/si";
-import { TbBrandVscode } from "react-icons/tb";
+import {
+  SiDjango,
+  SiFirebase,
+  SiKibana,
+  SiMysql,
+  SiTensorflow,
+  SiZapier,
+} from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 
-import Heading from "./Heading";
 import Languages from "./Contents/Languages";
+import Heading from "./Heading";
 import ControlSwitch from "./Switch";
 
 type Props = {};
 
 function TechnologiesContent({}: Props) {
+  const { skills } = request();
+
   return (
     <div>
       <div className="flex justify-start gap-6 py-4 mt-8">
@@ -29,78 +33,161 @@ function TechnologiesContent({}: Props) {
       </div>
       <Heading label="Programming Languages" icon={FaJava} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {languages.map((language, index) => (
+        {skills.languages.map((language, index) => (
           <Languages
             key={index}
             label={language.label}
             image={language.image}
-            index={index}
           />
         ))}
       </div>
-      <Heading label="Style Components" icon={FaCss3Alt} />
+      <Heading label="Frontend" icon={FaReact} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {styleComponents.map((technology, index) => (
+        {skills.frontend.map((technology, index) => (
           <Languages
             key={index}
             label={technology.label}
             image={technology.image}
-            index={index}
           />
         ))}
       </div>
-      <Heading label="Frontend Development FrameWork" icon={FaReact} />
+      <Heading label="Backend" icon={GrNode} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {frontendDevelopment.map((technology, index) => (
+        {skills.backend.map((technology, index) => (
           <Languages
             key={index}
             label={technology.label}
             image={technology.image}
-            index={index}
           />
         ))}
       </div>
-      <Heading label="Backend Development" icon={GrNode} />
+      <Heading label="Database" icon={SiMysql} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {backendFrameWork.map((technology, index) => (
+        {skills.database.map((technology, index) => (
           <Languages
             key={index}
             label={technology.label}
             image={technology.image}
-            index={index}
           />
         ))}
       </div>
-      <Heading label="Other Development FrameWork" icon={SiGtk} />
+      <Heading label="Backend Service" icon={SiFirebase} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {otherFrameWork.map((technology, index) => (
+        {skills.backendService.map((technology, index) => (
           <Languages
             key={index}
             label={technology.label}
             image={technology.image}
-            index={index}
           />
         ))}
       </div>
-      <Heading label="Development Editors / IDE" icon={TbBrandVscode} />
+      <Heading label="Devops" icon={FaDocker} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {developmentEditors.map((technology, index) => (
+        {skills.devops.map((technology, index) => (
           <Languages
             key={index}
             label={technology.label}
             image={technology.image}
-            index={index}
+          />
+        ))}
+      </div>
+      <Heading label="Mobile" icon={AiFillAndroid} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.mobile.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Static" icon={TbBrandNextjs} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.static.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Framework" icon={SiDjango} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.framework.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Software" icon={DiPhotoshop} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.software.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Visualization" icon={SiKibana} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.visualization.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Testing" icon={BiTestTube} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.testing.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="ML" icon={SiTensorflow} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.mL.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Engines" icon={FaUnity} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.engines.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
+          />
+        ))}
+      </div>
+      <Heading label="Automation" icon={SiZapier} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
+        {skills.automation.map((technology, index) => (
+          <Languages
+            key={index}
+            label={technology.label}
+            image={technology.image}
           />
         ))}
       </div>
       <Heading label="Other" icon={FaLinux} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
-        {others.map((technology, index) => (
+        {skills.other.map((technology, index) => (
           <Languages
             key={index}
             label={technology.label}
             image={technology.image}
-            index={index}
           />
         ))}
       </div>
