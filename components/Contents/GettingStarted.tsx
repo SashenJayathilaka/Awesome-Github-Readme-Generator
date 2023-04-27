@@ -1,8 +1,8 @@
 "use client";
 
-import { Divider } from "@mui/material";
 import { BsFillBagCheckFill } from "react-icons/bs";
 
+import DividerLine from "../DividerLine";
 import Acknowledgements from "./Acknowledgements";
 import Contact from "./Contact";
 import Contributing from "./Contributing";
@@ -24,106 +24,26 @@ function GettingStarted({}: Props) {
         <BsFillBagCheckFill size={25} />
         <p className="text-2xl">Getting Started</p>
       </div>
-         <Prerequisites />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <Prerequisites />
+      <DividerLine />
       <Installation />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <RunningTests />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <RunLocally />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <Deployment />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <Roadmap />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <Contributing />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <FaqSection />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <License />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <Contact />
-      <Divider
-        orientation="horizontal"
-        variant="fullWidth"
-        flexItem
-        sx={{
-          backgroundColor: "#3795BD",
-          marginY: "10px",
-        }}
-      />
+      <DividerLine />
       <Acknowledgements />
     </div>
   );

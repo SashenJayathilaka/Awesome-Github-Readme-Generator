@@ -21,6 +21,7 @@ import EnvironmentVariables from "./Contents/EnvironmentVariables";
 import Features from "./Contents/Features";
 import GettingStarted from "./Contents/GettingStarted";
 import TechStack from "./Contents/TechStack";
+import DividerLine from "./DividerLine";
 import Heading from "./Heading";
 import InputField from "./InputField";
 import TechnologiesContent from "./TechnologiesContent";
@@ -156,15 +157,7 @@ function FormContainer({
                 value={gitHubDetail.gitRepoUrl}
               />
             </div>
-            <Divider
-              orientation="horizontal"
-              variant="fullWidth"
-              flexItem
-              sx={{
-                backgroundColor: "#3795BD",
-                marginY: "10px",
-              }}
-            />
+            <DividerLine />
             <div className="flex justify-between gap-12 py-2">
               <InputField
                 onChange={onChangeReadmeRow}
@@ -206,15 +199,7 @@ function FormContainer({
                 />
               </div>
             </div>
-            <Divider
-              orientation="horizontal"
-              variant="fullWidth"
-              flexItem
-              sx={{
-                backgroundColor: "#3795BD",
-                marginY: "10px",
-              }}
-            />
+            <DividerLine />
             <Heading icon={TbWorldWww} label="Live Demo" />
             <InputField
               onChange={onChangeGitHubBadges}
@@ -223,36 +208,12 @@ function FormContainer({
               name="websiteLink"
               value={displayBadges.websiteLink}
             />
-            <Divider
-              orientation="horizontal"
-              variant="fullWidth"
-              flexItem
-              sx={{
-                backgroundColor: "#3795BD",
-                marginY: "10px",
-              }}
-            />
+            <DividerLine />
             <Badges onChangeGitHubBadges={onChangeGitHubBadges} />
           </div>
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
           <AboutProject />
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
           {/*  Tech Stack */}
           <TechStack />
           <Divider
@@ -267,39 +228,15 @@ function FormContainer({
           {/*  Tech Stack */}
           {/*  Features */}
           <Features />
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
           {/*  Features */}
           {/* ColorReference */}
           <ColorReference />
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
           {/* ColorReference */}
           {/* EnvironmentVariables */}
           <EnvironmentVariables />
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
           {/* EnvironmentVariables */}
           {/* GettingStarted */}
           <GettingStarted />
@@ -315,15 +252,7 @@ function FormContainer({
           {/* GettingStarted */}
           {/*  Technologies */}
           <TechnologiesContent />
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
         </form>
       </div>
     </div>

@@ -12,7 +12,6 @@ import {
   AiFillInstagram,
   AiFillLinkedin,
   AiFillMediumCircle,
-  AiFillProfile,
   AiFillTwitterCircle,
   AiFillYoutube,
 } from "react-icons/ai";
@@ -22,6 +21,7 @@ import { MdLogoDev } from "react-icons/md";
 import {
   SiCodechef,
   SiCodeforces,
+  SiGeeksforgeeks,
   SiHackerearth,
   SiHashnode,
   SiLeetcode,
@@ -46,7 +46,7 @@ function Social({}: Props) {
   return (
     <div className="py-6">
       <Heading icon={SlSocialGithub} label="Social" />
-      <div className="flex flex-col justify-start gap-6 py-2">
+      <div className="flex flex-col justify-start gap-6 py-2 w-full">
         <SocialInput
           onChange={onChange}
           value={profileDetails.github}
@@ -176,7 +176,7 @@ function Social({}: Props) {
           secondValue={profileDetails.RSS}
           secondLabel="RSS feed URL"
           secondName="RSS"
-          icon={AiFillProfile}
+          icon={SiGeeksforgeeks}
           secondIcon={BsFillRssFill}
         />
       </div>
