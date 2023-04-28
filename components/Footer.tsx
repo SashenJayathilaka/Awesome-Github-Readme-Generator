@@ -107,7 +107,7 @@ function Footer({}: Props) {
               <span className="sr-only">Facebook page</span>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/sashen_hasindu_perrra/"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -125,7 +125,7 @@ function Footer({}: Props) {
               <span className="sr-only">Instagram page</span>
             </a>
             <a
-              href="#"
+              href="https://twitter.com/SashenHasinduJ"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -139,7 +139,7 @@ function Footer({}: Props) {
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="#"
+              href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
