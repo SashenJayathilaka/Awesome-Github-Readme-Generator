@@ -12,7 +12,7 @@ import "../styles/globals.css";
 export const metadata = {
   title: "Readme Generator",
   description: "Github Readme File Generator",
-  icons: "",
+  icons: "https://dl.dropboxusercontent.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp",
 };
 
 export default async function RootLayout({
