@@ -13,22 +13,22 @@ You can easily and quickly create a readme file for your github profile or git h
 <!-- Badges -->
 <p>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/Github-Readme-File-Generator" alt="contributors" />
+    <img src="https://img.shields.io/github/contributors/SashenJayathilaka/Github-Readme-File-Generator" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/Github-Readme-File-Generator" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/SashenJayathilaka/Github-Readme-File-Generator" alt="last update" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/Github-Readme-File-Generator" alt="forks" />
+    <img src="https://img.shields.io/github/forks/SashenJayathilaka/Github-Readme-File-Generator" alt="forks" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/Github-Readme-File-Generator" alt="stars" />
+    <img src="https://img.shields.io/github/stars/SashenJayathilaka/Github-Readme-File-Generator" alt="stars" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/Github-Readme-File-Generator" alt="open issues" />
+    <img src="https://img.shields.io/github/issues/SashenJayathilaka/Github-Readme-File-Generator" alt="open issues" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/awesGithub-Readme-File-Generator" alt="license" />
+    <img src="https://img.shields.io/github/license/SashenJayathilaka/Github-Readme-File-Generator" alt="license" />
   </a>
 </p>
    
