@@ -7,6 +7,7 @@ export type gitHubDetail = {
   name: string;
   twitter: string;
   email: string;
+  isTable: string;
 };
 
 const defaultPostState: gitHubDetail = {
@@ -16,6 +17,7 @@ const defaultPostState: gitHubDetail = {
   name: "",
   twitter: "",
   email: "",
+  isTable: "",
 };
 
 export const gitHubDetails = atom<gitHubDetail>({

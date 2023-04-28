@@ -1,5 +1,6 @@
 "use client";
 
+import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox, Tooltip } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -21,8 +22,6 @@ function Skill({
   setStateSkill,
 }: Props) {
   const [isAtomValueExits, setIsAtomValueExits] = useState(false);
-
-  const boxLabel = { inputProps: { "aria-label": "Checkbox demo" } };
 
   const onChangeTechnology = () => {
     if (isAtomValueExits) {

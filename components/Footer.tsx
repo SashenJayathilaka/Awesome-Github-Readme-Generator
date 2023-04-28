@@ -13,7 +13,7 @@ function Footer({}: Props) {
               className="flex items-center"
             >
               <img
-                src="https://user-images.githubusercontent.com/99184393/232021800-8e2d8151-7484-451c-a194-ced6ab249b00.png"
+                src="https://www.dropbox.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp?dl=1"
                 className="h-8 mr-3"
                 alt="FlowBite Logo"
               />
@@ -37,11 +37,8 @@ function Footer({}: Props) {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Tailwind CSS
+                  <a href="#" className="hover:underline">
+                    Source Code
                   </a>
                 </li>
               </ul>
@@ -53,18 +50,15 @@ function Footer({}: Props) {
               <ul className="text-gray-600 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/themesberg/flowbite"
+                    href="https://github.com/SashenJayathilaka"
                     className="hover:underline "
                   >
                     Github
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
-                    Discord
+                  <a href="https://discord.gg" className="hover:underline">
+                    Linkedin
                   </a>
                 </li>
               </ul>
@@ -91,11 +85,7 @@ function Footer({}: Props) {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
-              Flowbite™
-            </a>
-            . All Rights Reserved.
+            © 2023 . All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a

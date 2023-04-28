@@ -1,7 +1,9 @@
+"use client";
+
 import { SkillsType } from "@/type";
 import { useEffect, useState } from "react";
 
-const request = () => {
+const Request = () => {
   const [skills, setSkills] = useState<SkillsType>({
     automation: [],
     backend: [],
@@ -40,4 +42,4 @@ const request = () => {
   return { skills };
 };
 
-export default request;
+export default Request;

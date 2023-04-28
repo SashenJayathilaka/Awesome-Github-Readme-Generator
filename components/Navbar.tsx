@@ -91,10 +91,13 @@ function Navbar({}: Props) {
               </h1>
             </div>
             <div className="flex justify-center gap-4 items-center">
-              <button className="flex justify-center px-1 py-1 bg-gray-800 hover:bg-gray-600 border border-gray-500 items-center text-center rounded-lg gap-1 text-sm">
+              <a
+                href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+                className="flex justify-center px-1 py-1 bg-gray-800 hover:bg-gray-600 border border-gray-500 items-center text-center rounded-lg gap-1 text-sm"
+              >
                 <AiFillGithub size={15} />
                 {`GitHub`}
-              </button>
+              </a>
               {session ? (
                 <div
                   className="flex justify-center items-center"

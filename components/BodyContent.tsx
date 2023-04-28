@@ -3,7 +3,6 @@
 import { gitBadge } from "@/atom/displayBadges";
 import { gitHubDetails } from "@/atom/gitHubDetails";
 import { gitImages } from "@/atom/images";
-import { middleControllers } from "@/atom/middleController";
 import { readmeRows } from "@/atom/readmeRow";
 import { gitImagesSizes } from "@/atom/size";
 import { gitTechStack } from "@/atom/techStack";
@@ -14,7 +13,6 @@ import {
   GitHubImages,
   GitHubImagesSize,
   GitHubTechStack,
-  MiddleController,
   ReadmeRow,
 } from "@/type";
 import { Divider } from "@mui/material";
@@ -45,7 +43,6 @@ function BodyContent({}: Props) {
   const [images, setImages] = useRecoilState(gitImages);
   const [size, setSize] = useRecoilState(gitImagesSizes);
   const [displayBadges, setDisplayBadges] = useRecoilState(gitBadge);
-  const [controllers, setControllers] = useRecoilState(middleControllers);
 
   const {
     updateFirstElement,
@@ -54,7 +51,6 @@ function BodyContent({}: Props) {
     updateFourthElement,
     updateFifthElement,
     updateSixthElement,
-    updateSeventhElement,
   } = updateCurrentStateValue();
 
   const [firstElement, setFirstElement] =
@@ -65,8 +61,6 @@ function BodyContent({}: Props) {
   const [fourthElement, setFourthElement] = useState<GitHubImages>(images);
   const [fifthElement, setFifthElement] = useState<GitHubImagesSize>(size);
   const [sixthElement, setSixthElement] = useState<GitBadges>(displayBadges);
-  const [seventhElement, setSevenElement] =
-    useState<MiddleController>(controllers);
 
   const KeepCacheUpdated = (
     firstStore: GitHubTechStack,
@@ -74,8 +68,7 @@ function BodyContent({}: Props) {
     thirdStore: ReadmeRow,
     fourthStore: GitHubImages,
     fifthStore: GitHubImagesSize,
-    sixthStore: GitBadges,
-    seventhStore: MiddleController
+    sixthStore: GitBadges
   ) => {
     localStorage.setItem(
       "cache",
@@ -86,7 +79,6 @@ function BodyContent({}: Props) {
         fourthStore,
         fifthStore,
         sixthStore,
-        seventhStore,
       })
     );
 
@@ -130,11 +122,6 @@ function BodyContent({}: Props) {
         ? { ...gitHubTechStack, ...cache.sixthStore }
         : gitHubTechStack
     );
-    setSevenElement(
-      cache.seventhStore
-        ? { ...gitHubTechStack, ...cache.seventhStore }
-        : gitHubTechStack
-    );
   };
 
   const OnChangeAction = () => {
@@ -144,8 +131,7 @@ function BodyContent({}: Props) {
       readmeRow,
       images,
       size,
-      displayBadges,
-      controllers
+      displayBadges
     );
 
     setAction(true);
@@ -164,7 +150,6 @@ function BodyContent({}: Props) {
     updateFourthElement(fourthElement, setImages);
     updateFifthElement(fifthElement, setSize);
     updateSixthElement(sixthElement, setDisplayBadges);
-    updateSeventhElement(seventhElement, setControllers);
   };
 
   useEffect(() => {
@@ -173,7 +158,7 @@ function BodyContent({}: Props) {
 
   return (
     <>
-      {!isShow && <SmallHeader />}
+      <SmallHeader />
       <div className="px-12 py-12 items-center">
         {isShow ? (
           <>

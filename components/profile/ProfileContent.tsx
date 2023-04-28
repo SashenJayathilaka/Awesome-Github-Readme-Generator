@@ -11,10 +11,10 @@ import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
 import ActionLode from "../ActionLode";
-import SmallHeader from "../Contents/SmallHeader";
-import FeedBackForm from "../FeedBackForm";
 import ProfileButtonAction from "./ProfileButtonAction";
+import ProfileFeedbackForm from "./ProfileFeedbackForm";
 import ProfileFormContainer from "./ProfileFormContainer";
+import ProfileHeader from "./ProfileHeader";
 import ProfileMarkdown from "./markdown/ProfileMarkdown";
 import ProfileMarkdownPreview from "./markdown/ProfileMarkdownPreview";
 
@@ -77,7 +77,7 @@ function ProfileContent({}: Props) {
 
   return (
     <>
-      {!isShow && <SmallHeader />}
+      <ProfileHeader />
       <div className="px-12 py-12 items-center">
         {isShow ? (
           <>
@@ -147,7 +147,7 @@ function ProfileContent({}: Props) {
                 marginY: "10px",
               }}
             />
-            <FeedBackForm />
+            <ProfileFeedbackForm />
           </>
         )}
       </div>
