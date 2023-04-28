@@ -76,7 +76,7 @@ function Social({}: Props) {
           name="linkedin"
           secondValue={profileDetails.facebook}
           secondLabel="facebook username"
-          secondName=""
+          secondName="facebook"
           icon={AiFillLinkedin}
           secondIcon={AiFillFacebook}
         />
