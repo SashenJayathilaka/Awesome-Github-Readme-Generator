@@ -12,6 +12,7 @@ import "../styles/globals.css";
 export const metadata = {
   title: "Readme Generator",
   description: "Github Readme File Generator",
+  icons: "",
 };
 
 export default async function RootLayout({

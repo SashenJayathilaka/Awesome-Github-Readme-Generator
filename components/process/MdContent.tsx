@@ -3,7 +3,6 @@
 import { gitBadge } from "@/atom/displayBadges";
 import { gitHubDetails } from "@/atom/gitHubDetails";
 import { gitImages } from "@/atom/images";
-import { middleControllers } from "@/atom/middleController";
 import { readmeRows } from "@/atom/readmeRow";
 import { gitImagesSizes } from "@/atom/size";
 import { gitTechStack } from "@/atom/techStack";
@@ -15,7 +14,6 @@ const MdContent = () => {
   const [images] = useRecoilState(gitImages);
   const [size] = useRecoilState(gitImagesSizes);
   const [displayBadges] = useRecoilState(gitBadge);
-  const [controllers] = useRecoilState(middleControllers);
   const [gitHubTechStack] = useRecoilState(gitTechStack);
 
   const CenterStart = () => {
@@ -208,7 +206,7 @@ const MdContent = () => {
 
   const startTable = () => {
     const languageLabel = images.updatedStateTechnology;
-    const table = controllers.isTable;
+    const table = gitHubDetail.isTable;
 
     if (languageLabel.length > 0 && languageLabel.length <= 10 && table) {
       return (
@@ -228,7 +226,7 @@ const MdContent = () => {
 
   const endTable = () => {
     const languageLabel = images.updatedStateTechnology;
-    const table = controllers.isTable;
+    const table = gitHubDetail.isTable;
 
     if (languageLabel.length > 0 && languageLabel.length <= 10 && table) {
       return (
@@ -458,7 +456,7 @@ const MdContent = () => {
 
   const MKLanguages = () => {
     const languageLabel = images.updatedStateTechnology;
-    const table = controllers.isTable;
+    const table = gitHubDetail.isTable;
 
     if (languageLabel.length > 0) {
       if (table) {

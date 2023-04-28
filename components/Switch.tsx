@@ -1,16 +1,16 @@
 "use client";
 
+import { gitHubDetails } from "@/atom/gitHubDetails";
 import { gitImages } from "@/atom/images";
-import { middleControllers } from "@/atom/middleController";
 import { Switch } from "@mui/material";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
 type Props = {};
 
 function ControlSwitch({}: Props) {
-  const [controllers, setControllers] = useRecoilState(middleControllers);
+  const [controllers, setControllers] = useRecoilState(gitHubDetails);
   const [images] = useRecoilState(gitImages);
 
   const handleChange = () => {

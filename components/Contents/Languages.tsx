@@ -1,41 +1,65 @@
 "use client";
 
-import { gitTechnologies } from "@/atom/technology";
-import updateState from "@/hook/updateState";
+import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox, Tooltip } from "@mui/material";
-import { useRecoilState } from "recoil";
+import { useEffect, useState } from "react";
 
 type Props = {
   label: string;
   image: string;
+  stateTechnologies: string[];
+  listOfTechnologies: string[];
+  setListOfTechnologies: (value: any) => void;
+  setStateTechnologies: (value: any) => void;
 };
 
-function Languages({ label, image }: Props) {
-  const [technology, setTechnology] = useRecoilState(gitTechnologies);
-  const { images } = updateState();
-
-  const boxLabel = { inputProps: { "aria-label": "Checkbox demo" } };
+function Languages({
+  label,
+  image,
+  stateTechnologies,
+  listOfTechnologies,
+  setListOfTechnologies,
+  setStateTechnologies,
+}: Props) {
+  const [isAtomValueExits, setIsAtomValueExits] = useState(false);
 
   const onChangeTechnology = () => {
-    if (images.updatedStateTechnology.includes(image)) {
-      setTechnology((prev) => ({
+    if (isAtomValueExits) {
+      const removeCurrentState = listOfTechnologies.filter(
+        (element: any) => element.label !== label
+      );
+      setListOfTechnologies(removeCurrentState);
+
+      const removeItem = stateTechnologies.filter(
+        (element: any) => element.label !== label
+      );
+      setStateTechnologies((prev: any) => ({
         ...prev,
-        [label]: null,
+        skills: removeItem,
       }));
     } else {
-      setTechnology((prev) => ({
-        ...prev,
-        [label]: image,
-      }));
+      const element = { label, image };
+      setListOfTechnologies((ls: any) => [
+        ...ls,
+        ...stateTechnologies,
+        element,
+      ]);
     }
   };
+
+  useEffect(() => {
+    const isExits = stateTechnologies.some(function (el: any) {
+      return el.label === label;
+    });
+    setIsAtomValueExits(isExits);
+  }, [stateTechnologies]);
 
   return (
     <div>
       <Tooltip title={label}>
         <div
           className={`flex justify-between items-center border border-[#0F2557] w-full overflow-hidden rounded-xl px-4 py-4 space-y-2 hover:bg-[#161748] hover-shadow-xl hover:text-black cursor-pointer ${
-            images.updatedStateTechnology.includes(image) && "bg-[#04082b]"
+            isAtomValueExits && "bg-[#04082b]"
           }`}
           onClick={onChangeTechnology}
         >
@@ -45,9 +69,9 @@ function Languages({ label, image }: Props) {
             name={label}
             sx={{ color: "#fff" }}
             color="default"
-            checked={images.updatedStateTechnology.includes(image)}
+            checked={isAtomValueExits}
           />
-          {images.updatedStateTechnology.includes(image) ? (
+          {isAtomValueExits ? (
             <img
               src={image}
               alt={label}

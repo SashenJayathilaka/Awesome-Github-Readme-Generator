@@ -6,7 +6,6 @@ import {
   GitHubImages,
   GitHubImagesSize,
   GitHubTechStack,
-  MiddleController,
   ReadmeRow,
 } from "@/type";
 
@@ -65,15 +64,6 @@ function updateCurrentStateValue() {
     }
   };
 
-  const updateSeventhElement = (
-    seventhElement: MiddleController,
-    setControllers: (value: MiddleController) => void
-  ) => {
-    if (seventhElement) {
-      setControllers(seventhElement);
-    }
-  };
-
   return {
     updateFirstElement,
     updateSecondElement,
@@ -81,7 +71,6 @@ function updateCurrentStateValue() {
     updateFourthElement,
     updateFifthElement,
     updateSixthElement,
-    updateSeventhElement,
   };
 }
 

@@ -1,6 +1,9 @@
 "use client";
 
+import { gitImages } from "@/atom/images";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import request from "@/lib/request";
+import { useEffect, useState } from "react";
 import { AiFillAndroid } from "react-icons/ai";
 import { BiTestTube } from "react-icons/bi";
 import { DiPhotoshop } from "react-icons/di";
@@ -15,6 +18,7 @@ import {
   SiZapier,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
+import { useRecoilState } from "recoil";
 
 import Languages from "./Contents/Languages";
 import Heading from "./Heading";
@@ -24,6 +28,23 @@ type Props = {};
 
 function TechnologiesContent({}: Props) {
   const { skills } = request();
+  const [listOfTechnologies, setListOfTechnologies] = useState([]);
+  const [stateTechnologies, setStateTechnologies] = useRecoilState(gitImages);
+
+  const updateState = (value: string[]) => {
+    if (!value) return;
+
+    const unique = value.filter(onlyUnique).flat();
+
+    setStateTechnologies((prev) => ({
+      ...prev,
+      updatedStateTechnology: unique,
+    }));
+  };
+
+  useEffect(() => {
+    updateState(listOfTechnologies);
+  }, [listOfTechnologies]);
 
   return (
     <div>
@@ -38,6 +59,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={language.label}
             image={language.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -48,6 +73,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -58,6 +87,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -68,6 +101,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -78,6 +115,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -88,6 +129,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -98,6 +143,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -108,6 +157,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -118,6 +171,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -128,6 +185,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -138,6 +199,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -148,6 +213,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -158,6 +227,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -168,6 +241,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -178,6 +255,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>
@@ -188,6 +269,10 @@ function TechnologiesContent({}: Props) {
             key={index}
             label={technology.label}
             image={technology.image}
+            stateTechnologies={stateTechnologies.updatedStateTechnology}
+            listOfTechnologies={listOfTechnologies}
+            setListOfTechnologies={setListOfTechnologies}
+            setStateTechnologies={setStateTechnologies}
           />
         ))}
       </div>

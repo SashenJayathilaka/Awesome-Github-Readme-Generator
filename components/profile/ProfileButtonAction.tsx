@@ -63,6 +63,7 @@ function ProfileButtonAction({
       toast.warn("Please Switch Preview Mode");
     }
   };
+
   return (
     <div className="flex justify-between items-center py-2.5">
       <button
@@ -96,7 +97,7 @@ function ProfileButtonAction({
         <span>Download Markdown</span>
       </button>
       <button
-        onClick={() => setIsShow(true)}
+        onClick={() => toast.info("This feature will be coming soon")}
         className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         <AiOutlineSave size={20} />

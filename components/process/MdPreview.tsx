@@ -6,7 +6,6 @@ import { gitImages } from "@/atom/images";
 import { readmeRows } from "@/atom/readmeRow";
 import { gitImagesSizes } from "@/atom/size";
 import { gitTechStack } from "@/atom/techStack";
-import { gitTechnologies } from "@/atom/technology";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { useRecoilState } from "recoil";

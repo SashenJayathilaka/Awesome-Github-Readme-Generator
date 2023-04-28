@@ -1,12 +1,10 @@
-import { profileAtomDetail } from "@/atom/profileDetailsAtom";
-import { gitTechnologies } from "@/atom/technology";
+import { gitImages } from "@/atom/images";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import languageArr from "./languageArr";
 
-const profileUpdateState = () => {
-  const [technology] = useRecoilState(gitTechnologies);
-  const [images, setImages] = useRecoilState(profileAtomDetail);
+const updateState = () => {
+  const [images, setImages] = useRecoilState(gitImages);
   const { languageArray } = languageArr();
   const updatedLanguageArray: string[] = [];
   const updatingLanguageArray: string[] = [];
@@ -34,17 +32,19 @@ const profileUpdateState = () => {
       unique = updatingLanguageArray.filter(onlyUnique).flat();
       updatedLanguageArray.push(unique);
 
-      setImages((prev) => ({
+      setImages((prev: string | any) => ({
         ...prev,
-        skills: unique,
+        updatedStateTechnology: unique,
       }));
+
+      // console.log(unique);
     }
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     filterOneByOne();
   }, [technology]);
-
+ */
   return {
     updatedLanguageArray,
     unique,
@@ -52,4 +52,4 @@ const profileUpdateState = () => {
   };
 };
 
-export default profileUpdateState;
+export default updateState;

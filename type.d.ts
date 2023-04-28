@@ -22,6 +22,7 @@ export interface GitHubDetail {
   name: string;
   twitter: string;
   email: string;
+  isTable: string;
 }
 
 export interface ReadmeRow {
@@ -55,12 +56,6 @@ export interface GitBadges {
   stars: string;
   issues: string;
   lastCommit: string;
-}
-
-export interface MiddleController {
-  isTable: string;
-  limitError: string;
-  fieldEmptyError: string;
 }
 
 export interface Technologies {
