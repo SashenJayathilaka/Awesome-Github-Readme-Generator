@@ -73,6 +73,12 @@ You can easily and quickly create a readme file for your github profile or git h
   <img src="./lib/bin/demo/ezgif-2-fc7c118718.gif" alt="screenshot" />
 </div>
 
+<br />
+
+![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
+![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
+
 <!-- Features -->
 
 ### :dart: Features
@@ -154,6 +160,19 @@ See `contributing.md` for ways to get started.
 ### :scroll: Code of Conduct
 
 Please read the [Code of Conduct](https://github.com/SashenJayathilaka/Github-Readme-File-Generator/blob/main/CODE_OF_CONDUCT.md)
+
+## 💻 Built with
+
+- [Next Js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/): for styling
+- [Framer Motion](https://www.framer.com/motion/): for Animations
+
+## 🙇 Special Thanks
+
+- [Anurag Hazra](https://github.com/anuraghazra) for amazing [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
+- [Anton Komarev](https://github.com/antonkomarev) for super cool [github-profile-views-counter](https://github.com/antonkomarev/github-profile-views-counter)
+- [Jonah Lawrence](https://github.com/DenverCoder1) for the incredible [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats)
+- [Julien Monty](https://github.com/konpa) for super useful [devicon](https://github.com/konpa/devicon)
 
 <!-- License -->
 
