@@ -214,13 +214,11 @@ const MdPreview = () => {
     if (languageLabel) {
       return (
         <>
-          {languageLabel.map((language, index) => (
+          {languageLabel.map((language: any, index) => (
             <img key={index} src={language.image} alt={language.label} className="w-10 h-10" />
           ))}
         </>
       );
-    } else {
-      return null;
     }
 
     return null;
