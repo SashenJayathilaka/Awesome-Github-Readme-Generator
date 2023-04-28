@@ -69,7 +69,7 @@ const defaultPostState: profileAtomDetails = {
   working: "🔭 I’m currently working on",
   workingName: "",
   workingLink: "",
-  collaborate: "🤝 I’m looking for help with",
+  collaborate: "👯 I’m looking to collaborate on",
   collaborateName: "",
   collaborateLink: "",
   learning: "🌱 I’m currently learning",
