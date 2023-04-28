@@ -745,36 +745,38 @@ const ProfileMdPreview = () => {
         <>
           <h3 className="text-left">Support:</h3>
           <p>
-            <>
-              {coffey && (
-                <>
-                  <a href={`https://www.buymeacoffee.com/${coffey}`}>
-                    <img
-                      className="items-start"
-                      src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-                      height="50"
-                      width="210"
-                      alt={coffey}
-                    />
-                  </a>
-                </>
-              )}
-            </>
-            <>
-              {koFi && (
-                <>
-                  <a href={`https://ko-fi.com/${koFi}`}>
-                    <img
-                      className="items-start"
-                      src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
-                      height="50"
-                      width="210"
-                      alt={coffey}
-                    />
-                  </a>
-                </>
-              )}
-            </>
+            <div className="flex justify-start gap-2">
+              <>
+                {coffey && (
+                  <>
+                    <a href={`https://www.buymeacoffee.com/${coffey}`}>
+                      <img
+                        className="items-start"
+                        src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                        height="50"
+                        width="210"
+                        alt={coffey}
+                      />
+                    </a>
+                  </>
+                )}
+              </>
+              <>
+                {koFi && (
+                  <>
+                    <a href={`https://ko-fi.com/${koFi}`}>
+                      <img
+                        className="items-start"
+                        src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
+                        height="50"
+                        width="210"
+                        alt={coffey}
+                      />
+                    </a>
+                  </>
+                )}
+              </>
+            </div>
           </p>
         </>
       );

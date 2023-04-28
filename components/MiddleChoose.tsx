@@ -4,6 +4,8 @@ import { firstLine, secondLine } from "@/lib/choose";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+
 import Loader from "./Loader";
 
 type Props = {};
@@ -52,7 +54,6 @@ function MiddleChoose({}: Props) {
                         <h4 className="text-2xl text-indigo-700 font-semibold pb-8 text-center">
                           Github Profile Readme.Md Generator
                         </h4>
-
                         <div className="flex justify-center items-center">
                           <img
                             src={firstImageArr!}
@@ -97,7 +98,9 @@ function MiddleChoose({}: Props) {
                           You can Github Profile Readme.Md Generator
                         </p>
                         <button
-                          onClick={() => router.push("/repo")}
+                          onClick={() =>
+                            toast.info("This feature will be coming soon")
+                          }
                           className="mt-5 w-full text-indigo-700 focus:outline-none transition duration-150 ease-in-out rounded bg-white hover:bg-gray-100 px-8 py-3 text-base font-semibold3"
                         >
                           Choose
