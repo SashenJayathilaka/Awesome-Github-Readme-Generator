@@ -215,7 +215,7 @@ const MdPreview = () => {
       return (
         <>
           {languageLabel.map((language, index) => (
-            <img key={index} src={language} alt="name" className="w-10 h-10" />
+            <img key={index} src={language.image} alt={language.label} className="w-10 h-10" />
           ))}
         </>
       );

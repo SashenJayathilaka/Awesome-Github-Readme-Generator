@@ -464,10 +464,10 @@ const MdContent = () => {
           return (
             <>
               <br />
-              {languageLabel.map((language, index) => (
+              {languageLabel.map((language: any, index) => (
                 <div key={index}>
                   {`<td>
-                    <a href="#"><img src=${language} alt="name" width="30" /></a>
+                    <a href="#"><img src=${language.image} alt="${language.label}" width="30" /></a>
                     </td>`}
                   <br />
                 </div>
@@ -479,9 +479,9 @@ const MdContent = () => {
           return (
             <>
               <br />
-              {languageLabel.map((language, index) => (
+              {languageLabel.map((language: any, index) => (
                 <div key={index}>
-                  {`<a href="#"><img src=${language} alt="name" width="30" /></a>`}
+                  {`<a href="#"><img src=${language.image} alt="${language.label}" width="30" /></a>`}
                   <br />
                 </div>
               ))}
@@ -493,9 +493,9 @@ const MdContent = () => {
         return (
           <>
             <br />
-            {languageLabel.map((language, index) => (
+            {languageLabel.map((language: any, index) => (
               <div key={index}>
-                {`<a href="#"><img src=${language} alt="name" width="30" /></a>`}
+                {`<a href="#"><img src=${language.image} alt="${language.label}" width="30" /></a>`}
                 <br />
               </div>
             ))}
