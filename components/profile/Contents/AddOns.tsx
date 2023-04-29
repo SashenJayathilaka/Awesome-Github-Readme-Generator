@@ -4,6 +4,7 @@ import { profileAtomDetail } from "@/atom/profileDetailsAtom";
 import Heading from "@/components/Heading";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
+import { useTheme } from "next-themes";
 import { AiFillFileAdd } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -11,6 +12,7 @@ import { useRecoilState } from "recoil";
 type Props = {};
 
 function AddOns({}: Props) {
+  const { resolvedTheme } = useTheme();
   const [addOnes, setAddOnes] = useRecoilState(profileAtomDetail);
 
   const onClick = (value: string | any) => {
@@ -39,7 +41,7 @@ function AddOns({}: Props) {
           <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
             <Checkbox
               {...boxLabel}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               onClick={() => onClick("visitors")}
               checked={addOnes.visitors}
@@ -56,7 +58,7 @@ function AddOns({}: Props) {
           <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
             <Checkbox
               {...boxLabel}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               onClick={() => onClick("trophy")}
               checked={addOnes.trophy}
@@ -71,7 +73,7 @@ function AddOns({}: Props) {
           <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
             <Checkbox
               {...boxLabel}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               onClick={() => onClick("stats")}
               checked={addOnes.stats}
@@ -90,7 +92,7 @@ function AddOns({}: Props) {
           <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
             <Checkbox
               {...boxLabel}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               onClick={() => onClick("skillsCard")}
               checked={addOnes.skillsCard}
@@ -105,7 +107,7 @@ function AddOns({}: Props) {
           <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
             <Checkbox
               {...boxLabel}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               onClick={() => onClick("streak")}
               checked={addOnes.streak}
