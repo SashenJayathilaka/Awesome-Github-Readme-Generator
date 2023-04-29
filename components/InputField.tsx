@@ -2,6 +2,7 @@
 
 import { outlinedInputClasses } from "@mui/material/OutlinedInput";
 import TextField from "@mui/material/TextField";
+import { useTheme } from "next-themes";
 
 type Props = {
   label: string;
@@ -20,6 +21,8 @@ function InputField({
   value,
   defaultValue,
 }: Props) {
+  const { resolvedTheme } = useTheme();
+
   return (
     <div className="w-full space-y-2">
       <TextField
@@ -34,15 +37,18 @@ function InputField({
         sx={{
           [`& .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]:
             {
-              borderColor: "#0000cd",
+              borderColor: resolvedTheme === "dark" ? "#0000cd" : "#000",
             },
           [`&:hover .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]:
             {
               borderColor: "#3FD2C7",
             },
-          input: { color: "#fff", fontSize: "18px" },
+          input: {
+            color: resolvedTheme === "dark" ? "#ffffff" : "#000",
+            fontSize: "18px",
+          },
           label: {
-            color: "#ffffff",
+            color: resolvedTheme === "dark" ? "#ffffff" : "#000",
             fontSize: "15px",
           },
         }}

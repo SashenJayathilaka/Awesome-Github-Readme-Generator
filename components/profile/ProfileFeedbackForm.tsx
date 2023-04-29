@@ -28,7 +28,7 @@ function ProfileFeedbackForm({}: Props) {
           <div>
             <a
               href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
-              className="flex justify-center px-4 py-4 bg-gray-800 hover:bg-gray-600 border border-gray-500 items-center text-center font-medium rounded-lg gap-4 cursor-pointer"
+              className="flex justify-center px-4 py-4 bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-600 border border-gray-500 items-center text-center font-medium rounded-lg gap-4 cursor-pointer"
             >
               <AiFillGithub size={25} />
               {`Please Don't Forget to Star This Repository`}

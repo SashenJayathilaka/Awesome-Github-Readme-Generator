@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
     body {
-        @apply bg-gradient-to-l from-[#191a47] via-[#060a33] to-[#04082b] text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-[#43C6DB];
+        @apply !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-[#43C6DB];
     }
 }
 
+body {
+    @apply bg-gray-300 text-black dark:bg-gradient-to-l from-[#191a47] via-[#060a33] to-[#04082b] dark:text-white
+}

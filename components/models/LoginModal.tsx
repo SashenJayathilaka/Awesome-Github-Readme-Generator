@@ -39,7 +39,7 @@ function LoginModal({}: Props) {
       >
         <Box
           sx={style}
-          className="bg-gradient-to-l from-[#191a47] via-[#060a33] to-[#04082b] rounded-xl"
+          className="bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 dark:bg-gradient-to-l dark:from-[#191a47] dark:via-[#060a33] dark:to-[#04082b] rounded-xl"
         >
           <div className="flex justify-center items-center">
             <div className="flex flex-col justify-between items-center">

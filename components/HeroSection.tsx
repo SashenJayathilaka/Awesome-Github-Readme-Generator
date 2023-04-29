@@ -6,9 +6,9 @@ type Props = {
 
 function HeroSection({ setIsShow }: Props) {
   return (
-    <div className="py-12 bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] overflow-y-hidden z-0">
+    <div className="py-12 bg-gradient-to-r from-slate-300 via-slate-100 to-[#06375f] dark:bg-gradient-to-r dark:from-[#191a47] dark:via-[#0d0d37] dark:to-[#06375f] overflow-y-hidden z-0">
       <div className="w-full px-6">
-        <div className="mt-8 rounded-lg bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
+        <div className="mt-8 rounded-lg bg-gradient-to-l from-slate-300 via-slate-100 to-[#06375f] dark:bg-gradient-to-l dark:from-[#191a47] dark:via-[#0d0d37] dark:to-[#06375f] container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           {/*   <img
             className="mr-2 lg:mr-12 mt-2 lg:mt-12 absolute right-0 top-0"
             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg2.svg"
@@ -20,18 +20,18 @@ function HeroSection({ setIsShow }: Props) {
             alt="bg"
           /> */}
           <div className="w-11/12 sm:w-2/3 mb-5 sm:mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-bold leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-950 dark:text-white font-bold leading-tight">
               Github Readme File Generator
             </h1>
           </div>
           <div className="flex justify-center items-center mb-8 sm:mb-8">
             <button
-              className="hover:text-white hover:bg-transparent lg:text-xl hover:border-white border bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700	focus:ring-white rounded text-indigo-700 px-4 sm:px-8 py-1 sm:py-3 text-sm"
+              className="dark:hover:text-white dark:hover:bg-transparent lg:text-xl bg-gray-800 text-white hover:bg-transparent hover:text-black hover:border hover:border-gray-700 dark:hover:border-white border dark:bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700	focus:ring-white rounded dark:text-indigo-700 px-4 sm:px-8 py-1 sm:py-3 text-sm"
               onClick={() => setIsShow(false)}
             >
               Get Started
             </button>
-            <button className="hover:bg-white hover:text-indigo-600 lg:text-xl hover:border-indigo-600 ml-3 sm:ml-6 bg-transparent transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-sm">
+            <button className="hover:text-black hover:border hover:border-gray-700 border border-gray-600 dark:hover:bg-white dark:hover:text-indigo-600 lg:text-xl dark:hover:border-indigo-600 ml-3 sm:ml-6 bg-transparent transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded dark:border dark:border-white dark:text-white px-4 sm:px-8 py-1 sm:py-3 text-sm">
               Learn More
             </button>
           </div>
