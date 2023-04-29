@@ -27,7 +27,7 @@ function SocialInput({
   secondIcon: SecondIcon,
 }: Props) {
   return (
-    <div className="flex justify-start gap-6 py-2">
+    <div className="flex justify-start gap-6 py-2 w-full">
       <div className="flex justify-center gap-2 items-center">
         <Icon size={30} />
         <InputField
