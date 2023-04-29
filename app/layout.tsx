@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import RecoilRoot from "@/provider/RecoilRoot";
 import SessionProvider from "@/provider/SessionProvider";
+import ThemeProvider from "@/provider/ThemeProvider";
 import ToastContainerBar from "@/provider/ToastContainerBar";
 import { getServerSession } from "next-auth";
 import "../styles/globals.css";
@@ -12,7 +13,8 @@ import "../styles/globals.css";
 export const metadata = {
   title: "Readme Generator",
   description: "Github Readme File Generator",
-  icons: "https://dl.dropboxusercontent.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp",
+  icons:
+    "https://dl.dropboxusercontent.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp",
 };
 
 export default async function RootLayout({
@@ -26,15 +28,17 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <SessionProvider session={session}>
-          <RecoilRoot>
-            <ClientOnly>
-              <Navbar />
-              <ToastContainerBar />
-              <Bot />
-              {children}
-              <Footer />
-            </ClientOnly>
-          </RecoilRoot>
+          <ThemeProvider>
+            <RecoilRoot>
+              <ClientOnly>
+                <ToastContainerBar />
+                <Navbar />
+                <Bot />
+                {children}
+                <Footer />
+              </ClientOnly>
+            </RecoilRoot>
+          </ThemeProvider>
         </SessionProvider>
       </body>
     </html>

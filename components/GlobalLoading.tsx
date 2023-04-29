@@ -2,12 +2,15 @@
 
 import { Box, LinearProgress, Paper, Toolbar } from "@mui/material";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 type Props = {
   isLoading: boolean;
 };
 
 function GlobalLoading({ isLoading }: Props) {
+  const { resolvedTheme } = useTheme();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,7 +26,7 @@ function GlobalLoading({ isLoading }: Props) {
           width: "100vw",
           height: "100vh",
           zIndex: 999,
-          background: "#060a33",
+          background: resolvedTheme === "dark" ? "#060a33" : "#F5F5F5",
         }}
       >
         <br />
@@ -44,7 +47,7 @@ function GlobalLoading({ isLoading }: Props) {
               className="w-[300px] items-center"
             />
           </div>
-          <p className="font-bold text-4xl text-white animate-pulse">
+          <p className="font-bold text-4xl text-gray-900 dark:text-white animate-pulse">
             Github Readme File Generator
           </p>
         </Box>

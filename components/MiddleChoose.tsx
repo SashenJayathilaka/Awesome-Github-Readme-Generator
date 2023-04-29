@@ -28,7 +28,7 @@ function MiddleChoose({}: Props) {
         <section className="px-6 xl:px-0">
           <div className="mt-20 mx-auto container">
             <div className="flex flex-col lg:items-center justify-center w-full">
-              <h1 className="font-semibold text-gray-300 text-3xl md:text-4xl">
+              <h1 className="font-semibold text-gray-700 dark:text-gray-300 text-3xl md:text-4xl">
                 Chose Github Readme Template
               </h1>
               <p className="mt-2.5 lg:w-1/2 lg:text-center text-2xl text-gray-500">
@@ -109,11 +109,6 @@ function MiddleChoose({}: Props) {
                     </motion.div>
                   </div>
                 </div>
-                <style
-                  dangerouslySetInnerHTML={{
-                    __html: "",
-                  }}
-                />
               </div>
             </div>
           </div>
@@ -121,15 +116,6 @@ function MiddleChoose({}: Props) {
       ) : (
         <Loader />
       )}
-
-      <style>
-        {` 
-            .checkbox:checked {
-                right: 0;
-                background-color: #4338ca;
-            }
-            `}
-      </style>
     </div>
   );
 }

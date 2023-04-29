@@ -6,9 +6,9 @@ type Props = {};
 
 function HowItWorks({}: Props) {
   return (
-    <div className="overflow-y-hidden bg-gradient-to-r from-[#191a47] via-[#0d0d37] to-[#06375f] shadow-2xl">
+    <div className="overflow-y-hidden bg-gradient-to-r from-slate-300 via-slate-100 to-[#06375f] dark:bg-gradient-to-r dark:from-[#191a47] dark:via-[#0d0d37] dark:to-[#06375f] shadow-2xl">
       <div className="mx-auto container f-f-p px-4 xl:px-0 py-24">
-        <h1 className="focus:outline-none text-center text-3xl lg:text-4xl font-extrabold lg:leading-9 tracking-wider text-gray-100">
+        <h1 className="focus:outline-none text-center text-3xl lg:text-4xl font-extrabold lg:leading-9 tracking-wider text-gray-900 dark:text-gray-100">
           How it works?
         </h1>
         <div className="md:mt-24 f-f-p">
@@ -57,7 +57,7 @@ function HowItWorks({}: Props) {
                 <h1 className="focus:outline-none text-xl font-bold leading-5">
                   Chose a Template
                 </h1>
-                <h2 className="focus:outline-none text-gray-500 mt-3 pl-3 text-center md:text-right text-base leading-6 tracking-wide">
+                <h2 className="focus:outline-none text-gray-700 dark:text-gray-500 mt-3 pl-3 text-center md:text-right text-base leading-6 tracking-wide">
                   Chose Github Readme Template you want (available Github
                   Profile Readme.Md Generator or Github Repository Readme.Md
                   Generator)
@@ -112,7 +112,7 @@ function HowItWorks({}: Props) {
                 <h1 className="focus:outline-none text-xl font-bold leading-5">
                   Click Get Started
                 </h1>
-                <h2 className="focus:outline-none text-gray-500 mt-3 text-base leading-6 tracking-wide">
+                <h2 className="focus:outline-none text-gray-700 dark:text-gray-500 mt-3 text-base leading-6 tracking-wide">
                   Click the Get Started button to start the process (if you want
                   can SignUp)
                 </h2>
@@ -160,7 +160,7 @@ function HowItWorks({}: Props) {
                 <h1 className="focus:outline-none text-xl font-bold leading-5">
                   Fill in the only field you want
                 </h1>
-                <h2 className="focus:outline-none text-gray-500 mt-3 text-base leading-6 tracking-wide">
+                <h2 className="focus:outline-none text-gray-700 dark:text-gray-500 mt-3 text-base leading-6 tracking-wide">
                   Fill in the desired fields and press the generate button to
                   create your Readme.Md file
                 </h2>
@@ -181,7 +181,7 @@ function HowItWorks({}: Props) {
               <h1 className="text-xl text-center tracking-wide leading-5 font-bold">
                 Click Get Started
               </h1>
-              <h2 className="text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
+              <h2 className="text-gray-700 dark:text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
                 Click the Get Started button to start the process (if you want
                 can SignUp)
               </h2>
@@ -199,7 +199,7 @@ function HowItWorks({}: Props) {
               <h1 className="text-xl tracking-wide text-center leading-5 font-bold">
                 Chose a template
               </h1>
-              <h2 className="text-gray-500 mt-3 pl-3 text-center text-base leading-6 tracking-wide">
+              <h2 className="text-gray-700 dark:text-gray-500 mt-3 pl-3 text-center text-base leading-6 tracking-wide">
                 Chose Github Readme Template you want (available Github Profile
                 Readme.Md Generator or Github Repository Readme.Md Generator)
               </h2>
@@ -217,7 +217,7 @@ function HowItWorks({}: Props) {
               <h1 className="text-xl text-center tracking-wide leading-5 font-bold">
                 Fill in the only field you want
               </h1>
-              <h2 className="text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
+              <h2 className="text-gray-700 dark:text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
                 Fill in the desired fields and press the generate button to
                 create your Readme.Md file
               </h2>
