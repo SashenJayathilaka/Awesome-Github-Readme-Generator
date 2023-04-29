@@ -72,6 +72,7 @@ function ProfileContent({}: Props) {
   };
 
   useEffect(() => {
+    updateCurrentValue();
     updateAtom();
   }, [isShow]);
 
