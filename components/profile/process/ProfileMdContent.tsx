@@ -387,6 +387,7 @@ const ProfileMdContent = () => {
   const AddOnFirst = () => {
     const visitors = profileDetails.visitors;
     const trophy = profileDetails.trophy;
+    const trophyTheme = profileDetails.trophyTheme;
     const githubUsername = profileDetails.github;
 
     if (githubUsername) {
@@ -396,7 +397,7 @@ const ProfileMdContent = () => {
             {`<p align="left"> <img src="https://komarev.com/ghpvc/?username=${githubUsername}&label=Profile%20views&color=0e75b6&style=flat" alt="${githubUsername}" /> </p>`}
             <br />
             <br />
-            {`<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=${githubUsername}" alt="${githubUsername}" /></a> </p>`}
+            {`<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=${githubUsername}&theme=${trophyTheme}" alt="${githubUsername}" /></a> </p>`}
             <br />
             <br />
           </>
@@ -409,9 +410,40 @@ const ProfileMdContent = () => {
 
   const AddOn = () => {
     const stats = profileDetails.stats;
+    const startTheme = profileDetails.starsTheme;
     const skillsCard = profileDetails.skillsCard;
     const streak = profileDetails.streak;
+    const streakCardTheme = profileDetails.streakTheme;
     const githubUsername = profileDetails.github;
+    const skills = profileDetails.skillCardLayout;
+    const gitSkillCard = profileDetails.skillCardTheme;
+
+    const SkillCardFilter = () => {
+      if (skills === "showMore") {
+        return (
+          <>
+            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&langs_count=8&theme=${gitSkillCard}" alt=${githubUsername}
+          />`}
+          </>
+        );
+      } else if (skills === "compact") {
+        return (
+          <>
+            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&layout=compact&theme=${gitSkillCard}" alt=${githubUsername}
+              />`}
+          </>
+        );
+      } else if (skills === "hide") {
+        return (
+          <>
+            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&hide_progress=true&theme=${gitSkillCard}" alt=${githubUsername}
+            />`}
+          </>
+        );
+      }
+
+      return null;
+    };
 
     if (githubUsername) {
       if (stats || skillsCard || streak) {
@@ -422,7 +454,7 @@ const ProfileMdContent = () => {
             <>
               {skillsCard && (
                 <>
-                  {`<p><img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs?username=${githubUsername}&show_icons=true&locale=en&layout=compact" alt="${githubUsername}" /></p>`}
+                  <SkillCardFilter />
                   <br />
                   <br />
                 </>
@@ -431,7 +463,7 @@ const ProfileMdContent = () => {
             <>
               {stats && (
                 <>
-                  {`<p>&nbsp;<img align="center" height="180em" src="https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&locale=en" alt="${githubUsername}" /></p>`}
+                  {`<p>&nbsp;<img align="center" height="180em" src="https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&locale=en&theme=${startTheme}" alt="${githubUsername}" /></p>`}
                   <br />
                   <br />
                 </>
@@ -440,7 +472,7 @@ const ProfileMdContent = () => {
             <>
               {streak && (
                 <>
-                  {`<p><img align="center" height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&" alt="${githubUsername}" /></p>`}
+                  {`<p><img align="center" height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=${streakCardTheme}" alt="${githubUsername}" /></p>`}
                   <br />
                   <br />
                 </>

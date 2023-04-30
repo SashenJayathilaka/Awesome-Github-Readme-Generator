@@ -55,9 +55,14 @@ export type profileAtomDetails = {
   RSS: string;
   visitors: boolean;
   trophy: boolean;
+  trophyTheme: string;
   stats: boolean;
+  starsTheme: string;
   skillsCard: boolean;
+  skillCardTheme: string;
+  skillCardLayout: string;
   streak: boolean;
+  streakTheme: string;
   buymeacoffee: string;
   koFi: string;
 };
@@ -121,6 +126,11 @@ const defaultPostState: profileAtomDetails = {
   streak: false,
   buymeacoffee: "",
   koFi: "",
+  trophyTheme: "",
+  starsTheme: "",
+  skillCardTheme: "",
+  skillCardLayout: "compact",
+  streakTheme: "",
 };
 
 export const profileAtomDetail = atom<profileAtomDetails>({

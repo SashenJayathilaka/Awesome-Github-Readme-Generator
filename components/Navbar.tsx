@@ -1,17 +1,14 @@
 "use client";
 
 import { authModelState } from "@/atom/authModalAtom";
-import { firestore } from "@/clientApp";
 import { FormGroup } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { Session } from "next-auth";
 import { signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   AiFillGithub,
   AiOutlineCloseCircle,
@@ -31,7 +28,6 @@ function Navbar({}: Props) {
   const { data: session } = useSession();
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [show, setshow] = useState(false);
-  const [userCreates, setUserCreate] = useState<boolean>(false);
   const [modelState, setModelState] = useRecoilState(authModelState);
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -82,43 +78,12 @@ function Navbar({}: Props) {
     },
   }));
 
-  const getUserData = async () => {
-    if (session) {
-      try {
-        const docRef = doc(firestore, "users", session?.user?.uid);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          console.log("User Already Created");
-          setUserCreate(false);
-        } else {
-          setUserCreate(true);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    } else return;
-  };
-
-  const userCreate = async (session: Session) => {
-    const userDocRef = doc(firestore, "readmeDoc", session?.user?.uid);
-    await setDoc(userDocRef, JSON.parse(JSON.stringify(session)));
-  };
-
   const handleOpen = () => {
     setModelState((prev) => ({
       ...prev,
       open: true,
     }));
   };
-
-  useEffect(() => {
-    getUserData();
-
-    if (userCreates) {
-      userCreate(session!);
-    } else return;
-  }, [session, firestore, userCreates]);
 
   return (
     <>

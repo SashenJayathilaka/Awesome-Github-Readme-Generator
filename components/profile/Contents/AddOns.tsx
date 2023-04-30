@@ -9,6 +9,11 @@ import { AiFillFileAdd } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
+import ProfileTrophy from "./card/ProfileTrophy";
+import StatsCard from "./card/StatsCard";
+import StreakStatsCard from "./card/StreakStatsCard";
+import SkillCard from "./card/TopSkills";
+
 type Props = {};
 
 function AddOns({}: Props) {
@@ -54,71 +59,31 @@ function AddOns({}: Props) {
             />
           </div>
         </div>
-        <div className="inline-block py-4 md:flex justify-between gap-4">
-          <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
-            <Checkbox
-              {...boxLabel}
-              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
-              color="default"
-              onClick={() => onClick("trophy")}
-              checked={addOnes.trophy}
-            />
-            <p className="text-lg font-medium">Display Github Trophy</p>
-            <img
-              src="https://github-profile-trophy.vercel.app/?username=sashenjayathilaka"
-              alt="visitors"
-              className="hidden md:flex w-[400px]"
-            />
-          </div>
-          <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
-            <Checkbox
-              {...boxLabel}
-              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
-              color="default"
-              onClick={() => onClick("stats")}
-              checked={addOnes.stats}
-            />
-            <p className="text-lg font-medium">
-              Display Github Profile Stats Card
-            </p>
-            <img
-              src="https://github-readme-stats.vercel.app/api?username=sashenjayathilaka&show_icons=true&locale=en"
-              alt="visitors"
-              className="hidden md:flex w-[300px]"
-            />
-          </div>
+        <div className="flex justify-between gap-12 py-4">
+          <ProfileTrophy
+            addOnes={addOnes}
+            setAddOnes={setAddOnes}
+            resolvedTheme={resolvedTheme}
+          />
         </div>
-        <div className="inline-block py-4 md:flex justify-start gap-4">
-          <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
-            <Checkbox
-              {...boxLabel}
-              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
-              color="default"
-              onClick={() => onClick("skillsCard")}
-              checked={addOnes.skillsCard}
-            />
-            <p className="text-lg font-medium">Display Top Skills</p>
-            <img
-              src="https://github-readme-stats.vercel.app/api/top-langs?username=sashenjayathilaka&show_icons=true&locale=en&layout=compact"
-              alt="visitors"
-              className="hidden md:flex h-[130px]"
-            />
-          </div>
-          <div className="flex justify-center border border-blue-500 items-center px-4 py-4 gap-4 rounded-md">
-            <Checkbox
-              {...boxLabel}
-              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
-              color="default"
-              onClick={() => onClick("streak")}
-              checked={addOnes.streak}
-            />
-            <p className="text-lg font-medium">Display Github Streak Stats</p>
-            <img
-              src="https://github-readme-streak-stats.herokuapp.com/?user=sashenjayathilaka&"
-              alt="visitors"
-              className="hidden md:flex w-[300px]"
-            />
-          </div>
+        <div className="inline-block md:flex justify-start gap-12 py-4">
+          <StatsCard
+            addOnes={addOnes}
+            setAddOnes={setAddOnes}
+            resolvedTheme={resolvedTheme}
+          />
+          <StreakStatsCard
+            addOnes={addOnes}
+            setAddOnes={setAddOnes}
+            resolvedTheme={resolvedTheme}
+          />
+        </div>
+        <div className="flex justify-start gap-12 py-4">
+          <SkillCard
+            addOnes={addOnes}
+            setAddOnes={setAddOnes}
+            resolvedTheme={resolvedTheme}
+          />
         </div>
       </div>
     </div>

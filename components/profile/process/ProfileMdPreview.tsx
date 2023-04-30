@@ -649,6 +649,7 @@ const ProfileMdPreview = () => {
   const AddOnFirst = () => {
     const visitors = profileDetails.visitors;
     const trophy = profileDetails.trophy;
+    const trophyTheme = profileDetails.trophyTheme;
     const githubUsername = profileDetails.github;
 
     if (githubUsername) {
@@ -662,14 +663,14 @@ const ProfileMdPreview = () => {
               />
             </p>
             <br />
-            <p className="text-left">
+            <div className="text-left">
               <a href="https://github.com/ryo-ma/github-profile-trophy">
                 <img
-                  src={`https://github-profile-trophy.vercel.app/?username=${githubUsername}`}
+                  src={`https://github-profile-trophy.vercel.app/?username=${githubUsername}&theme=${trophyTheme}`}
                   alt={githubUsername}
                 />
               </a>
-            </p>
+            </div>
           </>
         );
       }
@@ -680,9 +681,49 @@ const ProfileMdPreview = () => {
 
   const AddOn = () => {
     const stats = profileDetails.stats;
+    const startTheme = profileDetails.starsTheme;
     const skillsCard = profileDetails.skillsCard;
     const streak = profileDetails.streak;
+    const streakCardTheme = profileDetails.streakTheme;
     const githubUsername = profileDetails.github;
+    const skills = profileDetails.skillCardLayout;
+    const gitSkillCard = profileDetails.skillCardTheme;
+
+    const SkillCardFilter = () => {
+      if (skills === "showMore") {
+        return (
+          <>
+            <img
+              className="items-start"
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&langs_count=8&theme=${gitSkillCard}`}
+              alt={githubUsername}
+            />
+          </>
+        );
+      } else if (skills === "compact") {
+        return (
+          <>
+            <img
+              className="items-start"
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&layout=compact&theme=${gitSkillCard}`}
+              alt={githubUsername}
+            />
+          </>
+        );
+      } else if (skills === "hide") {
+        return (
+          <>
+            <img
+              className="items-start"
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&hide_progress=true&theme=${gitSkillCard}`}
+              alt={githubUsername}
+            />
+          </>
+        );
+      }
+
+      return null;
+    };
 
     if (githubUsername) {
       if (stats || skillsCard || streak) {
@@ -692,11 +733,7 @@ const ProfileMdPreview = () => {
               {skillsCard && (
                 <>
                   <p>
-                    <img
-                      className="items-start"
-                      src={`https://github-readme-stats.vercel.app/api/top-langs?username=${githubUsername}&show_icons=true&locale=en&layout=compact`}
-                      alt={githubUsername}
-                    />
+                    <SkillCardFilter />
                   </p>
                 </>
               )}
@@ -708,7 +745,7 @@ const ProfileMdPreview = () => {
                     &nbsp;
                     <img
                       className="items-center"
-                      src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&locale=en`}
+                      src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&locale=en&theme=${startTheme}`}
                       alt={githubUsername}
                     />
                   </p>
@@ -721,7 +758,7 @@ const ProfileMdPreview = () => {
                   <p>
                     <img
                       className="items-center"
-                      src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&`}
+                      src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=${streakCardTheme}`}
                       alt={githubUsername}
                     />
                   </p>

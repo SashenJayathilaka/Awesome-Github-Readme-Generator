@@ -136,9 +136,14 @@ export interface ProfileAtomDetails {
   RSS: string;
   visitors: boolean;
   trophy: boolean;
+  trophyTheme: string;
   stats: boolean;
+  starsTheme: string;
   skillsCard: boolean;
+  skillCardTheme: string;
+  skillCardLayout: string;
   streak: boolean;
+  streakTheme: string;
   buymeacoffee: string;
   koFi: string;
 }
