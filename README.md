@@ -6,7 +6,7 @@ Github Readme File Generator.
 </h1>
   
   <p>
-You can easily and quickly create a readme file for your github profile or git hub repository. (visit below) (Click the Get Started button to start the process, Chose Github Readme Template you want, Fill in the desired fields and press the generate button to create your Readme.Md file,)
+You can easily and quickly create a readme file for your github profile or git hub repository. (visit below) (Click the Get Started button to start the process, Chose Github Readme Template you want, Fill in the desired fields and press the generate button to create your Readme.Md file)
   </p>
   
   
