@@ -42,8 +42,6 @@ function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         ...prev,
         starsTheme: topSkills,
       }));
-    } else {
-      onUpdateState();
     }
   };
 
