@@ -44,7 +44,8 @@ function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
       }));
     } else {
       onUpdateState();
-    };
+    }
+  };
 
   useEffect(() => {
     updateStateValue();
