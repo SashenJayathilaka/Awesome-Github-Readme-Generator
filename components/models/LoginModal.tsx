@@ -4,7 +4,6 @@ import { authModelState } from "@/atom/authModalAtom";
 import { Box, Modal } from "@mui/material";
 import { signIn } from "next-auth/react";
 import { AiFillGithub } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
 import { useRecoilState } from "recoil";
 
 const style = {
@@ -45,14 +44,14 @@ function LoginModal({}: Props) {
             <div className="flex flex-col justify-between items-center">
               <p className="text-xl font-bold text-center">SignIn</p>
               <div className="flex flex-col justify-between gap-2 items-center my-8">
-                <button
+                {/*          <button
                   onClick={() => signIn("google")}
                   className="flex justify-center gap-2 items-center border border-gray-500 px-6 py-2 rounded-full"
                 >
                   <FcGoogle size={18} />
                   SignIn With Google
                 </button>
-                <p>Or</p>
+                <p>Or</p> */}
                 <button
                   onClick={() => signIn("github")}
                   className="flex justify-center gap-2 items-center border border-gray-500 px-6 py-2 rounded-full"

@@ -48,7 +48,7 @@ function Skills({}: Props) {
   return (
     <div>
       <div className="flex justify-start gap-6 py-4 mt-8">
-        <p className="text-2xl font-semibold">Skills</p>
+        <p className="text-2xl font-semibold dark:font-medium">Skills</p>
       </div>
       <Heading label="Programming Languages" icon={FaJava} />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-12 mb-8">
