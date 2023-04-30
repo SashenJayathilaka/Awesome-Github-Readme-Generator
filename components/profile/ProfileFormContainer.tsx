@@ -47,7 +47,7 @@ function ProfileFormContainer({ updateCurrentValue, updateAtom }: Props) {
         </button>
       </div>
       <div className="px-14 py-14 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 dark:bg-gradient-to-r dark:from-[#191a47] dark:via-[#0d0d37] dark:to-[#06375f] shadow-2xl rounded-md">
-        {/*         <Title />
+        <Title />
         <DividerLine />
         <Subtitle />
         <DividerLine />
@@ -64,8 +64,7 @@ function ProfileFormContainer({ updateCurrentValue, updateAtom }: Props) {
         <AddOns />
         <DividerLine />
         <Support />
-        <DividerLine /> */}
-        <AddOns />
+        <DividerLine />
       </div>
     </div>
   );
