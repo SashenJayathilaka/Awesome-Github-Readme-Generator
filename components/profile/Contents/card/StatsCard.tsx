@@ -43,12 +43,8 @@ function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         starsTheme: topSkills,
       }));
     } else {
-      setAddOnes((prev: ProfileAtomDetails) => ({
-        ...prev,
-        stats: true,
-      }));
-    }
-  };
+      onUpdateState();
+    };
 
   useEffect(() => {
     updateStateValue();
