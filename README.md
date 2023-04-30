@@ -69,8 +69,23 @@ You can easily and quickly create a readme file for your github profile or git h
 
 ### :camera: Screenshots
 
+- Github Readme File Generator GetStarted
 <div align="center"> 
-  <img src="./lib/bin/demo/ezgif-2-fc7c118718.gif" alt="screenshot" />
+  <img src="https://github.com/teamedwardforever/awesome-readme-template-1/blob/main/assets/ezgif-5-2a876de248.gif?raw=true" alt="screenshot" />
+</div>
+
+<br />
+
+- Fill in the desired fields
+<div align="center"> 
+  <img src="https://github.com/teamedwardforever/awesome-readme-template-1/blob/main/assets/ezgif-5-d3142c792b.gif?raw=true" alt="screenshot" />
+</div>
+
+<br />
+
+- Fill in the desired fields and press the generate button to create your Readme.Md file (& new release)
+<div align="center"> 
+  <img src="https://github.com/teamedwardforever/awesome-readme-template-1/blob/main/assets/ezgif-5-902eb787ef.gif?raw=true" alt="screenshot" />
 </div>
 
 <br />
