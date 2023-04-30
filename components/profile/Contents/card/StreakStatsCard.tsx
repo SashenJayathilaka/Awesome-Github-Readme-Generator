@@ -80,6 +80,16 @@ function StreakStatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
             option: (state) =>
               "bg-white text-black hover:bg-gray-900 hover:text-gray-100 cursor-pointer",
           }} */
+          theme={(theme) => ({
+            ...theme,
+            borderRadius: 0,
+            colors: {
+              ...theme.colors,
+              text: "orangered",
+              primary25: "hotpink",
+              primary: "black",
+            },
+          })}
           onChange={(e: any) => setStreakStats(e.value)}
         />
       </div>
