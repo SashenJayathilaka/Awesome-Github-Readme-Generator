@@ -43,10 +43,7 @@ function ProfileTrophy({ addOnes, setAddOnes, resolvedTheme }: Props) {
         trophyTheme: trophy,
       }));
     } else {
-      setAddOnes((prev: ProfileAtomDetails) => ({
-        ...prev,
-        trophy: true,
-      }));
+      onUpdateState();
     }
   };
 

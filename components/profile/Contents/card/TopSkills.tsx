@@ -90,10 +90,7 @@ function SkillCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         skillCardLayout: skills,
       }));
     } else {
-      setAddOnes((prev: ProfileAtomDetails) => ({
-        ...prev,
-        skillsCard: true,
-      }));
+      onUpdateState();
     }
   };
 

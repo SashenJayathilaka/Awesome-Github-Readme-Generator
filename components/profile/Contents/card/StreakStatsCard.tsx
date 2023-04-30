@@ -45,10 +45,7 @@ function StreakStatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         streakTheme: streakStats,
       }));
     } else {
-      setAddOnes((prev: ProfileAtomDetails) => ({
-        ...prev,
-        streak: true,
-      }));
+      onUpdateState();
     }
   };
 
