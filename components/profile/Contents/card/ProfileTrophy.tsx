@@ -42,8 +42,6 @@ function ProfileTrophy({ addOnes, setAddOnes, resolvedTheme }: Props) {
         ...prev,
         trophyTheme: trophy,
       }));
-    } else {
-      onUpdateState();
     }
   };
 

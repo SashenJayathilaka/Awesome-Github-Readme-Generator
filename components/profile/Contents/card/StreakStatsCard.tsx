@@ -44,8 +44,6 @@ function StreakStatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         ...prev,
         streakTheme: streakStats,
       }));
-    } else {
-      onUpdateState();
     }
   };
 

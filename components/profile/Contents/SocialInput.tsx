@@ -38,7 +38,7 @@ function SocialInput({
           value={value}
         />
       </div>
-      <div className="flex justify-center gap-2 items-center">
+      <div className="flex justify-center gap-2 items-center w-full">
         <SecondIcon size={30} />
         <InputField
           onChange={onChange}

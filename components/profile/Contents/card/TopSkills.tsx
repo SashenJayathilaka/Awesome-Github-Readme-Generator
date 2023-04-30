@@ -89,8 +89,6 @@ function SkillCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         skillCardTheme: gitSkillCard,
         skillCardLayout: skills,
       }));
-    } else {
-      onUpdateState();
     }
   };
 
