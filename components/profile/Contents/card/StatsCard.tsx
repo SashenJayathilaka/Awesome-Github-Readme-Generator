@@ -73,11 +73,11 @@ function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
           placeholder={topSkills}
           isSearchable
           menuPosition="fixed"
-          classNames={{
+          /* classNames={{
             control: (state) => "bg-[#fff] border-[#434654] cursor-pointer",
             option: (state) =>
               "bg-white text-black hover:bg-gray-900 hover:text-gray-100 cursor-pointer",
-          }}
+          }} */
           onChange={(e: any) => setTopSkills(e.value)}
         />
       </div>
