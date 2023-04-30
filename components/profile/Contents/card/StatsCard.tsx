@@ -5,7 +5,7 @@ import { supportedThemes } from "@/lib/themesStore";
 import { ProfileAtomDetails } from "@/type";
 import { Checkbox } from "@mui/material";
 import { useEffect, useState } from "react";
-import Select from "react-select";
+import Select, { StylesConfig } from "react-select";
 import { toast } from "react-toastify";
 
 type Props = {
@@ -16,6 +16,19 @@ type Props = {
 
 function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
   const [topSkills, setTopSkills] = useState<string | null>(addOnes.starsTheme);
+
+  const colorStyles: StylesConfig = {
+    option: (styles) => ({
+      ...styles,
+      color: "#000",
+      cursor: "pointer",
+    }),
+    singleValue: (styles) => ({
+      ...styles,
+      color: "#000",
+      cursor: "pointer",
+    }),
+  };
 
   const onUpdateState = () => {
     if (addOnes.github) {
@@ -78,16 +91,7 @@ function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
             option: (state) =>
               "bg-white text-black hover:bg-gray-900 hover:text-gray-100 cursor-pointer",
           }} */
-          theme={(theme) => ({
-            ...theme,
-            borderRadius: 0,
-            colors: {
-              ...theme.colors,
-              text: "orangered",
-              primary25: "hotpink",
-              primary: "black",
-            },
-          })}
+          styles={colorStyles}
           onChange={(e: any) => setTopSkills(e.value)}
         />
       </div>
