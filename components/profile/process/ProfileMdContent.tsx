@@ -449,7 +449,7 @@ const ProfileMdContent = () => {
       if (stats || skillsCard || streak) {
         return (
           <>
-            {`<h3 align="left">Support:</h3>`}
+            {`<h3 align="left">Statistics</h3>`}
             <br />
             <>
               {skillsCard && (
@@ -493,7 +493,7 @@ const ProfileMdContent = () => {
     if (coffey || koFi) {
       return (
         <>
-          {`<h3 align="left">## 📊 Statistics</h3>`}
+          {`<h3 align="left">Support:</h3>`}
           <br />
           {`<p>`}
           <>
