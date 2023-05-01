@@ -215,7 +215,12 @@ const MdPreview = () => {
       return (
         <>
           {languageLabel.map((language: any, index) => (
-            <img key={index} src={language.image} alt={language.label} className="w-10 h-10" />
+            <img
+              key={index}
+              src={language.image}
+              alt={language.label}
+              className="w-10 h-10"
+            />
           ))}
         </>
       );
@@ -225,12 +230,8 @@ const MdPreview = () => {
   };
 
   const PDemoProjectAssets = () => {
-    var projectImageLink = images.demoImage;
+    const projectImageLink = images.demoImage;
     const link = displayBadges.websiteLink;
-
-    projectImageLink = projectImageLink.filter(function (element) {
-      return element !== "";
-    });
 
     if (projectImageLink.length > 0) {
       return (
@@ -239,11 +240,15 @@ const MdPreview = () => {
           <br />
           <h3>📷 Screenshots</h3>
           <br />
-          {projectImageLink.map((image, index) => (
+          {projectImageLink.map((image: any, index) => (
             <>
               <div key={index} className="flex justify-center items-center">
                 <a href={link}>
-                  <img src={image} alt="image" className="w-[800px]" />
+                  <img
+                    src={image.demoImageLink}
+                    alt="image"
+                    className="w-[800px]"
+                  />
                 </a>
               </div>
               <br />
@@ -467,9 +472,7 @@ const MdPreview = () => {
           <br />
           <div className="grid grid-cols-1">
             {environmentVariables.map((envData: any, index) => (
-              <div key={index} className="bg-gray-50 px-2 py-2 rounded-md">
-                `{`${envData.envVariables}`}`
-              </div>
+              <div key={index}>`{`${envData.envVariables}`}`</div>
             ))}
           </div>
         </>

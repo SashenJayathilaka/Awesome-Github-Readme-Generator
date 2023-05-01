@@ -4,9 +4,9 @@ import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { useEffect, useState } from "react";
 import { GiDart } from "react-icons/gi";
-import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
 
+import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
 
@@ -72,7 +72,7 @@ function Features({}: Props) {
     <div className="py-8">
       <Heading icon={GiDart} label="Features" />
       <div className="flex justify-between py-4">
-        <div className="flex justify-start gap-2 items-center">
+        <div className="flex justify-start gap-2">
           <InputField
             label="Features"
             type="text"
@@ -80,13 +80,7 @@ function Features({}: Props) {
             onChange={onChangeFeaturesValue}
             value={featuresValue}
           />
-          <button
-            onClick={(e: any) => onAddValue(e)}
-            className="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
-          >
-            <span>Add</span>
-            <IoIosAddCircle size={15} />
-          </button>
+          <FloatingActionButton onAddValue={onAddValue} />
         </div>
         <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
           {gitHubTechStack.features.map((feature: any, index) => (

@@ -1,73 +1,73 @@
 "use client";
 
 import { gitImages } from "@/atom/images";
-import { publicStateUpdate } from "@/atom/publicState";
-import { useEffect } from "react";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { HiPhotograph } from "react-icons/hi";
 import { useRecoilState } from "recoil";
 
+import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
 
 type Props = {};
 
 function AboutProject({}: Props) {
+  const [demoImageLink, setDemoImageLink] = useState("");
+  const [listOfDemoImages, setListOfDemoImage] = useState([]);
   const [images, setImages] = useRecoilState(gitImages);
-  const [updateState, setUpdateState] = useRecoilState(publicStateUpdate);
 
-  const onChangeSize = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUpdateState((prev) => ({
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDemoImageLink(event.target.value);
+  };
+
+  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const currentStateValue = images.demoImage;
+
+    if (demoImageLink) {
+      const element = { demoImageLink };
+      setListOfDemoImage((ls) => [...ls, ...currentStateValue, element] as any);
+      setDemoImageLink("");
+    }
+  };
+
+  const updateCurrentState = (value: string[]) => {
+    if (!value) return;
+
+    const unique = value.filter(onlyUnique).flat();
+
+    setImages((prev) => ({
       ...prev,
-      [event.target.name]: event.target.value,
+      demoImage: unique,
     }));
   };
 
-  const updateOriginalState = (values: any) => {
-    const dataArray: string[] = [
-      "screenShortOne",
-      "screenShortTwo",
-      "screenShortThree",
-      "screenShortFour",
-      "screenShortFive",
-      "screenShortSix",
-    ];
-    const updatedArray: string[] = [];
-    var unique: string[];
-    const currentValue = images.demoImage;
+  const removeElement = (label: any) => {
+    if (images.demoImage.length > 0) {
+      const removeCurrentState = listOfDemoImages.filter(
+        (element: any) => element.demoImageLink !== label.demoImageLink
+      );
 
-    function onlyUnique(
-      value: string | number,
-      index: string | number,
-      array: any
-    ) {
-      return array.indexOf(value) === index;
-    }
+      setListOfDemoImage(removeCurrentState);
 
-    for (let index = 0; index < dataArray.length; index++) {
-      const element = values[dataArray[index]];
-      updatedArray.push(...currentValue, element);
-    }
-
-    if (updatedArray.length > 0) {
-      unique = updatedArray.filter(onlyUnique).flat();
-
-      unique = unique.filter(function (element) {
-        return element !== undefined;
-      });
+      const removeItem = images.demoImage.filter(
+        (element: any) => element.demoImageLink !== label.demoImageLink
+      );
 
       setImages((prev) => ({
         ...prev,
-        demoImage: unique.flat(),
+        demoImage: removeItem,
       }));
     }
   };
 
   useEffect(() => {
-    if (updateState) {
-      updateOriginalState(updateState);
-    } else return;
-  }, [updateState]);
+    updateCurrentState(listOfDemoImages);
+  }, [listOfDemoImages]);
 
   return (
     <div className="mb-15 py-8">
@@ -76,43 +76,37 @@ function AboutProject({}: Props) {
         <p className="text-2xl">About the Project</p>
       </div>
       <Heading label="Screenshots" icon={HiPhotograph} />
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6">
+      <div className="flex justify-start gap-2">
         <InputField
-          onChange={onChangeSize}
-          label="Your Screenshot URL here"
+          label="Demo Images Link"
           type="text"
-          name="screenShortOne"
+          name="envVariables"
+          onChange={onChange}
+          value={demoImageLink}
         />
-        <InputField
-          onChange={onChangeSize}
-          label="Your Screenshot URL here"
-          type="text"
-          name="screenShortTwo"
-        />
-        <InputField
-          onChange={onChangeSize}
-          label="Your Screenshot URL here"
-          type="text"
-          name="screenShortThree"
-        />
-        <InputField
-          onChange={onChangeSize}
-          label="Your Screenshot URL here"
-          type="text"
-          name="screenShortFour"
-        />
-        <InputField
-          onChange={onChangeSize}
-          label="Your Screenshot URL here"
-          type="text"
-          name="screenShortFive"
-        />
-        <InputField
-          onChange={onChangeSize}
-          label="Your Screenshot URL here"
-          type="text"
-          name="screenShortSix"
-        />
+        <FloatingActionButton onAddValue={onAddValue} />
+      </div>
+      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-12">
+        {images.demoImage.map((img: any, index) => (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+            key={index}
+            onClick={() => removeElement(img)}
+            className="cursor-pointer"
+          >
+            <img
+              src={img.demoImageLink}
+              alt="demoImg"
+              className="rounded-md w-full"
+            />
+          </motion.div>
+        ))}
       </div>
     </div>
   );

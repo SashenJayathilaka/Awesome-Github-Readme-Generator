@@ -1,14 +1,14 @@
 "use client";
 
 import { gitTechStack } from "@/atom/techStack";
+import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { useEffect, useState } from "react";
 import { FaKey } from "react-icons/fa";
-import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
 
+import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
-import { onlyUnique } from "@/hook/onlyUniqueOne";
 
 type Props = {};
 
@@ -70,7 +70,7 @@ function EnvironmentVariables({}: Props) {
     <div className="py-8">
       <Heading icon={FaKey} label="Environment Variables" />
       <div className="flex justify-between py-4">
-        <div className="flex justify-start gap-2 items-center">
+        <div className="flex justify-start gap-2">
           <InputField
             label="Environment Variables"
             type="text"
@@ -78,13 +78,7 @@ function EnvironmentVariables({}: Props) {
             onChange={onChangeEnvVariables}
             value={envVariables}
           />
-          <button
-            onClick={(e: any) => onAddValue(e)}
-            className="bg-gray-800 hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
-          >
-            <span>Add</span>
-            <IoIosAddCircle size={15} />
-          </button>
+          <FloatingActionButton onAddValue={onAddValue} />
         </div>
         <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
           {gitHubTechStack.environmentVariables.map((envData: any, index) => (

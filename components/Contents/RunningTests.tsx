@@ -5,9 +5,9 @@ import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BiTestTube } from "react-icons/bi";
-import { IoIosAddCircle } from "react-icons/io";
 import { useRecoilState } from "recoil";
 
+import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
 
@@ -99,21 +99,17 @@ function RunningTests({}: Props) {
             name="runningTestsCommand"
             value={runningTestsValues.runningTestsCommand}
           />
-          <button
-            onClick={(e: any) => onAddValue(e)}
-            className="bg-[#265D97] hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
-          >
-            <span>Add</span>
-            <IoIosAddCircle size={15} />
-          </button>
+          <FloatingActionButton onAddValue={onAddValue} />
         </div>
         <div className="inline-block md:flex justify-start gap-36">
           <div className="hidden md:flex flex-col justify-between gap-2 max-h-36">
             <div className="flex gap-2">
-              <p className="text-lg font-medium text-gray-300">Example</p>
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                Example
+              </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-sm font-normal text-[#7c8691]">
+              <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 To run tests, run the following command
               </p>
               <p className="bg-slate-800 px-2.5 py-2 rounded-md w-[200px] items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
@@ -133,7 +129,7 @@ function RunningTests({}: Props) {
               className="flex flex-col justify-between gap-2 h-full"
             >
               <div className="flex gap-2">
-                <p className="text-lg font-medium text-gray-300">
+                <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
                   Your Details
                 </p>
               </div>
@@ -151,7 +147,7 @@ function RunningTests({}: Props) {
                   {data.runningTestsValue && (
                     <div className="flex flex-col gap-2 items-start py-1">
                       <p
-                        className="flex gap-2 items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
+                        className="flex gap-2 items-center cursor-pointer text-center text-sm font-normal text-gray-500 dark:text-[#7c8691]"
                         onClick={() =>
                           removeElement(
                             data.runningTestsValue,

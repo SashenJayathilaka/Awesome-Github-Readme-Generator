@@ -80,7 +80,7 @@ function ColorReference({}: Props) {
             <div className="w-[400px]">
               <input
                 type="text"
-                className="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
+                className="bg-transparent border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
                 placeholder="Primary Color"
                 value={primaryColor}
                 onChange={(e) => setPrimaryColor(e.target.value)}
@@ -95,7 +95,7 @@ function ColorReference({}: Props) {
             <div className="w-[400px]">
               <input
                 type="text"
-                className="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
+                className="bg-transparent border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
                 placeholder="Secondary Color"
                 value={secondaryColor}
                 onChange={(e) => setSecondaryColor(e.target.value)}
@@ -110,7 +110,7 @@ function ColorReference({}: Props) {
             <div className="w-[400px]">
               <input
                 type="text"
-                className="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
+                className="bg-transparent border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
                 placeholder="Accent Color"
                 value={accentColor}
                 onChange={(e) => setAccentColor(e.target.value)}
@@ -125,7 +125,7 @@ function ColorReference({}: Props) {
             <div className="w-[400px]">
               <input
                 type="text"
-                className="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
+                className="bg-transparent border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 font-medium"
                 placeholder="Text Color"
                 value={textColor}
                 onChange={(e) => setTextColor(e.target.value)}

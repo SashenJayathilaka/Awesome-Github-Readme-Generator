@@ -211,7 +211,7 @@ function BodyContent({}: Props) {
                   delay: 0.5,
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
-                className="px-12 py-8 bg-[#1f2937] mt-8 rounded-xl border-double border-4 border-[#001e3c] shadow-2xl"
+                className="px-12 py-8 bg-gray-200 dark:bg-[#1a2027] mt-8 rounded-xl border-double border-4 dark:border-[#001e3c]"
               >
                 <Markdown />
               </motion.div>
@@ -224,7 +224,7 @@ function BodyContent({}: Props) {
                   delay: 0.5,
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
-                className="px-12 py-8 bg-[#1a2027] mt-8 rounded-xl border-double border-4 border-[#001e3c]"
+                className="px-12 py-8 bg-gray-200 dark:bg-[#1a2027] mt-8 rounded-xl border-double border-4 dark:border-[#001e3c]"
               >
                 <MarkdownPreview />
               </motion.div>

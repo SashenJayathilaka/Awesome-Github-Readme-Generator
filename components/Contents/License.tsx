@@ -3,14 +3,17 @@
 import { readmeRows } from "@/atom/readmeRow";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { AiOutlineWarning } from "react-icons/ai";
 import { useRecoilState } from "recoil";
+
 import Heading from "../Heading";
 
 type Props = {};
 
 function License({}: Props) {
+  const { resolvedTheme } = useTheme();
   const [license, setLicense] = useState("undo");
   const [stateValue, setStateValue] = useRecoilState(readmeRows);
 
@@ -41,7 +44,7 @@ function License({}: Props) {
             <Checkbox
               {...boxLabel}
               onChange={(e) => setLicense(e.target.value)}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               checked={license === "do"}
               value="do"
@@ -53,7 +56,7 @@ function License({}: Props) {
             <Checkbox
               {...boxLabel}
               onChange={(e) => setLicense(e.target.value)}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
               checked={license === "undo"}
               value="undo"
