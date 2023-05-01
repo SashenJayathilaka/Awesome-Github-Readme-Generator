@@ -49,7 +49,7 @@ function ProfileContent({}: Props) {
     }
 
     setCurrentStateValue(
-      cache.firstStore
+      cache.profileStore
         ? { ...profileDetails, ...cache.profileStore }
         : profileDetails
     );

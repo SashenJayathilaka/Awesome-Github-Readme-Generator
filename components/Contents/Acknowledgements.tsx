@@ -4,10 +4,10 @@ import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { useEffect, useState } from "react";
 import { DiMagento } from "react-icons/di";
-import { IoIosAddCircle } from "react-icons/io";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
+import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
 
@@ -106,13 +106,7 @@ function Acknowledgements({}: Props) {
             name="acknowledgementsUrl"
             value={acknowledgementsValues.acknowledgementsUrl}
           />
-          <button
-            onClick={(e: any) => onAddValue(e)}
-            className="bg-[#265D97] hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
-          >
-            <span>Add</span>
-            <IoIosAddCircle size={15} />
-          </button>
+          <FloatingActionButton onAddValue={onAddValue} />
         </div>
         <div className="flex flex-col">
           {gitHubTechStack.acknowledgements.map((data: any, index) => (
@@ -126,7 +120,7 @@ function Acknowledgements({}: Props) {
               }
               className="cursor-pointer"
             >
-              <p className="text-sm font-normal text-[#7c8691]">
+              <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 {data.acknowledgementsValue}
               </p>
             </div>

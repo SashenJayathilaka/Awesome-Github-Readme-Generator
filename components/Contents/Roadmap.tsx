@@ -5,18 +5,20 @@ import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { AiFillCompass } from "react-icons/ai";
-import { IoIosAddCircle } from "react-icons/io";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
+import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
 
 type Props = {};
 
 function Roadmap({}: Props) {
+  const { resolvedTheme } = useTheme();
   const [roadMapValues, setRoadMapValue] = useState({
     roadMapValue: "",
     roadMapCheck: "do",
@@ -102,7 +104,7 @@ function Roadmap({}: Props) {
               <Checkbox
                 {...boxLabel}
                 onChange={onChange}
-                sx={{ color: "#fff" }}
+                sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                 color="default"
                 checked={roadMapValues.roadMapCheck === "do"}
                 value="do"
@@ -114,7 +116,7 @@ function Roadmap({}: Props) {
               <Checkbox
                 {...boxLabel}
                 onChange={onChange}
-                sx={{ color: "#fff" }}
+                sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                 color="default"
                 checked={roadMapValues.roadMapCheck === "undo"}
                 value="undo"
@@ -123,18 +125,14 @@ function Roadmap({}: Props) {
               <p className="text-lg font-medium">Not Yet</p>
             </div>
           </div>
-          <button
-            onClick={(e: any) => onAddValue(e)}
-            className="bg-[#265D97] hover:bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center gap-1"
-          >
-            <span>Add</span>
-            <IoIosAddCircle size={15} />
-          </button>
+          <FloatingActionButton onAddValue={onAddValue} />
         </div>
         <div className="inline-block md:flex justify-start gap-60">
           <div className="hidden md:flex flex-col justify-between gap-2 max-h-36">
             <div className="flex gap-2">
-              <p className="text-lg font-medium text-gray-300">Example</p>
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                Example
+              </p>
             </div>
             <div className="flex justify-start gap-2 py-1 items-center">
               <Checkbox
@@ -144,7 +142,9 @@ function Roadmap({}: Props) {
                 checked
                 sx={{ color: "#7c8691" }}
               />
-              <p className="text-lg font-medium text-[#7c8691]">Todo 1</p>
+              <p className="text-lg font-medium text-gray-500 dark:text-[#7c8691]">
+                Todo 1
+              </p>
             </div>
             <div className="flex justify-start gap-2 py-1 items-center">
               <Checkbox
@@ -153,7 +153,9 @@ function Roadmap({}: Props) {
                 disabled
                 sx={{ color: "#7c8691" }}
               />
-              <p className="text-lg font-medium text-[#7c8691]">Todo 2</p>
+              <p className="text-lg font-medium text-gray-500 dark:text-[#7c8691]">
+                Todo 2
+              </p>
             </div>
           </div>
           {gitHubTechStack.roadMap.length > 0 && (
@@ -168,7 +170,7 @@ function Roadmap({}: Props) {
               className="flex flex-col justify-between gap-2 h-full"
             >
               <div className="flex gap-2">
-                <p className="text-lg font-medium text-gray-300">
+                <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
                   Your RoadMap Details
                 </p>
               </div>
@@ -202,7 +204,7 @@ function Roadmap({}: Props) {
                         />
                       )}
                       <p
-                        className="text-lg font-normal cursor-pointer text-center text-[#7c8691]"
+                        className="text-lg font-normal cursor-pointer text-center text-gray-500 dark:text-[#7c8691]"
                         onClick={() =>
                           removeElement(data.roadMapValue, "roadMapValue")
                         }

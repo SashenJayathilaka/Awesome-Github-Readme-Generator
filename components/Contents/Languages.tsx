@@ -2,6 +2,7 @@
 
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox, Tooltip } from "@mui/material";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 type Props = {
@@ -21,6 +22,7 @@ function Languages({
   setListOfTechnologies,
   setStateTechnologies,
 }: Props) {
+  const { resolvedTheme } = useTheme();
   const [isAtomValueExits, setIsAtomValueExits] = useState(false);
 
   const onChangeTechnology = () => {
@@ -58,8 +60,8 @@ function Languages({
     <div>
       <Tooltip title={label}>
         <div
-          className={`flex justify-between items-center border border-[#0F2557] w-full overflow-hidden rounded-xl px-4 py-4 space-y-2 hover:bg-[#161748] hover-shadow-xl hover:text-black cursor-pointer ${
-            isAtomValueExits && "bg-[#04082b]"
+          className={`flex justify-between items-center border border-gray-300 dark:border-[#0F2557] hover:bg-slate-200 w-full overflow-hidden rounded-xl px-4 py-4 space-y-2 dark:hover:bg-[#161748] hover-shadow-xl hover:text-black cursor-pointer ${
+            isAtomValueExits && "bg-slate-200 dark:bg-[#04082b]"
           }`}
           onClick={onChangeTechnology}
         >
@@ -67,7 +69,7 @@ function Languages({
             {...boxLabel}
             value={label}
             name={label}
-            sx={{ color: "#fff" }}
+            sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             color="default"
             checked={isAtomValueExits}
           />

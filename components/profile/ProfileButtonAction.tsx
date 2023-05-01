@@ -39,7 +39,7 @@ function ProfileButtonAction({
       tempElement.click();
       document.body.removeChild(tempElement);
     } else {
-      toast.warn("Please Switch Preview Mode");
+      toast.warn("Please Switch Preview Code");
     }
   };
 
@@ -60,7 +60,7 @@ function ProfileButtonAction({
         setIsCopy(false);
       }, 1000);
     } else {
-      toast.warn("Please Switch Preview Mode");
+      toast.warn("Please Switch Preview Code");
     }
   };
 

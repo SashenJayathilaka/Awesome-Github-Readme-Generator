@@ -519,12 +519,8 @@ const MdContent = () => {
   };
 
   const DemoProjectAssets = () => {
-    var projectImageLink = images.demoImage;
+    const projectImageLink = images.demoImage;
     const link = displayBadges.websiteLink;
-
-    projectImageLink = projectImageLink.filter(function (element) {
-      return element !== "";
-    });
 
     if (projectImageLink.length > 0) {
       return (
@@ -533,10 +529,10 @@ const MdContent = () => {
           <br />
           {`### :camera: Screenshots`}
           <br />
-          {projectImageLink.map((image, index) => (
+          {projectImageLink.map((image: any, index) => (
             <div key={index}>
               {`<div align="center">
-                <a href="${link}"><img  src="${image}" alt='image' width='800'/></a>
+                <a href="${link}"><img  src="${image.demoImageLink}" alt='image' width='800'/></a>
               </div>`}
             </div>
           ))}

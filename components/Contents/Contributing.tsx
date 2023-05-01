@@ -4,6 +4,7 @@ import { gitHubDetails } from "@/atom/gitHubDetails";
 import { readmeRows } from "@/atom/readmeRow";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { HiClipboardDocumentList } from "react-icons/hi2";
 import { MdWavingHand } from "react-icons/md";
@@ -15,6 +16,7 @@ import Heading from "../Heading";
 type Props = {};
 
 function Contributing({}: Props) {
+  const { resolvedTheme } = useTheme();
   const [contributingValue, seContributingValue] = useState({
     firstValue: "undo",
     secondValue: "undo",
@@ -64,7 +66,7 @@ function Contributing({}: Props) {
                 <Checkbox
                   {...boxLabel}
                   onChange={onChange}
-                  sx={{ color: "#fff" }}
+                  sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
                   checked={contributingValue.firstValue === "do"}
                   value="do"
@@ -76,7 +78,7 @@ function Contributing({}: Props) {
                 <Checkbox
                   {...boxLabel}
                   onChange={onChange}
-                  sx={{ color: "#fff" }}
+                  sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
                   checked={contributingValue.firstValue === "undo"}
                   value="undo"
@@ -100,7 +102,7 @@ function Contributing({}: Props) {
                 <Checkbox
                   {...boxLabel}
                   onChange={onChange}
-                  sx={{ color: "#fff" }}
+                  sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
                   checked={contributingValue.secondValue === "do"}
                   value="do"
@@ -112,7 +114,7 @@ function Contributing({}: Props) {
                 <Checkbox
                   {...boxLabel}
                   onChange={onChange}
-                  sx={{ color: "#fff" }}
+                  sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
                   checked={contributingValue.secondValue === "undo"}
                   value="undo"
