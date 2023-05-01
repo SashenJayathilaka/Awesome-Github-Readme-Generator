@@ -32,7 +32,7 @@ function ProfileFormContainer({ updateCurrentValue, updateAtom }: Props) {
     <div>
       <div className="flex justify-start gap-4 py-6">
         <button
-          onClick={() => setIsStore(true)}
+          onClick={() => (isStore ? setIsStore(false) : setIsStore(true))}
           className="bg-gray-700 text-gray-300 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
         >
           <MdRestore size={20} />
