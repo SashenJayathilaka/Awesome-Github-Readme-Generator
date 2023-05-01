@@ -71,7 +71,7 @@ function BodyContent({}: Props) {
     sixthStore: GitBadges
   ) => {
     localStorage.setItem(
-      "cache",
+      "repoCache",
       JSON.stringify({
         firstStore,
         secondStore,
@@ -86,7 +86,7 @@ function BodyContent({}: Props) {
   };
 
   const updateCurrentValue = async () => {
-    const cache = JSON.parse(localStorage.getItem("cache")!);
+    const cache = JSON.parse(localStorage.getItem("repoCache")!);
 
     if (!cache) {
       return;
