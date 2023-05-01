@@ -35,9 +35,7 @@ function License({}: Props) {
       <Heading label="License" icon={AiOutlineWarning} />
       <div className="flex justify-start gap-20 items-center">
         <div>
-          <p className="text-lg font-medium text-gray-300">
-            If you want add License section
-          </p>
+          <p className="text-lg font-medium">If you want add License section</p>
         </div>
         <div className="flex justify-start gap-4 items-center">
           <div className="flex justify-between items-center text-center ml-[25px]">

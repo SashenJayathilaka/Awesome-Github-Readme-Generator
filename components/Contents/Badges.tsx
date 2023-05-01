@@ -2,6 +2,7 @@
 
 import { Divider } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
+import { useTheme } from "next-themes";
 import { SlBadge } from "react-icons/sl";
 
 import Heading from "../Heading";
@@ -11,6 +12,7 @@ type Props = {
 };
 
 function Badges({ onChangeGitHubBadges }: Props) {
+  const { resolvedTheme } = useTheme();
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   return (
@@ -26,7 +28,7 @@ function Badges({ onChangeGitHubBadges }: Props) {
               value="websiteUpDown"
               name="websiteUpDown"
               onChange={onChangeGitHubBadges}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             />
             <div className="w-24">
               <img src="https://img.shields.io/website-up-down-green-red/http/monip.org.svg" />
@@ -40,7 +42,7 @@ function Badges({ onChangeGitHubBadges }: Props) {
               value="maintained"
               name="maintained"
               onChange={onChangeGitHubBadges}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             />
             <div className="w-24">
               <img src="https://img.shields.io/badge/Maintained-Yes-indigo" />
@@ -54,7 +56,7 @@ function Badges({ onChangeGitHubBadges }: Props) {
               value="forks"
               name="forks"
               onChange={onChangeGitHubBadges}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             />
             <div className="w-24">
               <img src="https://img.shields.io/github/forks/SashenJayathilaka/Airbnb-Build.svg" />
@@ -78,7 +80,7 @@ function Badges({ onChangeGitHubBadges }: Props) {
               value="stars"
               name="stars"
               onChange={onChangeGitHubBadges}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             />
             <div className="w-24">
               <img src="https://img.shields.io/github/stars/SashenJayathilaka/Airbnb-Build.svg" />
@@ -92,7 +94,7 @@ function Badges({ onChangeGitHubBadges }: Props) {
               value="issues"
               name="issues"
               onChange={onChangeGitHubBadges}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             />
             <div className="w-24">
               <img src="https://img.shields.io/github/issues/SashenJayathilaka/Airbnb-Build" />
@@ -106,7 +108,7 @@ function Badges({ onChangeGitHubBadges }: Props) {
               value="lastCommit"
               name="lastCommit"
               onChange={onChangeGitHubBadges}
-              sx={{ color: "#fff" }}
+              sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
             />
             <div className="w-24">
               <img src="https://img.shields.io/github/last-commit/SashenJayathilaka/Airbnb-Build" />
