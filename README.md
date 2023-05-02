@@ -12,34 +12,34 @@ You can easily and quickly create a readme file for your github profile or git h
   
 <!-- Badges -->
 <p>
-  <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/SashenJayathilaka/Github-Readme-File-Generator" alt="contributors" />
+  <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/SashenJayathilaka/Awesome-Github-Readme-Generator" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/SashenJayathilaka/Github-Readme-File-Generator" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/SashenJayathilaka/Awesome-Github-Readme-Generator" alt="last update" />
   </a>
-  <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/network/members">
-    <img src="https://img.shields.io/github/forks/SashenJayathilaka/Github-Readme-File-Generator" alt="forks" />
+  <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/network/members">
+    <img src="https://img.shields.io/github/forks/SashenJayathilaka/Awesome-Github-Readme-Generator" alt="forks" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/stargazers">
-    <img src="https://img.shields.io/github/stars/SashenJayathilaka/Github-Readme-File-Generator" alt="stars" />
+    <img src="https://img.shields.io/github/stars/SashenJayathilaka/Awesome-Github-Readme-Generator" alt="stars" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/issues/">
-    <img src="https://img.shields.io/github/issues/SashenJayathilaka/Github-Readme-File-Generator" alt="open issues" />
+    <img src="https://img.shields.io/github/issues/SashenJayathilaka/Awesome-Github-Readme-Generator" alt="open issues" />
   </a>
   <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/SashenJayathilaka/Github-Readme-File-Generator" alt="license" />
+    <img src="https://img.shields.io/github/license/SashenJayathilaka/Awesome-Github-Readme-Generator" alt="license" />
   </a>
 </p>
    
 <h4>
     <a href="https://git-readme-generator.vercel.app">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/blob/main/README.md">Documentation</a>
+    <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/blob/main/README.md">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/issues/">Report Bug</a>
+    <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/issues/">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator/issues/">Request Feature</a>
+    <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/issues/">Request Feature</a>
   </h4>
 </div>
 
@@ -130,7 +130,7 @@ To run this project, you will need to add the following environment variables to
 Clone the project
 
 ```bash
-  git clone https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git
+  git clone https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git
 ```
 
 Go to the project directory
