@@ -61,6 +61,7 @@ const ProfileMdContent = () => {
     const experiencesName = profileDetails.experiencesName;
     const fact = profileDetails.fact;
     const factName = profileDetails.factName;
+    const rightImageLink = profileDetails.rightHandSideImage;
 
     if (
       workingName ||
@@ -72,10 +73,20 @@ const ProfileMdContent = () => {
       projectName ||
       articlesName ||
       experiencesName ||
-      factName
+      factName ||
+      rightImageLink
     ) {
       return (
         <>
+          {rightImageLink && (
+            <>
+              {`<img
+                align="right"
+                src="${rightImageLink}"
+                width="50%"
+              />`}
+            </>
+          )}
           <>
             {working && workingName && workingLink ? (
               <>
@@ -449,7 +460,7 @@ const ProfileMdContent = () => {
       if (stats || skillsCard || streak) {
         return (
           <>
-            {`<h3 align="left">Statistics</h3>`}
+            {`<h3 align="left">Stars</h3>`}
             <br />
             <>
               {skillsCard && (
@@ -579,6 +590,111 @@ const ProfileMdContent = () => {
     return null;
   };
 
+  const Divider = () => {
+    return (
+      <>
+        {`<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">`}
+      </>
+    );
+  };
+
+  const Statistics = () => {
+    const stats = profileDetails.statisticsStars;
+    const starsTheme = profileDetails.statisticsTheme;
+    const commit = profileDetails.mostCommit;
+    const commitTheme = profileDetails.mostCommitTheme;
+    const summaryCard = profileDetails.summaryCard;
+    const summaryCardTheme = profileDetails.summaryCardTheme;
+    const productTime = profileDetails.productiveTime;
+    const productTimeTheme = profileDetails.productiveTimeTheme;
+    const profileDetail = profileDetails.profileDetailsCard;
+    const profileDetailsTheme = profileDetails.profileDetailsCardTheme;
+    const githubUsername = profileDetails.github;
+
+    if (githubUsername) {
+      if (stats || commit || summaryCard || productTime || profileDetail) {
+        return (
+          <>
+            {`<h3 align="center">Statistics</h3>`}
+            <br />
+            {`<div align="center">`}
+            <br />
+            {`<a href="https://github.com/${githubUsername}">`}
+            <br />
+            <>
+              {starsTheme && (
+                <>
+                  {`<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=${githubUsername}&theme=${starsTheme}" height="180em" />`}
+                  <br />
+                </>
+              )}
+            </>
+            <>
+              {commitTheme && (
+                <>
+                  {`<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${githubUsername}&theme=${commitTheme}" height="180em" />`}
+                  <br />
+                </>
+              )}
+            </>
+            <>
+              {summaryCardTheme && (
+                <>
+                  {`<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${githubUsername}&theme=${summaryCardTheme}" height="180em" />`}
+                  <br />
+                </>
+              )}
+            </>
+            <>
+              {productTimeTheme && (
+                <>
+                  {`<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${githubUsername}&theme=${productTimeTheme}" height="180em" />`}
+                  <br />
+                </>
+              )}
+            </>
+            <>
+              {profileDetailsTheme && (
+                <>
+                  {`<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${githubUsername}&theme=${profileDetailsTheme}" height="180em" />`}
+                  <br />
+                </>
+              )}
+            </>
+            {`</div>`}
+          </>
+        );
+      }
+    }
+
+    return null;
+  };
+
+  const ActiveGraph = () => {
+    const activeGraph = profileDetails.activityGraph;
+    const activeGraphTheme = profileDetails.activityGraphTheme;
+    const githubUsername = profileDetails.github;
+
+    if (githubUsername) {
+      if (activeGraph) {
+        <>
+          {`<h2 align="left">⚡Activity Graph:</h2>`}
+          <br />
+          <>
+            {activeGraphTheme && (
+              <>
+                {`<img align="center" src="https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}" height="180em" />`}
+                <br />
+              </>
+            )}
+          </>
+        </>;
+      }
+    }
+
+    return null;
+  };
+
   return {
     Tittle,
     SubTittle,
@@ -589,6 +705,9 @@ const ProfileMdContent = () => {
     AddOn,
     Support,
     Shields,
+    Divider,
+    Statistics,
+    ActiveGraph,
   };
 };
 

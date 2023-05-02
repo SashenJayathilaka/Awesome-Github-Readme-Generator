@@ -65,6 +65,19 @@ export type profileAtomDetails = {
   streakTheme: string;
   buymeacoffee: string;
   koFi: string;
+  rightHandSideImage: string;
+  statisticsStars: boolean;
+  statisticsTheme: string;
+  summaryCard: boolean;
+  summaryCardTheme: string;
+  mostCommit: boolean;
+  mostCommitTheme: string;
+  productiveTime: boolean;
+  productiveTimeTheme: string;
+  profileDetailsCard: boolean;
+  profileDetailsCardTheme: string;
+  activityGraph: boolean;
+  activityGraphTheme: string;
 };
 
 const defaultPostState: profileAtomDetails = {
@@ -95,7 +108,7 @@ const defaultPostState: profileAtomDetails = {
   helpName: "",
   helpLink: "",
   skills: [],
-  github: "",
+  github: "sashenjayathilaka",
   dev: "",
   codeSandbox: "",
   linkedin: "",
@@ -131,6 +144,19 @@ const defaultPostState: profileAtomDetails = {
   skillCardTheme: "",
   skillCardLayout: "compact",
   streakTheme: "",
+  rightHandSideImage: "",
+  statisticsStars: false,
+  statisticsTheme: "2077",
+  summaryCard: false,
+  summaryCardTheme: "2077",
+  mostCommit: false,
+  mostCommitTheme: "2077",
+  productiveTime: false,
+  productiveTimeTheme: "2077",
+  profileDetailsCard: false,
+  profileDetailsCardTheme: "2077",
+  activityGraph: false,
+  activityGraphTheme: "",
 };
 
 export const profileAtomDetail = atom<profileAtomDetails>({
