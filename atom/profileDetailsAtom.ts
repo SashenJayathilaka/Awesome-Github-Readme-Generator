@@ -156,7 +156,7 @@ const defaultPostState: profileAtomDetails = {
   profileDetailsCard: false,
   profileDetailsCardTheme: "2077",
   activityGraph: false,
-  activityGraphTheme: "",
+  activityGraphTheme: "default",
 };
 
 export const profileAtomDetail = atom<profileAtomDetails>({
