@@ -738,7 +738,7 @@ const ProfileMdPreview = () => {
         return (
           <>
             <h3 className="text-left">Stars</h3>
-            <div className="grid grid-cols-2 gap-4 items-center">
+            <div className="grid grid-cols-2 gap-1 items-center">
               <>
                 {skillsCard && (
                   <>
@@ -932,56 +932,60 @@ const ProfileMdPreview = () => {
         return (
           <>
             <h3 className="text-center items-center">Statistics</h3>
-            <>
-              {starsTheme && (
-                <>
-                  <img
-                    className="items-center"
-                    src={`http://github-profile-summary-cards.vercel.app/api/cards/stats?username=${githubUsername}&theme=${starsTheme}`}
-                  />
-                </>
-              )}
-            </>
-            <>
-              {commitTheme && (
-                <>
-                  <img
-                    className="items-center"
-                    src={`http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${githubUsername}&theme=${commitTheme}`}
-                  />
-                </>
-              )}
-            </>
-            <>
-              {summaryCardTheme && (
-                <>
-                  <img
-                    className="items-center"
-                    src={`http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${githubUsername}&theme=${summaryCardTheme}`}
-                  />
-                </>
-              )}
-            </>
-            <>
-              {productTimeTheme && (
-                <>
-                  <img
-                    className="items-center"
-                    src={`http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${githubUsername}&theme=${productTimeTheme}`}
-                  />
-                </>
-              )}
-            </>
-            <>
-              {profileDetailsTheme && (
-                <>
-                  <img
-                    className="items-center"
-                    src={`http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${githubUsername}&theme=${profileDetailsTheme}`}
-                  />
-                </>
-              )}
-            </>
+            <div className="flex justify-start gap-2">
+              <>
+                {starsTheme && (
+                  <>
+                    <img
+                      className="items-center"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/stats?username=${githubUsername}&theme=${starsTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {commitTheme && (
+                  <>
+                    <img
+                      className="items-center"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${githubUsername}&theme=${commitTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {summaryCardTheme && (
+                  <>
+                    <img
+                      className="items-center"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${githubUsername}&theme=${summaryCardTheme}`}
+                    />
+                  </>
+                )}
+              </>
+            </div>
+            <div className="flex justify-start gap-2">
+              <>
+                {productTimeTheme && (
+                  <>
+                    <img
+                      className="items-center"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${githubUsername}&theme=${productTimeTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {profileDetailsTheme && (
+                  <>
+                    <img
+                      className="items-center"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${githubUsername}&theme=${profileDetailsTheme}`}
+                    />
+                  </>
+                )}
+              </>
+            </div>
           </>
         );
       }
@@ -999,19 +1003,21 @@ const ProfileMdPreview = () => {
       console.log(activeGraph);
 
       if (activeGraph) {
-        <>
-          <h2 className="text-left items-start">⚡Activity Graph:</h2>
+        return (
           <>
-            {activeGraphTheme && (
-              <>
-                <img
-                  className="items-center"
-                  src={`https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}`}
-                />
-              </>
-            )}
+            <h2 className="text-left items-start">⚡Activity Graph:</h2>
+            <>
+              {activeGraphTheme && (
+                <>
+                  <img
+                    className="items-center"
+                    src={`https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}`}
+                  />
+                </>
+              )}
+            </>
           </>
-        </>;
+        );
       }
     }
 

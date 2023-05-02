@@ -664,6 +664,7 @@ const ProfileMdContent = () => {
               )}
             </>
             {`</div>`}
+            <br />
           </>
         );
       }
@@ -679,18 +680,20 @@ const ProfileMdContent = () => {
 
     if (githubUsername) {
       if (activeGraph) {
-        <>
-          {`<h2 align="left">⚡Activity Graph:</h2>`}
-          <br />
+        return (
           <>
-            {activeGraphTheme && (
-              <>
-                {`<img align="center" src="https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}" height="180em" />`}
-                <br />
-              </>
-            )}
+            {`<h2 align="left">⚡Activity Graph:</h2>`}
+            <br />
+            <>
+              {activeGraphTheme && (
+                <>
+                  {`<img align="center" src="https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}" height="180em" />`}
+                  <br />
+                </>
+              )}
+            </>
           </>
-        </>;
+        );
       }
     }
 
