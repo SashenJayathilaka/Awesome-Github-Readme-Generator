@@ -201,4 +201,4 @@ Distributed under the no License. See LICENSE.txt for more information.
 
 Your Name - [Sashen Jayathilaka](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git](https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git)
+Project Link: [https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git](https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git)

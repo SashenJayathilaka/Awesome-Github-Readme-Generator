@@ -24,14 +24,14 @@ function SmallHeader({}: Props) {
         </div>
         <div className="flex justify-center gap-4 py-2.5">
           <a
-            href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+            href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
             className="flex justify-center px-4 py-2.5 border border-gray-500 rounded-md hover: bg-gray-800 bg-transparent text-gray-800 dark:text-white items-center cursor-pointer"
           >
             <AiOutlineStar size={20} className="animate-spin mr-2" />
             Star This Repository
           </a>
           <a
-            href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+            href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
             className="flex justify-center px-4 py-2.5 border border-gray-500 rounded-md hover: bg-gray-800 bg-transparent text-gray-800 dark:text-white items-center cursor-pointer"
           >
             <AiOutlineFork size={20} className="animate-bounce mr-2" />
