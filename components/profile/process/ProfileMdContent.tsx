@@ -687,7 +687,7 @@ const ProfileMdContent = () => {
             <>
               {activeGraphTheme && (
                 <>
-                  {`<img align="center" src="https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}" height="180em" />`}
+                  {`<img align="center" src="https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}"/>`}
                   <br />
                 </>
               )}
