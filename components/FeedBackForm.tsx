@@ -27,7 +27,7 @@ function FeedBackForm({}: Props) {
         <div className="flex flex-col items-center">
           <div>
             <a
-              href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+              href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
               className="flex justify-center px-4 py-4 bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-600 border border-gray-500 items-center text-center font-medium rounded-lg gap-4 cursor-pointer"
             >
               <AiFillGithub size={25} />
