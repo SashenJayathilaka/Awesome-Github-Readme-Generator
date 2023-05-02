@@ -60,100 +60,108 @@ const ProfileMdPreview = () => {
     const experiencesName = profileDetails.experiencesName;
     const fact = profileDetails.fact;
     const factName = profileDetails.factName;
+    const rightImageLink = profileDetails.rightHandSideImage;
 
     return (
-      <>
-        <>
-          {working && workingName && (
-            <>
-              <p>
-                {working} {workingName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {collaborate && collaborateName && (
-            <>
-              <p>
-                {collaborate} {collaborateName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {help && helpName && (
-            <>
-              <p>
-                {help} {helpName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {learning && learningName && (
-            <>
-              <p>
-                {learning} {learningName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {about && aboutName && (
-            <>
-              <p>
-                {about} {aboutName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {reach && reachName && (
-            <>
-              <p>
-                {reach} {reachName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {project && projectName && (
-            <>
-              <p>
-                {project} {projectName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {articles && articlesName && (
-            <>
-              <p>
-                {articles} {articlesName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {experiences && experiencesName && (
-            <>
-              <p>
-                {experiences} {experiencesName}
-              </p>
-            </>
-          )}
-        </>
-        <>
-          {fact && factName && (
-            <>
-              <p>
-                {fact} {factName}
-              </p>
-            </>
-          )}
-        </>
-      </>
+      <div className="flex justify-start gap-12 items-center">
+        <div className="flex flex-col gap-1 items-center">
+          <>
+            {working && workingName && (
+              <>
+                <p>
+                  {working} {workingName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {collaborate && collaborateName && (
+              <>
+                <p>
+                  {collaborate} {collaborateName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {help && helpName && (
+              <>
+                <p>
+                  {help} {helpName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {learning && learningName && (
+              <>
+                <p>
+                  {learning} {learningName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {about && aboutName && (
+              <>
+                <p>
+                  {about} {aboutName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {reach && reachName && (
+              <>
+                <p>
+                  {reach} {reachName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {project && projectName && (
+              <>
+                <p>
+                  {project} {projectName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {articles && articlesName && (
+              <>
+                <p>
+                  {articles} {articlesName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {experiences && experiencesName && (
+              <>
+                <p>
+                  {experiences} {experiencesName}
+                </p>
+              </>
+            )}
+          </>
+          <>
+            {fact && factName && (
+              <>
+                <p>
+                  {fact} {factName}
+                </p>
+              </>
+            )}
+          </>
+        </div>
+        {rightImageLink && (
+          <div>
+            <img src={rightImageLink} className="items-center w-[50%] " />
+          </div>
+        )}
+      </div>
     );
   };
 
@@ -729,42 +737,45 @@ const ProfileMdPreview = () => {
       if (stats || skillsCard || streak) {
         return (
           <>
-            <>
-              {skillsCard && (
-                <>
-                  <p>
-                    <SkillCardFilter />
-                  </p>
-                </>
-              )}
-            </>
-            <>
-              {stats && (
-                <>
-                  <p>
-                    &nbsp;
-                    <img
-                      className="items-center"
-                      src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&locale=en&theme=${startTheme}`}
-                      alt={githubUsername}
-                    />
-                  </p>
-                </>
-              )}
-            </>
-            <>
-              {streak && (
-                <>
-                  <p>
-                    <img
-                      className="items-center"
-                      src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=${streakCardTheme}`}
-                      alt={githubUsername}
-                    />
-                  </p>
-                </>
-              )}
-            </>
+            <h3 className="text-left">Stars</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <>
+                {skillsCard && (
+                  <>
+                    <p>
+                      <SkillCardFilter />
+                    </p>
+                  </>
+                )}
+              </>
+              <>
+                {stats && (
+                  <>
+                    <p>
+                      &nbsp;
+                      <img
+                        className="items-center"
+                        src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&locale=en&theme=${startTheme}`}
+                        alt={githubUsername}
+                      />
+                    </p>
+                  </>
+                )}
+              </>
+              <>
+                {streak && (
+                  <>
+                    <p>
+                      <img
+                        className="items-center"
+                        src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=${streakCardTheme}`}
+                        alt={githubUsername}
+                      />
+                    </p>
+                  </>
+                )}
+              </>
+            </div>
           </>
         );
       }
@@ -903,6 +914,110 @@ const ProfileMdPreview = () => {
     return null;
   };
 
+  const Statistics = () => {
+    const stats = profileDetails.statisticsStars;
+    const starsTheme = profileDetails.statisticsTheme;
+    const commit = profileDetails.mostCommit;
+    const commitTheme = profileDetails.mostCommitTheme;
+    const summaryCard = profileDetails.summaryCard;
+    const summaryCardTheme = profileDetails.summaryCardTheme;
+    const productTime = profileDetails.productiveTime;
+    const productTimeTheme = profileDetails.productiveTimeTheme;
+    const profileDetail = profileDetails.profileDetailsCard;
+    const profileDetailsTheme = profileDetails.profileDetailsCardTheme;
+    const githubUsername = profileDetails.github;
+
+    if (githubUsername) {
+      if (stats || commit || summaryCard || productTime || profileDetail) {
+        return (
+          <>
+            <h3 className="text-center items-center">Statistics</h3>
+            <div className="items-center grid grid-cols-3 gap-4">
+              <>
+                {starsTheme && (
+                  <>
+                    <img
+                      className="items-center h-[180em]"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/stats?username=${githubUsername}&theme=${starsTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {commitTheme && (
+                  <>
+                    <img
+                      className="items-center h-[180em]"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=${githubUsername}&theme=${commitTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {summaryCardTheme && (
+                  <>
+                    <img
+                      className="items-center h-[180em]"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=${githubUsername}&theme=${summaryCardTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {productTimeTheme && (
+                  <>
+                    <img
+                      className="items-center h-[180em]"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${githubUsername}&theme=${productTimeTheme}`}
+                    />
+                  </>
+                )}
+              </>
+              <>
+                {profileDetailsTheme && (
+                  <>
+                    <img
+                      className="items-center h-[180em]"
+                      src={`http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=${githubUsername}&theme=${profileDetailsTheme}`}
+                    />
+                  </>
+                )}
+              </>
+            </div>
+          </>
+        );
+      }
+    }
+
+    return null;
+  };
+
+  const ActiveGraph = () => {
+    const activeGraph = profileDetails.activityGraph;
+    const activeGraphTheme = profileDetails.activityGraphTheme;
+    const githubUsername = profileDetails.github;
+
+    if (githubUsername) {
+      if (activeGraph) {
+        <>
+          <h2 className="text-left items-start">⚡Activity Graph:</h2>
+          <>
+            {activeGraphTheme && (
+              <>
+                <img
+                  className="items-center h-[180em]"
+                  src={`https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}`}
+                />
+              </>
+            )}
+          </>
+        </>;
+      }
+    }
+
+    return null;
+  };
+
   return {
     Tittle,
     SubTittle,
@@ -913,6 +1028,8 @@ const ProfileMdPreview = () => {
     AddOn,
     Support,
     Shields,
+    Statistics,
+    ActiveGraph,
   };
 };
 

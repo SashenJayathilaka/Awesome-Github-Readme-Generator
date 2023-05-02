@@ -29,7 +29,7 @@ function Support({}: Props) {
             className="w-36"
           />
           <InputField
-            label="Buy me a Coffee uUername"
+            label="Buy me a Coffee Username"
             type="text"
             name="buymeacoffee"
             onChange={onChange}

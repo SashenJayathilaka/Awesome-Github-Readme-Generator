@@ -668,3 +668,429 @@ export const trophyTheme = [
     label: "Dark Lover",
   },
 ];
+
+export const profileSummaryCardsTheme = [
+  {
+    value: "2077",
+    label: "2077",
+  },
+  {
+    value: "algolia",
+    label: "algolia",
+  },
+  {
+    value: "apprentice",
+    label: "Apprentice",
+  },
+  {
+    value: "aura",
+    label: "Aura",
+  },
+  {
+    value: "aura_dark",
+    label: "Aura dark",
+  },
+  {
+    value: "ayu_mirage",
+    label: "Ayu Mirage",
+  },
+  {
+    value: "bear",
+    label: "Bear",
+  },
+  {
+    value: "blue_green",
+    label: "Blue green",
+  },
+  {
+    value: "blueberry",
+    label: "Blueberry",
+  },
+  {
+    value: "buefy",
+    label: "buefy",
+  },
+  {
+    value: "calm",
+    label: "calm",
+  },
+  {
+    value: "chartreuse_dark",
+    label: "Chartreuse dark",
+  },
+  {
+    value: "city_lights",
+    label: "City lights",
+  },
+  {
+    value: "cobalt",
+    label: "Cobalt",
+  },
+  {
+    value: "cobalt2",
+    label: "Cobalt2",
+  },
+  {
+    value: "codeSTACKr",
+    label: "CodeSTACKr",
+  },
+  {
+    value: "darcula",
+    label: "Darcula",
+  },
+  {
+    value: "dark",
+    label: "Dark",
+  },
+  {
+    value: "date_night",
+    label: "Date Night",
+  },
+  {
+    value: "default",
+    label: "Default",
+  },
+  {
+    value: "discord_old_blurple",
+    label: "Discord old blurple",
+  },
+  {
+    value: "dracula",
+    label: "Dracula",
+  },
+  {
+    value: "flag_india",
+    label: "Flag india",
+  },
+  {
+    value: "github",
+    label: "Github",
+  },
+  {
+    value: "github_dark",
+    label: "Github dark",
+  },
+  {
+    value: "gotham",
+    label: "Gotham",
+  },
+  {
+    value: "graywhite",
+    label: "Graywhite",
+  },
+  {
+    value: "great_gatsby",
+    label: "Great Gatsby",
+  },
+  {
+    value: "gruvbox",
+    label: "Gruvbox",
+  },
+  {
+    value: "highcontrast",
+    label: "Highcontrast",
+  },
+  {
+    value: "jolly",
+    label: "Jolly",
+  },
+  {
+    value: "kacho_ga",
+    label: "Kacho ga",
+  },
+  {
+    value: "maroongold",
+    label: "Maroongold",
+  },
+  {
+    value: "material_palenight",
+    label: "Material palenight",
+  },
+  {
+    value: "merko",
+    label: "Merko",
+  },
+  {
+    value: "midnight_purple",
+    label: "Midnight Purple",
+  },
+  {
+    value: "moltack",
+    label: "Moltack",
+  },
+  {
+    value: "monokai",
+    label: "Monokai",
+  },
+  {
+    value: "moonlight",
+    label: "Moonlight",
+  },
+  {
+    value: "nightowl",
+    label: "Nightowl",
+  },
+  {
+    value: "noctis_minimus",
+    label: "Noctis minimus",
+  },
+  {
+    value: "nord_bright",
+    label: "Nord bright",
+  },
+  {
+    value: "nord_dark",
+    label: "Nord dark",
+  },
+  {
+    value: "ocean_dark",
+    label: "Ocean dark",
+  },
+  {
+    value: "omni",
+    label: "Omni",
+  },
+  {
+    value: "onedark",
+    label: "Onedark",
+  },
+  {
+    value: "outrun",
+    label: "Outrun",
+  },
+  {
+    value: "panda",
+    label: "Panda",
+  },
+  {
+    value: "prussian",
+    label: "Prussian",
+  },
+  {
+    value: "radical",
+    label: "Radical",
+  },
+  {
+    value: "react",
+    label: "React",
+  },
+  {
+    value: "rose_pine",
+    label: "Rose pine",
+  },
+  {
+    value: "shades_of_purple",
+    label: "Shades of purple",
+  },
+  {
+    value: "slateorange",
+    label: "Slateorange",
+  },
+  {
+    value: "solarized",
+    label: "Solarized",
+  },
+  {
+    value: "solarized_dark",
+    label: "Solarized_dark",
+  },
+  {
+    value: "swift",
+    label: "Swift",
+  },
+  {
+    value: "synthwave",
+    label: "Synthwave",
+  },
+  {
+    value: "tokyonight",
+    label: "Tokyonight",
+  },
+  {
+    value: "transparent",
+    label: "Transparent",
+  },
+  {
+    value: "vision_friendly_dark",
+    label: "Vision friendly dark",
+  },
+  {
+    value: "vue",
+    label: "Vue",
+  },
+  {
+    value: "yeblu",
+    label: "Yeblu",
+  },
+  {
+    value: "zenburn",
+    label: "Zenburn",
+  },
+];
+
+export const activityGraphTheme = [
+  {
+    value: "default",
+    label: "Default",
+  },
+  {
+    value: "react",
+    label: "React",
+  },
+  {
+    value: "react-dark",
+    label: "React dark",
+  },
+  {
+    value: "github",
+    label: "Github",
+  },
+  {
+    value: "github-compact",
+    label: "Github compact",
+  },
+  {
+    value: "xcode",
+    label: "Xcode",
+  },
+  {
+    value: "rogue",
+    label: "Rogue",
+  },
+  {
+    value: "merko",
+    label: "Merko",
+  },
+  {
+    value: "vue",
+    label: "Vue",
+  },
+  {
+    value: "tokyo-night",
+    label: "Tokyo Night",
+  },
+  {
+    value: "high-contrast",
+    label: "High Contrast",
+  },
+  {
+    value: "redical",
+    label: "Redical",
+  },
+  {
+    value: "coral",
+    label: "Coral",
+  },
+  {
+    value: "nord",
+    label: "Nord",
+  },
+  {
+    value: "lucent",
+    label: "Lucent",
+  },
+  {
+    value: "dracula",
+    label: "Dracula",
+  },
+  {
+    value: "gruvbox",
+    label: "Gruvbox",
+  },
+  {
+    value: "chartreuse-dark",
+    label: "Chartreuse dark",
+  },
+  {
+    value: "github-light",
+    label: "Github light",
+  },
+  {
+    value: "github-dark",
+    label: "Github dark",
+  },
+  {
+    value: "minimal",
+    label: "Minimal",
+  },
+  {
+    value: "material-palenight",
+    label: "Material palenight",
+  },
+  {
+    value: "green",
+    label: "Green",
+  },
+  {
+    value: "gotham",
+    label: "Gotham",
+  },
+  {
+    value: "noctis-minimus",
+    label: "Noctis Minimus",
+  },
+  {
+    value: "monokai",
+    label: "Monokai",
+  },
+  {
+    value: "one-dark",
+    label: "One Dark",
+  },
+  {
+    value: "elegant",
+    label: "Elegant",
+  },
+  {
+    value: "aqua",
+    label: "Aqua",
+  },
+  {
+    value: "synthwave-84",
+    label: "Synthwave-84",
+  },
+  {
+    value: "react",
+    label: "React",
+  },
+  {
+    value: "merko",
+    label: "Merko",
+  },
+  {
+    value: "vue",
+    label: "Vue",
+  },
+  {
+    value: "tokyo-day",
+    label: "Tokyo day",
+  },
+  {
+    value: "tokyo-night",
+    label: "Tokyo night",
+  },
+  {
+    value: "high-contrast",
+    label: "High Contrast",
+  },
+  {
+    value: "cobalt",
+    label: "Cobalt",
+  },
+  {
+    value: "material",
+    label: "Material",
+  },
+  {
+    value: "nightowl",
+    label: "Nightowl",
+  },
+  {
+    value: "modern-lilac",
+    label: "Modern lilac",
+  },
+  {
+    value: "arctic",
+    label: "Arctic",
+  },
+];

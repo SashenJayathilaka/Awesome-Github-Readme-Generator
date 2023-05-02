@@ -1,6 +1,7 @@
 "use client";
 
 import { authModelState } from "@/atom/authModalAtom";
+import { profileAtomDetail } from "@/atom/profileDetailsAtom";
 import { FormGroup } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
@@ -8,7 +9,7 @@ import { styled } from "@mui/material/styles";
 import { signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AiFillGithub,
   AiOutlineCloseCircle,
@@ -26,6 +27,7 @@ function Navbar({}: Props) {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [show, setshow] = useState(false);
   const [modelState, setModelState] = useRecoilState(authModelState);
+  const [gitUser, setGitUser] = useRecoilState(profileAtomDetail);
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -81,6 +83,25 @@ function Navbar({}: Props) {
       open: true,
     }));
   };
+
+  const updateStateUser = () => {
+    if (!session) return;
+
+    const userName = session.user.username;
+    const userEmail = session.user.email;
+
+    if (!gitUser.github) {
+      setGitUser((prev) => ({
+        ...prev,
+        github: userName!,
+        reachName: userEmail!,
+      }));
+    }
+  };
+
+  useEffect(() => {
+    updateStateUser();
+  }, [session]);
 
   return (
     <>
