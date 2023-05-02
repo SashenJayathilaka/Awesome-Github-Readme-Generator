@@ -12,11 +12,8 @@ import { useState } from "react";
 import {
   AiFillGithub,
   AiOutlineCloseCircle,
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
   AiOutlineMenu,
 } from "react-icons/ai";
-import { CiTwitter } from "react-icons/ci";
 import { useRecoilState } from "recoil";
 
 import LoginModal from "./models/LoginModal";
@@ -92,10 +89,9 @@ function Navbar({}: Props) {
         <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4">
           <div className="flex justify-between ">
             <div className="hidden sm:flex flex-row items-center space-x-6">
-              <CiTwitter size={25} />
-              <AiFillGithub size={25} />
-              <AiOutlineLinkedin size={25} />
-              <AiOutlineInstagram size={25} />
+              <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git">
+                <AiFillGithub size={30} />
+              </a>
             </div>
             <div
               className=" flex space-x-3 items-center cursor-pointer"
@@ -166,10 +162,9 @@ function Navbar({}: Props) {
             className={`${show ? "block" : "hidden"} sm:hidden mt-4 mx-auto`}
           >
             <div className="flex flex-row items-center justify-center space-x-6">
-              <CiTwitter size={25} />
-              <AiFillGithub size={25} />
-              <AiOutlineLinkedin size={25} />
-              <AiOutlineInstagram size={25} />
+              <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git">
+                <AiFillGithub size={30} />
+              </a>
             </div>
             {session ? (
               <div

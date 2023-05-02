@@ -9,7 +9,7 @@ function Footer({}: Props) {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a
-              href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+              href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
               className="flex items-center"
             >
               <img
@@ -30,7 +30,7 @@ function Footer({}: Props) {
               <ul className="text-gray-600 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+                    href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
                     className="hover:underline"
                   >
                     Github Readme Generator
@@ -139,7 +139,7 @@ function Footer({}: Props) {
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+              href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg

@@ -18,7 +18,7 @@ function ProfileFeedbackForm({}: Props) {
           </div>
         </div>
         <img
-          src="https://www.dropbox.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp?dl=1"
+          src="https://github.com/teamedwardforever/awesome-readme-template-1/blob/main/assets/134278937-ed33e623-b833-4565-945d-29fa43ea0b7c.gif?raw=true"
           alt=""
           className="w-[300px]"
         />
@@ -27,7 +27,7 @@ function ProfileFeedbackForm({}: Props) {
         <div className="flex flex-col items-center">
           <div>
             <a
-              href="https://github.com/SashenJayathilaka/Github-Readme-File-Generator.git"
+              href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git"
               className="flex justify-center px-4 py-4 bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-600 border border-gray-500 items-center text-center font-medium rounded-lg gap-4 cursor-pointer"
             >
               <AiFillGithub size={25} />
