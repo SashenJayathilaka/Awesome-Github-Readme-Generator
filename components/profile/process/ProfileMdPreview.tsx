@@ -64,7 +64,7 @@ const ProfileMdPreview = () => {
 
     return (
       <div className="flex justify-start gap-12 items-center">
-        <div className="flex flex-col gap-1 items-center">
+        <div className="flex flex-col gap-1 items-start">
           <>
             {working && workingName && (
               <>
@@ -738,7 +738,7 @@ const ProfileMdPreview = () => {
         return (
           <>
             <h3 className="text-left">Stars</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 items-center">
               <>
                 {skillsCard && (
                   <>
@@ -932,7 +932,7 @@ const ProfileMdPreview = () => {
         return (
           <>
             <h3 className="text-center items-center">Statistics</h3>
-            <div className="items-center grid grid-cols-3 gap-4">
+            <div className="">
               <>
                 {starsTheme && (
                   <>

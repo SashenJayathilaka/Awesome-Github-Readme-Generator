@@ -83,8 +83,10 @@ const ProfileMdContent = () => {
               {`<img
                 align="right"
                 src="${rightImageLink}"
-                width="50%"
+                width="30%"
               />`}
+              <br />
+              <br />
             </>
           )}
           <>
