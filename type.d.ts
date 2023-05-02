@@ -146,4 +146,17 @@ export interface ProfileAtomDetails {
   streakTheme: string;
   buymeacoffee: string;
   koFi: string;
+  rightHandSideImage: string;
+  statisticsStars: boolean;
+  statisticsTheme: string;
+  summaryCard: boolean;
+  summaryCardTheme: string;
+  mostCommit: boolean;
+  mostCommitTheme: string;
+  productiveTime: boolean;
+  productiveTimeTheme: string;
+  profileDetailsCard: boolean;
+  profileDetailsCardTheme: string;
+  activityGraph: boolean;
+  activityGraphTheme: string;
 }
