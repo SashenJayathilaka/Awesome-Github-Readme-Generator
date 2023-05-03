@@ -2,7 +2,7 @@
 
   <img src="https://user-images.githubusercontent.com/99184393/235164394-a1865b60-6506-488a-a666-bd55d2e009cb.png" alt="logo" width="300" height="auto" />
   <h1>
-Github Readme File Generator.
+Awesome Github Readme Generator
 </h1>
   
   <p>
