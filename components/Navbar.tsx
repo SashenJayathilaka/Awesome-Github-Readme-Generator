@@ -124,7 +124,7 @@ function Navbar({}: Props) {
                 className="w-8"
               />
               <h1 className="font-semibold text-2xl leading-6 text-gray-900 dark:text-gray-100">
-                Github Readme File Generator
+                Awesome Github Readme Generator
               </h1>
             </div>
             <div className="flex justify-center gap-4 items-center">

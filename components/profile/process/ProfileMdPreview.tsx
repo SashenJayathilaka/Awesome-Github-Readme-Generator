@@ -13,7 +13,7 @@ const ProfileMdPreview = () => {
     if (tittle && name) {
       return (
         <>
-          <h1 className="text-center">
+          <h1 className="text-center text-xl font-bold">
             {tittle} {name}
           </h1>
           <br />
@@ -30,7 +30,7 @@ const ProfileMdPreview = () => {
     if (subTittle) {
       return (
         <>
-          <h3 className="text-center">{subTittle}</h3>
+          <h3 className="text-center text-lg font-semibold">{subTittle}</h3>
           <br />
         </>
       );
@@ -171,7 +171,9 @@ const ProfileMdPreview = () => {
     if (languages.length > 0) {
       return (
         <>
-          <h3 className="text-left">Languages and Tools:</h3>
+          <h3 className="text-left text-lg font-semibold">
+            Languages and Tools:
+          </h3>
           <br />
           <div
             style={{
@@ -249,7 +251,7 @@ const ProfileMdPreview = () => {
     ) {
       return (
         <>
-          <h3 className="text-left">Connect with me:</h3>
+          <h3 className="text-left text-lg font-semibold">Connect with me:</h3>
           <br />
           <p className="text-left">
             <br />
@@ -737,8 +739,8 @@ const ProfileMdPreview = () => {
       if (stats || skillsCard || streak) {
         return (
           <>
-            <h3 className="text-left">Stars</h3>
-            <div className="grid grid-cols-2 gap-1 items-center">
+            <h3 className="text-left text-lg font-semibold">Stars</h3>
+            <div className="flex justify-start gap-2">
               <>
                 {skillsCard && (
                   <>
@@ -762,20 +764,20 @@ const ProfileMdPreview = () => {
                   </>
                 )}
               </>
-              <>
-                {streak && (
-                  <>
-                    <p>
-                      <img
-                        className="items-center"
-                        src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=${streakCardTheme}`}
-                        alt={githubUsername}
-                      />
-                    </p>
-                  </>
-                )}
-              </>
             </div>
+            <>
+              {streak && (
+                <>
+                  <p>
+                    <img
+                      className="items-center"
+                      src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=${streakCardTheme}`}
+                      alt={githubUsername}
+                    />
+                  </p>
+                </>
+              )}
+            </>
           </>
         );
       }
@@ -791,7 +793,7 @@ const ProfileMdPreview = () => {
     if (coffey || koFi) {
       return (
         <>
-          <h3 className="text-left">Support:</h3>
+          <h3 className="text-left text-lg font-semibold">Support:</h3>
           <p>
             <div className="flex justify-start gap-2">
               <>
@@ -931,7 +933,9 @@ const ProfileMdPreview = () => {
       if (stats || commit || summaryCard || productTime || profileDetail) {
         return (
           <>
-            <h3 className="text-center items-center">Statistics</h3>
+            <h3 className="text-center items-center text-lg font-semibold">
+              Statistics
+            </h3>
             <div className="flex justify-start gap-2">
               <>
                 {starsTheme && (
@@ -1005,7 +1009,9 @@ const ProfileMdPreview = () => {
       if (activeGraph) {
         return (
           <>
-            <h2 className="text-left items-start">⚡Activity Graph:</h2>
+            <h2 className="text-left items-start text-lg font-semibold">
+              ⚡Activity Graph:
+            </h2>
             <>
               {activeGraphTheme && (
                 <>
