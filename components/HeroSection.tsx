@@ -21,7 +21,7 @@ function HeroSection({ setIsShow }: Props) {
           /> */}
           <div className="w-11/12 sm:w-2/3 mb-5 sm:mb-10">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-950 dark:text-white font-bold leading-tight">
-              Github Readme File Generator
+              Awesome Github Readme Generator
             </h1>
           </div>
           <div className="flex justify-center items-center mb-8 sm:mb-8">
