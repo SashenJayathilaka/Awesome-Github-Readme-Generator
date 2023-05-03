@@ -7,7 +7,6 @@ import { MdRestore } from "react-icons/md";
 
 import DividerLine from "../DividerLine";
 import AddOns from "./Contents/AddOns";
-import SideBarImage from "./Contents/SideBarImage";
 import Skills from "./Contents/Skills";
 import Social from "./Contents/Social";
 import Statistics from "./Contents/Statistics";
@@ -63,8 +62,8 @@ function ProfileFormContainer({ updateCurrentValue, updateAtom }: Props) {
         )}
         <Social />
         <DividerLine />
-        <SideBarImage />
-        <DividerLine />
+        {/*         <SideBarImage />
+        <DividerLine /> */}
         <AddOns />
         <DividerLine />
         <Statistics />
