@@ -108,7 +108,7 @@ const defaultPostState: profileAtomDetails = {
   helpName: "",
   helpLink: "",
   skills: [],
-  github: "sashenjayathilaka",
+  github: "",
   dev: "",
   codeSandbox: "",
   linkedin: "",
