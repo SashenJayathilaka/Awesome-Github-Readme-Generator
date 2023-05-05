@@ -108,12 +108,12 @@ function Navbar({}: Props) {
       <LoginModal />
       <div className="bg-transparent shadow-2xl">
         <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4">
-          <div className="flex justify-between ">
-            <div className="hidden sm:flex flex-row items-center space-x-6">
+          <div className="flex justify-between">
+            {/* <div className="hidden sm:flex flex-row items-center space-x-6">
               <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git">
                 <AiFillGithub size={30} />
               </a>
-            </div>
+            </div> */}
             <div
               className=" flex space-x-3 items-center cursor-pointer"
               onClick={() => router.push("/")}
@@ -137,7 +137,7 @@ function Navbar({}: Props) {
                       inputProps={{ "aria-label": "controlled" }}
                     />
                   }
-                  label={theme?.toLocaleUpperCase()}
+                  label=""
                   value={resolvedTheme === "dark" ? "light" : "dark"}
                   onChange={(e: any) => setTheme(e.target.value)}
                   name="theme"
