@@ -9,7 +9,7 @@ import Loader from "./Loader";
 
 type Props = {};
 
-function MiddleChoose({}: Props) {
+function MiddleChoose({ }: Props) {
   const router = useRouter();
   const [firstImageArr, setFirstImageArr] = useState<string | null>(null);
   const [secondImageArr, setSecondImageArr] = useState<string | null>(null);
@@ -28,7 +28,7 @@ function MiddleChoose({}: Props) {
           <div className="mt-20 mx-auto container">
             <div className="flex flex-col lg:items-center justify-center w-full">
               <h1 className="font-semibold text-gray-700 dark:text-gray-300 text-3xl md:text-4xl">
-                Chose Github Readme Template
+                Choose Github Readme Template
               </h1>
               <p className="mt-2.5 lg:w-1/2 lg:text-center text-2xl text-gray-500">
                 We have several plans to showcase your Business. Get everything
@@ -51,7 +51,7 @@ function MiddleChoose({}: Props) {
                     >
                       <div className="py-5 px-4 bg-white border border-gray-200shadow rounded-lg text-left">
                         <h4 className="text-2xl text-indigo-700 font-semibold pb-8 text-center">
-                          Github Profile Readme.Md Generator
+                          Github Profile README.md Generator
                         </h4>
                         <div className="flex justify-center items-center">
                           <img
@@ -61,7 +61,7 @@ function MiddleChoose({}: Props) {
                           />
                         </div>
                         <p className="text-gray-500 text-center px-2">
-                          You can Github Profile Readme.Md Generator
+                          You can use Github Profile README.md Generator
                         </p>
                         <button
                           onClick={() => router.push("/profile")}
@@ -83,7 +83,7 @@ function MiddleChoose({}: Props) {
                     >
                       <div className="py-5 px-4 bg-indigo-700 border border-gray-200 shadow rounded-lg text-left">
                         <h4 className="text-2xl text-white font-semibold pb-8 text-center">
-                          Github Repository Readme.Md Generator
+                          Github Repository README.md Generator
                         </h4>
                         <div className="flex justify-center items-center">
                           <img
@@ -93,7 +93,7 @@ function MiddleChoose({}: Props) {
                           />
                         </div>
                         <p className="text-gray-100 text-center px-2">
-                          You can Github Profile Readme.Md Generator
+                          You can use Github Repository README.md Generator
                         </p>
                         <button
                           onClick={() => router.push("/repo")}

@@ -1143,9 +1143,8 @@ const MdContent = () => {
           {`## :handshake: Contact`}
           <br />
           <br />
-          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${
-            email && email
-          }`}
+          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${email && email
+            }`}
           <br />
           {`${projectLink && `Project Link: [${projectLink}](${projectLink})`}`}
         </>
