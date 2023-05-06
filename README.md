@@ -185,6 +185,9 @@ Please read the [Code of Conduct](https://github.com/SashenJayathilaka/Github-Re
 ## 🙇 Special Thanks
 
 - [Anurag Hazra](https://github.com/anuraghazra) for amazing [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
+- [ryo-ma](https://github.com/ryo-ma) for amazing [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy)
+- [Casper](https://github.com/vn7n24fzkq) for amazing [github-profile-summary-cards](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+- [Ashutosh Dwivedi](https://github.com/Ashutosh007100) for amazing [github-readme-activity-graph](https://github.com/Ashutosh00710/github-readme-activity-graph)
 - [Anton Komarev](https://github.com/antonkomarev) for super cool [github-profile-views-counter](https://github.com/antonkomarev/github-profile-views-counter)
 - [Jonah Lawrence](https://github.com/DenverCoder1) for the incredible [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats)
 - [Julien Monty](https://github.com/konpa) for super useful [devicon](https://github.com/konpa/devicon)
