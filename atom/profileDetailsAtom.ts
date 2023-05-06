@@ -78,6 +78,8 @@ export type profileAtomDetails = {
   profileDetailsCardTheme: string;
   activityGraph: boolean;
   activityGraphTheme: string;
+  startWelcomeSection: boolean;
+  endWelcomeSection: boolean;
 };
 
 const defaultPostState: profileAtomDetails = {
@@ -157,6 +159,8 @@ const defaultPostState: profileAtomDetails = {
   profileDetailsCardTheme: "2077",
   activityGraph: false,
   activityGraphTheme: "default",
+  startWelcomeSection: false,
+  endWelcomeSection: false,
 };
 
 export const profileAtomDetail = atom<profileAtomDetails>({

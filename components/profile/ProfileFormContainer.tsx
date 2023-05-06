@@ -9,6 +9,7 @@ import DividerLine from "../DividerLine";
 import AddOns from "./Contents/AddOns";
 import Skills from "./Contents/Skills";
 import Social from "./Contents/Social";
+import StartAndEnd from "./Contents/StartAndEnd";
 import Statistics from "./Contents/Statistics";
 import Subtitle from "./Contents/Subtitle";
 import Support from "./Contents/Support";
@@ -61,6 +62,8 @@ function ProfileFormContainer({ updateCurrentValue, updateAtom }: Props) {
           </>
         )}
         <Social />
+        <DividerLine />
+        <StartAndEnd />
         <DividerLine />
         {/*         <SideBarImage />
         <DividerLine /> */}
