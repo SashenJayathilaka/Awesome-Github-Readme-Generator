@@ -38,7 +38,7 @@ function MiddleChoose({}: Props) {
                       <div className="flex justify-center items-center">
                         <img
                           src="https://dl.dropboxusercontent.com/s/sln5pt7i92d61yq/upgrade.png"
-                          className="w-[200px]"
+                          className="w-[200px] h-[200px]"
                           alt=""
                         />
                       </div>
@@ -70,7 +70,7 @@ function MiddleChoose({}: Props) {
                       <div className="flex justify-center items-center">
                         <img
                           src="https://dl.dropboxusercontent.com/s/n36wped2q4l7lx8/3284-1024x973.png"
-                          className="w-[200px]"
+                          className="w-[200px] h-[200px]"
                           alt=""
                         />
                       </div>
