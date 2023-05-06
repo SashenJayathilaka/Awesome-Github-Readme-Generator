@@ -159,4 +159,6 @@ export interface ProfileAtomDetails {
   profileDetailsCardTheme: string;
   activityGraph: boolean;
   activityGraphTheme: string;
+  startWelcomeSection: boolean;
+  endWelcomeSection: boolean;
 }
