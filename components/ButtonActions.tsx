@@ -5,7 +5,6 @@ import {
   AiOutlineDownload,
   AiOutlineEye,
   AiOutlineFileDone,
-  AiOutlineSave,
 } from "react-icons/ai";
 import { BiArrowBack, BiCopy } from "react-icons/bi";
 import { toast } from "react-toastify";
@@ -94,13 +93,13 @@ function ButtonActions({ setIsShow, setIsMdPreview, isMdPreview }: Props) {
         <AiOutlineDownload size={20} />
         <span>Download Markdown</span>
       </button>
-      <button
+      {/*       <button
         onClick={() => toast.info("This feature will be coming soon")}
         className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         <AiOutlineSave size={20} />
         <span>Save Markdown</span>
-      </button>
+      </button> */}
       <button
         onClick={() =>
           isMdPreview ? setIsMdPreview(false) : setIsMdPreview(true)

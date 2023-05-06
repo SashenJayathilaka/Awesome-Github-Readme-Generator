@@ -1030,6 +1030,42 @@ const ProfileMdPreview = () => {
     return null;
   };
 
+  const StartSection = () => {
+    const start = profileDetails.startWelcomeSection;
+
+    if (start) {
+      return (
+        <>
+          <img
+            src="https://raw.githubusercontent.com/BEPb/BEPb/5c63fa170d1cbbb0b1974f05a3dbe6aca3f5b7f3/assets/Bottom_up.svg"
+            className="w-full"
+          />
+          <br />
+        </>
+      );
+    }
+
+    return null;
+  };
+
+  const EndSection = () => {
+    const end = profileDetails.endWelcomeSection;
+
+    if (end) {
+      return (
+        <>
+          <br />
+          <img
+            src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg"
+            className="w-full"
+          />
+        </>
+      );
+    }
+
+    return null;
+  };
+
   return {
     Tittle,
     SubTittle,
@@ -1042,6 +1078,8 @@ const ProfileMdPreview = () => {
     Shields,
     Statistics,
     ActiveGraph,
+    StartSection,
+    EndSection,
   };
 };
 
