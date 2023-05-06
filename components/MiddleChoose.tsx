@@ -9,7 +9,7 @@ import Loader from "./Loader";
 
 type Props = {};
 
-function MiddleChoose({ }: Props) {
+function MiddleChoose({}: Props) {
   const router = useRouter();
   const [firstImageArr, setFirstImageArr] = useState<string | null>(null);
   const [secondImageArr, setSecondImageArr] = useState<string | null>(null);
@@ -30,10 +30,6 @@ function MiddleChoose({ }: Props) {
               <h1 className="font-semibold text-gray-700 dark:text-gray-300 text-3xl md:text-4xl">
                 Choose Github Readme Template
               </h1>
-              <p className="mt-2.5 lg:w-1/2 lg:text-center text-2xl text-gray-500">
-                We have several plans to showcase your Business. Get everything
-                you need
-              </p>
             </div>
             <div className="flex items-center justify-center w-full">
               <div className="pt-14">
@@ -51,7 +47,7 @@ function MiddleChoose({ }: Props) {
                     >
                       <div className="py-5 px-4 bg-white border border-gray-200shadow rounded-lg text-left">
                         <h4 className="text-2xl text-indigo-700 font-semibold pb-8 text-center">
-                          Github Profile README.md Generator
+                          Awesome Github Profile README.md Generator
                         </h4>
                         <div className="flex justify-center items-center">
                           <img
@@ -83,7 +79,7 @@ function MiddleChoose({ }: Props) {
                     >
                       <div className="py-5 px-4 bg-indigo-700 border border-gray-200 shadow rounded-lg text-left">
                         <h4 className="text-2xl text-white font-semibold pb-8 text-center">
-                          Github Repository README.md Generator
+                          Awesome Github Repository README.md Generator
                         </h4>
                         <div className="flex justify-center items-center">
                           <img
