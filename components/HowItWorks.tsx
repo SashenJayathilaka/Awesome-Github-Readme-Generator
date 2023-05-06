@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 type Props = {};
 
-function HowItWorks({}: Props) {
+function HowItWorks({ }: Props) {
   return (
     <div className="overflow-y-hidden bg-gradient-to-r from-slate-300 via-slate-100 to-[#06375f] dark:bg-gradient-to-r dark:from-[#191a47] dark:via-[#0d0d37] dark:to-[#06375f] shadow-2xl">
       <div className="mx-auto container f-f-p px-4 xl:px-0 py-24">
@@ -55,11 +55,11 @@ function HowItWorks({}: Props) {
                 className="flex mt-12 flex-col items-center lg:items-end md:w-8/12"
               >
                 <h1 className="focus:outline-none text-xl font-bold leading-5">
-                  Chose a Template
+                  Choose a Template
                 </h1>
                 <h2 className="focus:outline-none text-gray-700 dark:text-gray-500 mt-3 pl-3 text-center md:text-right text-base leading-6 tracking-wide">
-                  Chose Github Readme Template you want (available Github
-                  Profile Readme.Md Generator or Github Repository Readme.Md
+                  Choose Github Readme Template you want (available Github
+                  Profile README.md Generator or Github Repository README.md
                   Generator)
                 </h2>
               </motion.div>
@@ -162,7 +162,7 @@ function HowItWorks({}: Props) {
                 </h1>
                 <h2 className="focus:outline-none text-gray-700 dark:text-gray-500 mt-3 text-base leading-6 tracking-wide">
                   Fill in the desired fields and press the generate button to
-                  create your Readme.Md file
+                  create your README.md file
                 </h2>
               </motion.div>
             </div>
@@ -197,11 +197,11 @@ function HowItWorks({}: Props) {
             />
             <div className="mt-10">
               <h1 className="text-xl tracking-wide text-center leading-5 font-bold">
-                Chose a template
+                Choose a template
               </h1>
               <h2 className="text-gray-700 dark:text-gray-500 mt-3 pl-3 text-center text-base leading-6 tracking-wide">
-                Chose Github Readme Template you want (available Github Profile
-                Readme.Md Generator or Github Repository Readme.Md Generator)
+                Choose Github Readme Template you want (available Github Profile
+                README.md Generator or Github Repository README.md Generator)
               </h2>
             </div>
             <img
@@ -219,7 +219,7 @@ function HowItWorks({}: Props) {
               </h1>
               <h2 className="text-gray-700 dark:text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
                 Fill in the desired fields and press the generate button to
-                create your Readme.Md file
+                create your README.md file
               </h2>
             </div>
           </div>
