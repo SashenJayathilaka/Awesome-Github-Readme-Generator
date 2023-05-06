@@ -6,7 +6,7 @@ import { AiOutlineFork, AiOutlineStar } from "react-icons/ai";
 
 type Props = {};
 
-function SmallHeader({ }: Props) {
+function SmallHeader({}: Props) {
   const [firstImageArr, setFirstImageArr] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function SmallHeader({ }: Props) {
         <div className="flex flex-col justify-between items-center">
           <img className="w-36" src={firstImageArr!} alt="" />
           <p className="text-xl font-medium">
-            Github Repository README.md Generator
+            Awesome Github Repository README.md Generator
           </p>
         </div>
         <div className="flex justify-center gap-4 py-2.5">
