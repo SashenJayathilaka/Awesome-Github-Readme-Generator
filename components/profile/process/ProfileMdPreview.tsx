@@ -714,7 +714,7 @@ const ProfileMdPreview = () => {
         return (
           <>
             <img
-              className="items-start"
+              className="items-center"
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&layout=compact&theme=${gitSkillCard}`}
               alt={githubUsername}
             />

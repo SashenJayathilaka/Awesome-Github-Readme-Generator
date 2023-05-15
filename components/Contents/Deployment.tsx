@@ -10,6 +10,7 @@ import { useRecoilState } from "recoil";
 import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
+import InstallCodeLine from "./InstallCodeLine";
 
 type Props = {};
 
@@ -110,9 +111,7 @@ function Deployment({}: Props) {
             </div>
             <div className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
               <p>To deploy this project run</p>
-              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-                yarn deploy
-              </p>
+              <InstallCodeLine label="yarn deploy" />
             </div>
           </div>
           {gitHubTechStack.deployment.length > 0 && (
@@ -158,7 +157,7 @@ function Deployment({}: Props) {
                     <div className="flex flex-col gap-2 items-start">
                       <div className="flex justify-start gap-2 items-center">
                         <p
-                          className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
+                          className="dark:bg-slate-800 bg-slate-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-gray-700 dark:text-[#7c8691]"
                           onClick={() =>
                             removeElement(
                               data.deploymentCommand,

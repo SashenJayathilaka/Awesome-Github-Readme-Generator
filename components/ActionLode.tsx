@@ -26,7 +26,7 @@ function ActionLode({}: Props) {
               </svg>
               <div className="div rounded-full bg-transparent w-[150px] h-[150px]" />
             </div>
-            <p className="mt-6 text-base font-medium text-gray-200 text-center">
+            <p className="mt-6 text-base font-medium dark:text-gray-200 text-gray-700 text-center">
               Loading ...
             </p>
           </div>

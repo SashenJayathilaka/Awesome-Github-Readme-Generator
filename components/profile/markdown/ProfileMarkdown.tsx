@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import ProfileMdContent from "../process/ProfileMdContent";
 
 type Props = {};
@@ -34,9 +35,9 @@ function ProfileMarkdown({}: Props) {
       <Languages />
       <Support />
       <AddOn />
-      {Statistics !== null && <Divider />}
+      {Statistics() && <Divider />}
       <Statistics />
-      {ActiveGraph !== null && <Divider />}
+      {ActiveGraph() && <Divider />}
       <ActiveGraph />
       <EndSection />
     </div>
