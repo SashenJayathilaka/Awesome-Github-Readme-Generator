@@ -10,6 +10,7 @@ import { useRecoilState } from "recoil";
 import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
+import InstallCodeLine from "./InstallCodeLine";
 
 type Props = {};
 
@@ -93,10 +94,12 @@ function RunLocally({}: Props) {
       <div className="flex flex-col justify-between gap-4">
         <div className="flex flex-col gap-1 mt-5 justify-start items-start">
           <p className="text-lg font-medium">Clone the project</p>
-          <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-            {gitHubDetail.gitRepoUrl ||
-              "git clone https://github.com/Louis3797/awesome-readme-template.git"}
-          </p>
+          <InstallCodeLine
+            label={
+              gitHubDetail.gitRepoUrl ||
+              "git clone https://github.com/Louis3797/awesome-readme-template.git"
+            }
+          />
         </div>
         <div className="py-4 flex justify-between gap-4">
           <InputField
@@ -126,25 +129,19 @@ function RunLocally({}: Props) {
               <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 Go to the project directory
               </p>
-              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-                cd my-project
-              </p>
+              <InstallCodeLine label="cd my-project" />
             </div>
             <div className="flex flex-col gap-1">
               <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 Install dependencies
               </p>
-              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-                yarn install
-              </p>
+              <InstallCodeLine label="yarn install" />
             </div>
             <div className="flex flex-col gap-1">
               <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 Start the server
               </p>
-              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-                yarn start
-              </p>
+              <InstallCodeLine label="yarn start" />
             </div>
           </div>
           {gitHubTechStack.runLocally.length > 0 && (
@@ -190,7 +187,7 @@ function RunLocally({}: Props) {
                     <div className="flex flex-col gap-2 items-start">
                       <div className="flex justify-start gap-2 items-center">
                         <p
-                          className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
+                          className="dark:bg-slate-800 bg-slate-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-gray-700 dark:text-[#7c8691]"
                           onClick={() =>
                             removeElement(data.runningCommand, "runningCommand")
                           }

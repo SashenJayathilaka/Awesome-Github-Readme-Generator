@@ -10,6 +10,7 @@ import { useRecoilState } from "recoil";
 import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
+import InstallCodeLine from "./InstallCodeLine";
 
 type Props = {};
 
@@ -112,9 +113,7 @@ function RunningTests({}: Props) {
               <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 To run tests, run the following command
               </p>
-              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-[200px] items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-                yarn test test
-              </p>
+              <InstallCodeLine label="yarn test test" />
             </div>
           </div>
           {gitHubTechStack.runningTests.length > 0 && (
@@ -163,7 +162,7 @@ function RunningTests({}: Props) {
                     <div className="flex flex-col gap-2 items-start">
                       <div className="flex justify-start gap-2 items-center">
                         <p
-                          className="bg-slate-800 px-2.5 py-2 rounded-md w-[200px] items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
+                          className="dark:bg-slate-800 bg-slate-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-gray-700 dark:text-[#7c8691]"
                           onClick={() =>
                             removeElement(
                               data.runningTestsCommand,

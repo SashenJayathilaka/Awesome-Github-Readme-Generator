@@ -12,6 +12,7 @@ import { useRecoilState } from "recoil";
 import FloatingActionButton from "../FloatingActionButton";
 import Heading from "../Heading";
 import InputField from "../InputField";
+import InstallCodeLine from "./InstallCodeLine";
 
 type Props = {};
 
@@ -154,9 +155,7 @@ function Prerequisites({}: Props) {
               <p className="text-sm font-normal text-gray-500 dark:text-[#7c8691]">
                 This project uses Yarn as package manager
               </p>
-              <p className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]">
-                npm install --global yarn
-              </p>
+              <InstallCodeLine label="npm install --global yarn" />
             </div>
           </div>
           {gitHubTechStack.prerequisites.length > 0 && (
@@ -216,7 +215,7 @@ function Prerequisites({}: Props) {
                       <div className="flex justify-start gap-2 items-center">
                         {!data.prerequisitesValue && <FaBowlingBall size={8} />}
                         <p
-                          className="bg-slate-800 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-[#7c8691]"
+                          className="dark:bg-slate-800 bg-slate-300 px-2.5 py-2 rounded-md w-auto items-center cursor-pointer text-center text-sm font-normal text-gray-700 dark:text-[#7c8691]"
                           onClick={() => removeElement(data.code, "code")}
                         >
                           {data.code}
