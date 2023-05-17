@@ -75,8 +75,12 @@ function ProfileButtonAction({
   };
 
   const handleStartProcess = useCallback(() => {
-    processJsonDownloaded();
-    setIsDownload(true);
+    if (isMdPreview) {
+      processJsonDownloaded();
+      setIsDownload(true);
+    } else {
+      toast.warn("Please Switch Preview Code");
+    }
   }, [isDownLoad]);
 
   const handleDownloadJson = (value: ProfileAtomDetails) => {
@@ -143,7 +147,7 @@ function ProfileButtonAction({
         className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         <BsFiletypeJson size={20} />
-        <span>Save Markdown</span>
+        <span>Download Backup</span>
       </button>
       <button
         onClick={() =>
