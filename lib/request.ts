@@ -26,8 +26,7 @@ const Request = () => {
   const fetchData = async () => {
     try {
       const skills: SkillsType = await fetch(
-        "https://globalmusicbeats.github.io/skill/Skills.json"
-        /* process.env.NEXT_PUBLIC_SKILL_API_KEY! */
+        process.env.NEXT_PUBLIC_SKILL_API_KEY!
       ).then((res) => res.json());
 
       setSkills(skills);
