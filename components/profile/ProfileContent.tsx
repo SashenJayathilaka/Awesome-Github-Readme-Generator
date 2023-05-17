@@ -17,6 +17,7 @@ import ProfileFormContainer from "./ProfileFormContainer";
 import ProfileHeader from "./ProfileHeader";
 import ProfileMarkdown from "./markdown/ProfileMarkdown";
 import ProfileMarkdownPreview from "./markdown/ProfileMarkdownPreview";
+import ConfigOptions from "./process/ConfigOptions";
 
 type Props = {};
 
@@ -95,12 +96,13 @@ function ProfileContent({}: Props) {
                   <button
                     disabled={action}
                     onClick={OnChangeAction}
-                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-bounce"
+                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-pulse"
                   >
                     Generate File
                     <AiOutlineDownload size={25} />
                   </button>
                 </div>
+                <ConfigOptions />
               </>
             )}
           </>
@@ -110,6 +112,7 @@ function ProfileContent({}: Props) {
               setIsShow={setIsShow}
               setIsMdPreview={setIsMdPreview}
               isMdPreview={isMdPreview}
+              profileDetails={profileDetails}
             />
             {isMdPreview ? (
               <motion.div
