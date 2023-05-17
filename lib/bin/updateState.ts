@@ -1,4 +1,4 @@
-import { gitImages } from "@/atom/images";
+/* import { gitImages } from "@/atom/images";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import languageArr from "./languageArr";
@@ -41,10 +41,10 @@ const updateState = () => {
     }
   };
 
-  /*   useEffect(() => {
+  useEffect(() => {
     filterOneByOne();
   }, [technology]);
- */
+
   return {
     updatedLanguageArray,
     unique,
@@ -53,3 +53,4 @@ const updateState = () => {
 };
 
 export default updateState;
+ */

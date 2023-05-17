@@ -1,17 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import convertJsonProcess from "@/hook/convertJsonProcess";
+import { ProfileAtomDetails } from "@/type";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import {
   AiOutlineDownload,
   AiOutlineEye,
   AiOutlineFileDone,
 } from "react-icons/ai";
 import { BiArrowBack, BiCopy } from "react-icons/bi";
+import { BsFiletypeJson } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 type Props = {
   setIsShow: (value: boolean) => void;
   setIsMdPreview: (value: boolean) => void;
+  profileDetails: ProfileAtomDetails;
   isMdPreview: boolean;
 };
 
@@ -19,10 +23,15 @@ function ProfileButtonAction({
   setIsShow,
   setIsMdPreview,
   isMdPreview,
+  profileDetails,
 }: Props) {
   const [isCopy, setIsCopy] = useState(false);
+  const [isDownLoad, setIsDownload] = useState(false);
 
-  const handleDownloadMarkdown = (event: React.FormEvent<HTMLFormElement>) => {
+  const { processJsonDownloaded, skillLabel, currentPostState } =
+    convertJsonProcess();
+
+  const handleDownloadMarkdown = (event: FormEvent) => {
     event.preventDefault();
 
     if (isMdPreview) {
@@ -44,7 +53,7 @@ function ProfileButtonAction({
     }
   };
 
-  const handleCopyToClipboard = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleCopyToClipboard = (event: FormEvent) => {
     event.preventDefault();
 
     if (isMdPreview) {
@@ -65,6 +74,38 @@ function ProfileButtonAction({
     }
   };
 
+  const handleStartProcess = useCallback(() => {
+    processJsonDownloaded();
+    setIsDownload(true);
+  }, [isDownLoad]);
+
+  const handleDownloadJson = (value: ProfileAtomDetails) => {
+    if (!value) return;
+
+    const tempElement = document.createElement("a");
+    tempElement.setAttribute(
+      "href",
+      `data:text/json;charset=utf-8,${encodeURIComponent(
+        JSON.stringify(value)
+      )}`
+    );
+    tempElement.setAttribute("download", "data.json");
+    tempElement.style.display = "none";
+    document.body.appendChild(tempElement);
+    tempElement.click();
+    document.body.removeChild(tempElement);
+  };
+
+  useEffect(() => {
+    if (isDownLoad) {
+      if (skillLabel.length > 0) {
+        handleDownloadJson(currentPostState);
+      } else {
+        handleDownloadJson(profileDetails);
+      }
+    }
+  }, [currentPostState.skills]);
+
   return (
     <div className="flex justify-between items-center py-2.5">
       <button
@@ -75,7 +116,7 @@ function ProfileButtonAction({
         <span>Back To Edit</span>
       </button>
       <button
-        onClick={(e: any) => handleCopyToClipboard(e)}
+        onClick={handleCopyToClipboard}
         className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         {isCopy ? (
@@ -91,19 +132,19 @@ function ProfileButtonAction({
         )}
       </button>
       <button
-        onClick={(e: any) => handleDownloadMarkdown(e)}
+        onClick={handleDownloadMarkdown}
         className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         <AiOutlineDownload size={20} />
         <span>Download Markdown</span>
       </button>
-      {/*       <button
-        onClick={() => toast.info("This feature will be coming soon")}
+      <button
+        onClick={handleStartProcess}
         className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
-        <AiOutlineSave size={20} />
+        <BsFiletypeJson size={20} />
         <span>Save Markdown</span>
-      </button> */}
+      </button>
       <button
         onClick={() =>
           isMdPreview ? setIsMdPreview(false) : setIsMdPreview(true)

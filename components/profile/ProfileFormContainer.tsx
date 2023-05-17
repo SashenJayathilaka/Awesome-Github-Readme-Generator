@@ -65,8 +65,6 @@ function ProfileFormContainer({ updateCurrentValue, updateAtom }: Props) {
         <DividerLine />
         <StartAndEnd />
         <DividerLine />
-        {/*         <SideBarImage />
-        <DividerLine /> */}
         <AddOns />
         <DividerLine />
         <Statistics />

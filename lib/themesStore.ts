@@ -1094,3 +1094,22 @@ export const activityGraphTheme = [
     label: "Arctic",
   },
 ];
+
+export const topic = [
+  "automation",
+  "backend",
+  "backendService",
+  "database",
+  "devops",
+  "engines",
+  "framework",
+  "frontend",
+  "languages",
+  "mL",
+  "mobile",
+  "other",
+  "software",
+  "static",
+  "testing",
+  "visualization",
+];
