@@ -3,7 +3,7 @@
 import { gitImages } from "@/atom/images";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { HiPhotograph } from "react-icons/hi";
 import { useRecoilState } from "recoil";
@@ -23,7 +23,7 @@ function AboutProject({}: Props) {
     setDemoImageLink(event.target.value);
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const currentStateValue = images.demoImage;

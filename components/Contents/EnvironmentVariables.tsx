@@ -2,7 +2,7 @@
 
 import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { FaKey } from "react-icons/fa";
 import { useRecoilState } from "recoil";
 
@@ -21,7 +21,7 @@ function EnvironmentVariables({}: Props) {
     setEnvVariables(event.target.value);
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const currentValue = gitHubTechStack.environmentVariables;

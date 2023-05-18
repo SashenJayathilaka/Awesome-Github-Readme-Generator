@@ -3,7 +3,7 @@
 import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { BsFillFlagFill } from "react-icons/bs";
 import { useRecoilState } from "recoil";
 
@@ -29,7 +29,7 @@ function Deployment({}: Props) {
     }));
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const deploymentValue = deploymentValues.deploymentValue;

@@ -2,7 +2,7 @@ import { gitHubDetails } from "@/atom/gitHubDetails";
 import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { BiRun } from "react-icons/bi";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -30,7 +30,7 @@ function RunLocally({}: Props) {
     }));
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const runningValue = runLocallyValues.runningValue;

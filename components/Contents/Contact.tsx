@@ -4,6 +4,7 @@ import { gitHubDetails } from "@/atom/gitHubDetails";
 import { useEffect, useState } from "react";
 import { FaRegHandshake } from "react-icons/fa";
 import { useRecoilState } from "recoil";
+
 import Heading from "../Heading";
 import InputField from "../InputField";
 

@@ -3,7 +3,7 @@
 import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { BiTestTube } from "react-icons/bi";
 import { useRecoilState } from "recoil";
 
@@ -29,7 +29,7 @@ function RunningTests({}: Props) {
     }));
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const runningTestsValue = runningTestsValues.runningTestsValue;
