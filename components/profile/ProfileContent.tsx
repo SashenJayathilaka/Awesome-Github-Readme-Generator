@@ -6,11 +6,12 @@ import { ProfileAtomDetails } from "@/type";
 import { Divider } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { AiOutlineDownload } from "react-icons/ai";
+import { BsMarkdown } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
 import ActionLode from "../ActionLode";
+import DividerLine from "../DividerLine";
 import ProfileButtonAction from "./ProfileButtonAction";
 import ProfileFeedbackForm from "./ProfileFeedbackForm";
 import ProfileFormContainer from "./ProfileFormContainer";
@@ -96,12 +97,13 @@ function ProfileContent({}: Props) {
                   <button
                     disabled={action}
                     onClick={OnChangeAction}
-                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-pulse"
+                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-pulse focus:outline-none focus:shadow-outline shadow-2xl items-center"
                   >
                     Generate File
-                    <AiOutlineDownload size={25} />
+                    <BsMarkdown size={25} />
                   </button>
                 </div>
+                <DividerLine />
                 <ConfigOptions />
               </>
             )}

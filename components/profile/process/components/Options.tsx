@@ -3,10 +3,12 @@
 import { ProfileAtomDetails } from "@/type";
 import { motion } from "framer-motion";
 import { FormEvent } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 type Props = {
   files: ProfileAtomDetails | null;
   fileName: string;
+  isLoading: boolean;
   setFiles: (value: ProfileAtomDetails | null) => void;
   setFileName: (value: string) => void;
   handleProcess: (event: FormEvent) => void;
@@ -16,6 +18,7 @@ type Props = {
 function Options({
   files,
   fileName,
+  isLoading,
   setFiles,
   setFileName,
   handleProcess,
@@ -76,7 +79,7 @@ function Options({
                 </div>
               </div>
             ) : (
-              <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center cursor-pointer">
+              <label className="flex flex-col rounded-lg border-4 border-dashed dark:border-gray-500 border-gray-300 w-full h-60 p-10 group text-center cursor-pointer">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -114,9 +117,13 @@ function Options({
         <div>
           <button
             onClick={handleProcess}
-            className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+            className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 cursor-pointer transition ease-in duration-300"
           >
-            Process
+            {isLoading ? (
+              <AiOutlineLoading3Quarters size={25} className="animate-spin" />
+            ) : (
+              "Process"
+            )}
           </button>
         </div>
       </form>
