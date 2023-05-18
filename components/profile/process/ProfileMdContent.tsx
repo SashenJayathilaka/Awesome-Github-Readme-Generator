@@ -435,21 +435,21 @@ const ProfileMdContent = () => {
       if (skills === "showMore") {
         return (
           <>
-            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&langs_count=8&theme=${gitSkillCard}" alt=${githubUsername}
+            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&langs_count=8&theme=${gitSkillCard}" alt=${githubUsername}
           />`}
           </>
         );
       } else if (skills === "compact") {
         return (
           <>
-            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&layout=compact&theme=${gitSkillCard}" alt=${githubUsername}
+            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=${gitSkillCard}" alt=${githubUsername}
               />`}
           </>
         );
       } else if (skills === "hide") {
         return (
           <>
-            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&hide_progress=true&theme=${gitSkillCard}" alt=${githubUsername}
+            {`<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&hide_progress=true&theme=${gitSkillCard}" alt=${githubUsername}
             />`}
           </>
         );
