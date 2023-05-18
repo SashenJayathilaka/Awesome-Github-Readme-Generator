@@ -705,7 +705,7 @@ const ProfileMdPreview = () => {
           <>
             <img
               className="items-start"
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&langs_count=8&theme=${gitSkillCard}`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&langs_count=8&theme=${gitSkillCard}`}
               alt={githubUsername}
             />
           </>
@@ -715,7 +715,7 @@ const ProfileMdPreview = () => {
           <>
             <img
               className="items-center"
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&layout=compact&theme=${gitSkillCard}`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=${gitSkillCard}`}
               alt={githubUsername}
             />
           </>
@@ -725,7 +725,7 @@ const ProfileMdPreview = () => {
           <>
             <img
               className="items-start"
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=sashenjayathilaka&hide_progress=true&theme=${gitSkillCard}`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&hide_progress=true&theme=${gitSkillCard}`}
               alt={githubUsername}
             />
           </>
