@@ -15,6 +15,7 @@ type Props = {};
 function ConfigOptions({}: Props) {
   const [files, setFiles] = useState<ProfileAtomDetails | null>(null);
   const [fileName, setFileName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [updateCurrentState, setUpdateCurrentState] =
     useRecoilState(profileAtomDetail);
 
@@ -47,11 +48,18 @@ function ConfigOptions({}: Props) {
 
       if (!files) return;
 
+      setIsLoading(true);
+
       if (files.skills.length > 0) {
         updateStateValue();
       } else {
         updateProfileStore(files, setUpdateCurrentState);
       }
+
+      setTimeout(() => {
+        setIsLoading(false);
+        toast.success("JSON Text Restore Successfully");
+      }, 1000);
     },
     [files]
   );
@@ -62,10 +70,11 @@ function ConfigOptions({}: Props) {
   }, [currentValue]);
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-12">
       <Options
         files={files}
         fileName={fileName}
+        isLoading={isLoading}
         setFiles={setFiles}
         setFileName={setFileName}
         handleProcess={handleProcess}

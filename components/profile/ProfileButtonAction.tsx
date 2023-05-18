@@ -75,12 +75,8 @@ function ProfileButtonAction({
   };
 
   const handleStartProcess = useCallback(() => {
-    if (isMdPreview) {
-      processJsonDownloaded();
-      setIsDownload(true);
-    } else {
-      toast.warn("Please Switch Preview Code");
-    }
+    processJsonDownloaded();
+    setIsDownload(true);
   }, [isDownLoad]);
 
   const handleDownloadJson = (value: ProfileAtomDetails) => {
