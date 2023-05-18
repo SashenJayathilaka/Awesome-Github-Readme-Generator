@@ -6,7 +6,7 @@ import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { AiFillCompass } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -33,7 +33,7 @@ function Roadmap({}: Props) {
     }));
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const roadMapValue = roadMapValues.roadMapValue;

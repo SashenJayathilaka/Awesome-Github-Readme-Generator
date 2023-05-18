@@ -2,7 +2,7 @@
 
 import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { GiDart } from "react-icons/gi";
 import { useRecoilState } from "recoil";
 
@@ -23,7 +23,7 @@ function Features({}: Props) {
     setFeaturesValue(event.target.value);
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const currentValue = gitHubTechStack.features;

@@ -3,7 +3,7 @@
 import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { FaBowlingBall } from "react-icons/fa";
 import { MdImportantDevices } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -34,7 +34,7 @@ function Prerequisites({}: Props) {
     }));
   };
 
-  const onAddValue = (event: React.FormEvent<HTMLFormElement>) => {
+  const onAddValue = (event: FormEvent) => {
     event.preventDefault();
 
     const prerequisitesValue = prerequisitesValues.prerequisitesValue;
