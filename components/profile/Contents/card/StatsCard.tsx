@@ -82,7 +82,9 @@ function StatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         <Select
           className="w-44"
           options={supportedThemes}
-          defaultValue={supportedThemes[0]}
+          defaultValue={
+            addOnes.starsTheme ? addOnes.starsTheme : supportedThemes[0]
+          }
           placeholder={topSkills}
           isSearchable
           menuPosition="fixed"

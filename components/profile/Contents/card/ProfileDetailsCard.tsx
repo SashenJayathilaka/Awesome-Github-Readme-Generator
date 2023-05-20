@@ -88,7 +88,11 @@ function ProfileDetailsCard({
         <Select
           className="w-44"
           options={profileSummaryCardsTheme}
-          defaultValue={profileSummaryCardsTheme[0]}
+          defaultValue={
+            statisticsData.profileDetailsCardTheme
+              ? statisticsData.profileDetailsCardTheme
+              : profileSummaryCardsTheme[0]
+          }
           placeholder={summaryCardTheme}
           isSearchable
           menuPosition="fixed"

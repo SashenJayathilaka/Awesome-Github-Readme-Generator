@@ -740,7 +740,7 @@ const ProfileMdPreview = () => {
         return (
           <>
             <h3 className="text-left text-lg font-semibold">Stars</h3>
-            <div className="flex justify-start gap-2">
+            <div className="flex justify-start gap-2 items-center">
               <>
                 {skillsCard && (
                   <>

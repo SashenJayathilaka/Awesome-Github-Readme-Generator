@@ -84,15 +84,12 @@ function StreakStatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         <Select
           className="w-44"
           options={supportedThemes}
-          defaultValue={supportedThemes[0]}
+          defaultValue={
+            addOnes.streakTheme ? addOnes.streakTheme : supportedThemes[0]
+          }
           placeholder={streakStats}
           isSearchable
           menuPosition="fixed"
-          /*   classNames={{
-            control: (state) => "bg-[#fff] border-[#434654] cursor-pointer",
-            option: (state) =>
-              "bg-white text-black hover:bg-gray-900 hover:text-gray-100 cursor-pointer",
-          }} */
           styles={colorStyles}
           onChange={(e: any) => setStreakStats(e.value)}
         />
