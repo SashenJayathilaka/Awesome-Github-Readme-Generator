@@ -129,15 +129,14 @@ function SkillCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
             <Select
               className="w-48"
               options={supportedThemes}
-              defaultValue={supportedThemes[0]}
+              defaultValue={
+                addOnes.skillCardTheme
+                  ? addOnes.skillCardTheme
+                  : supportedThemes[0]
+              }
               placeholder={gitSkillCard}
               isSearchable
               menuPosition="fixed"
-              /* classNames={{
-                control: (state) => "bg-[#fff] border-[#434654] cursor-pointer",
-                option: (state) =>
-                  "bg-white text-black hover:bg-gray-900 hover:text-gray-100 cursor-pointer",
-              }} */
               styles={colorStyles}
               onChange={(e: any) => setGitSkillCard(e.value)}
             />
@@ -147,7 +146,11 @@ function SkillCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
             <Select
               className="w-48"
               options={skillCardTemplate}
-              defaultValue={skillCardTemplate[1]}
+              defaultValue={
+                addOnes.skillCardLayout
+                  ? addOnes.skillCardLayout
+                  : skillCardTemplate[1]
+              }
               placeholder={skills}
               isSearchable
               menuPosition="fixed"

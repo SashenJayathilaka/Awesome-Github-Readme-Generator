@@ -88,7 +88,11 @@ function MostCommit({
         <Select
           className="w-44"
           options={profileSummaryCardsTheme}
-          defaultValue={profileSummaryCardsTheme[0]}
+          defaultValue={
+            statisticsData.mostCommitTheme
+              ? statisticsData.mostCommitTheme
+              : profileSummaryCardsTheme[0]
+          }
           placeholder={summaryCardTheme}
           isSearchable
           menuPosition="fixed"
