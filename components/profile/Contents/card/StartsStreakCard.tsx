@@ -84,11 +84,7 @@ function StartsStreakCard({
         <Select
           className="w-44"
           options={profileSummaryCardsTheme}
-          defaultValue={
-            statisticsData.statisticsTheme
-              ? statisticsData.statisticsTheme
-              : profileSummaryCardsTheme[0]
-          }
+          defaultValue={profileSummaryCardsTheme[0]}
           placeholder={stars}
           isSearchable
           menuPosition="fixed"

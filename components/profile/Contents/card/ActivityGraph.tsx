@@ -88,11 +88,7 @@ function ActivityGraph({
         <Select
           className="w-44"
           options={activityGraphTheme}
-          defaultValue={
-            statisticsData.activityGraphTheme
-              ? statisticsData.activityGraphTheme
-              : activityGraphTheme[0]
-          }
+          defaultValue={activityGraphTheme[0]}
           placeholder={summaryCardTheme}
           isSearchable
           menuPosition="fixed"
