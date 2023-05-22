@@ -84,9 +84,7 @@ function StreakStatsCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
         <Select
           className="w-44"
           options={supportedThemes}
-          defaultValue={
-            addOnes.streakTheme ? addOnes.streakTheme : supportedThemes[0]
-          }
+          defaultValue={supportedThemes[0]}
           placeholder={streakStats}
           isSearchable
           menuPosition="fixed"

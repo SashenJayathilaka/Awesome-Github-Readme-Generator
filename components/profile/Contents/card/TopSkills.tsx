@@ -129,11 +129,7 @@ function SkillCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
             <Select
               className="w-48"
               options={supportedThemes}
-              defaultValue={
-                addOnes.skillCardTheme
-                  ? addOnes.skillCardTheme
-                  : supportedThemes[0]
-              }
+              defaultValue={supportedThemes[0]}
               placeholder={gitSkillCard}
               isSearchable
               menuPosition="fixed"
@@ -146,11 +142,7 @@ function SkillCard({ addOnes, setAddOnes, resolvedTheme }: Props) {
             <Select
               className="w-48"
               options={skillCardTemplate}
-              defaultValue={
-                addOnes.skillCardLayout
-                  ? addOnes.skillCardLayout
-                  : skillCardTemplate[1]
-              }
+              defaultValue={skillCardTemplate[0]}
               placeholder={skills}
               isSearchable
               menuPosition="fixed"

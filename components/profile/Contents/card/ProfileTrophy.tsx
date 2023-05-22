@@ -80,9 +80,7 @@ function ProfileTrophy({ addOnes, setAddOnes, resolvedTheme }: Props) {
         <Select
           className="w-44 cursor-pointer"
           options={trophyTheme}
-          defaultValue={
-            addOnes.trophyTheme ? addOnes.trophyTheme : trophyTheme[0]
-          }
+          defaultValue={trophyTheme[0]}
           placeholder={trophy}
           isSearchable
           menuPosition="fixed"
