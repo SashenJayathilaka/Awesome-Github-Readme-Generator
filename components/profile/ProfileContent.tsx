@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
 import ActionLode from "../ActionLode";
+import ConfettiSection from "../ConfettiSection";
 import DividerLine from "../DividerLine";
 import ProfileButtonAction from "./ProfileButtonAction";
 import ProfileFeedbackForm from "./ProfileFeedbackForm";
@@ -110,6 +111,7 @@ function ProfileContent({}: Props) {
           </>
         ) : (
           <>
+            <ConfettiSection />
             <ProfileButtonAction
               setIsShow={setIsShow}
               setIsMdPreview={setIsMdPreview}

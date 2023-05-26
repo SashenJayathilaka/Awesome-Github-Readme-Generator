@@ -24,6 +24,7 @@ import { useRecoilState } from "recoil";
 
 import ActionLode from "./ActionLode";
 import ButtonActions from "./ButtonActions";
+import ConfettiSection from "./ConfettiSection";
 import SmallHeader from "./Contents/SmallHeader";
 import FeedBackForm from "./FeedBackForm";
 import FormContainer from "./FormContainer";
@@ -197,6 +198,7 @@ function BodyContent({}: Props) {
           </>
         ) : (
           <>
+            <ConfettiSection />
             <ButtonActions
               setIsShow={setIsShow}
               setIsMdPreview={setIsMdPreview}
