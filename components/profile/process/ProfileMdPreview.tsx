@@ -1017,7 +1017,7 @@ const ProfileMdPreview = () => {
                 <>
                   <img
                     className="items-center"
-                    src={`https://github-readme-activity-graph.cyclic.app/graph?username=${githubUsername}&theme=${activeGraphTheme}`}
+                    src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=${activeGraphTheme}`}
                   />
                 </>
               )}
