@@ -99,7 +99,7 @@ function ActivityGraph({
       <div className="flex justify-center items-center">
         <div className="flex justify-center gap-2 items-center border border-gray-800 px-2.5 py-2.5 rounded-md cursor-pointer">
           <img
-            src={`https://github-readme-activity-graph.cyclic.app/graph?username=${
+            src={`https://github-readme-activity-graph.vercel.app/graph?username=${
               statisticsData.github ? statisticsData.github : "sindresorhus"
             }&theme=${statisticsData.activityGraphTheme}`}
             alt="visitors"
