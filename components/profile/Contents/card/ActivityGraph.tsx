@@ -112,4 +112,3 @@ function ActivityGraph({
 }
 
 export default ActivityGraph;
-// ActivityGraph
