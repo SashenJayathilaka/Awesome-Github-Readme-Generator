@@ -1,19 +1,22 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitBadge } from "@/atom/displayBadges";
+import { gitHubDetails } from "@/atom/gitHubDetails";
+import { gitImages } from "@/atom/images";
+import { readmeRows } from "@/atom/readmeRow";
+import { gitImagesSizes } from "@/atom/size";
+import { gitTechStack } from "@/atom/techStack";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { useRecoilState } from "recoil";
 
 const MdPreview = () => {
-  const [gitHubDetail] = useRecoilState(gitRepoDetails);
-  const [readmeRow] = useRecoilState(gitRepoDetails);
-  const [images] = useRecoilState(gitRepoDetails);
-  const [size] = useRecoilState(gitRepoDetails);
-  const [displayBadges] = useRecoilState(gitRepoDetails);
-  const [gitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubDetail] = useRecoilState(gitHubDetails);
+  const [readmeRow] = useRecoilState(readmeRows);
+  const [images] = useRecoilState(gitImages);
+  const [size] = useRecoilState(gitImagesSizes);
+  const [displayBadges] = useRecoilState(gitBadge);
+  const [gitHubTechStack] = useRecoilState(gitTechStack);
 
   const PMainImage = () => {
     const image = images.mainImage;

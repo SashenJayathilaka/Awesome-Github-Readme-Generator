@@ -1,7 +1,7 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
-import { useCallback, useEffect, useState } from "react";
+import { gitHubDetails } from "@/atom/gitHubDetails";
+import { useEffect, useState } from "react";
 import { FaRegHandshake } from "react-icons/fa";
 import { useRecoilState } from "recoil";
 
@@ -16,7 +16,7 @@ function Contact({}: Props) {
     twitter: "",
     email: "",
   });
-  const [details, setDetails] = useRecoilState(gitRepoDetails);
+  const [details, setDetails] = useRecoilState(gitHubDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setContactsValue((prev) => ({
@@ -25,7 +25,7 @@ function Contact({}: Props) {
     }));
   };
 
-  const updateState = useCallback(() => {
+  const updateState = () => {
     if (contactValues) {
       setDetails((ls) => ({
         ...ls,
@@ -34,11 +34,11 @@ function Contact({}: Props) {
         twitter: contactValues.twitter,
       }));
     }
-  }, [contactValues, setDetails]);
+  };
 
   useEffect(() => {
     updateState();
-  }, [contactValues, updateState]);
+  }, [contactValues]);
 
   return (
     <div className="py-8">

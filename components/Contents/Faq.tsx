@@ -1,9 +1,9 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { BsQuestionCircle } from "react-icons/bs";
 import { useRecoilState } from "recoil";
 
@@ -19,7 +19,7 @@ function FaqSection({}: Props) {
     answers: "",
   });
   const [listOfFaq, setListOfFaq] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFaqValue((prev) => ({
@@ -46,46 +46,39 @@ function FaqSection({}: Props) {
     }
   };
 
-  const updateState = useCallback(
-    (value: string[]) => {
-      if (!value) return;
+  const updateState = (value: string[]) => {
+    if (!value) return;
 
-      const unique = value.filter(onlyUnique).flat();
+    const unique = value.filter(onlyUnique).flat();
+
+    setGitHubTechStack((prev) => ({
+      ...prev,
+      faqSection: unique,
+    }));
+  };
+
+  const removeElement = (value: string, label: string) => {
+    if (value) {
+      const removeCurrentState = listOfFaq.filter(
+        (element: any) => element[label] !== value
+      );
+
+      setListOfFaq(removeCurrentState);
+
+      const removeItem = gitHubTechStack.faqSection.filter(
+        (element: any) => element[label] !== value
+      );
 
       setGitHubTechStack((prev) => ({
         ...prev,
-        faqSection: unique,
+        faqSection: removeItem,
       }));
-    },
-    [setGitHubTechStack]
-  );
-
-  const removeElement = useCallback(
-    (value: string, label: string) => {
-      if (value) {
-        const removeCurrentState = listOfFaq.filter(
-          (element: any) => element[label] !== value
-        );
-
-        setListOfFaq(removeCurrentState);
-
-        const removeItem = gitHubTechStack.faqSection.filter(
-          (element: any) => element[label] !== value
-        );
-
-        setGitHubTechStack((prev) => ({
-          ...prev,
-          faqSection: removeItem,
-        }));
-      }
-    },
-    [gitHubTechStack.faqSection, listOfFaq, setGitHubTechStack]
-  );
+    }
+  };
 
   useEffect(() => {
     updateState(listOfFaq);
-  }, [listOfFaq, updateState]);
-
+  }, [listOfFaq]);
   return (
     <div className="py-8">
       <Heading label="FAQ" icon={BsQuestionCircle} />

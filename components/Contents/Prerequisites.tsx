@@ -1,9 +1,9 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { FaBowlingBall } from "react-icons/fa";
 import { MdImportantDevices } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -23,7 +23,7 @@ function Prerequisites({}: Props) {
     codeLine: "",
   });
   const [listOfPrerequisites, setListOfPrerequisites] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChangePrerequisites = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -60,19 +60,16 @@ function Prerequisites({}: Props) {
     }
   };
 
-  const updateState = useCallback(
-    (value: string[]) => {
-      if (!value) return;
+  const updateState = (value: string[]) => {
+    if (!value) return;
 
-      const unique = value.filter(onlyUnique).flat();
+    const unique = value.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        prerequisites: unique,
-      }));
-    },
-    [setGitHubTechStack]
-  );
+    setGitHubTechStack((prev) => ({
+      ...prev,
+      prerequisites: unique,
+    }));
+  };
 
   const removeElement = (value: string, label: string) => {
     if (value) {
@@ -95,7 +92,7 @@ function Prerequisites({}: Props) {
 
   useEffect(() => {
     updateState(listOfPrerequisites);
-  }, [listOfPrerequisites, updateState]);
+  }, [listOfPrerequisites]);
 
   return (
     <div className="py-6 h-full mb-12">

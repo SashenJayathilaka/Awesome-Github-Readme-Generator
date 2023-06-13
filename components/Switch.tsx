@@ -1,18 +1,19 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitHubDetails } from "@/atom/gitHubDetails";
+import { gitImages } from "@/atom/images";
 import { Switch } from "@mui/material";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
 
 type Props = {};
 
 function ControlSwitch({}: Props) {
-  const [controllers, setControllers] = useRecoilState(gitRepoDetails);
-  const [images] = useRecoilState(gitRepoDetails);
+  const [controllers, setControllers] = useRecoilState(gitHubDetails);
+  const [images] = useRecoilState(gitImages);
 
-  const handleChange = useCallback(() => {
+  const handleChange = () => {
     const languageLabel = images.updatedStateTechnology;
 
     if (languageLabel.length <= 10) {
@@ -30,14 +31,14 @@ function ControlSwitch({}: Props) {
     } else {
       toast.warn("You have reached the table's maximum number of limits");
     }
-  }, [controllers.isTable, images.updatedStateTechnology, setControllers]);
+  };
 
   useEffect(() => {
     setControllers((prev: string | any) => ({
       ...prev,
       isTable: "put a table",
     }));
-  }, [setControllers]);
+  }, []);
 
   return (
     <div className="flex justify-start gap-4 items-center text-center border border-gray-600 rounded-md px-2.5 py-2">

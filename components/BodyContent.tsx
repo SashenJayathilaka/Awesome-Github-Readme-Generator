@@ -1,8 +1,20 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitBadge } from "@/atom/displayBadges";
+import { gitHubDetails } from "@/atom/gitHubDetails";
+import { gitImages } from "@/atom/images";
+import { readmeRows } from "@/atom/readmeRow";
+import { gitImagesSizes } from "@/atom/size";
+import { gitTechStack } from "@/atom/techStack";
 import updateCurrentStateValue from "@/hook/updateCurrentStateValue";
-import { GitHubRepoDetails } from "@/type";
+import {
+  GitBadges,
+  GitHubDetail,
+  GitHubImages,
+  GitHubImagesSize,
+  GitHubTechStack,
+  ReadmeRow,
+} from "@/type";
 import { Divider } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -26,22 +38,48 @@ function BodyContent({}: Props) {
   const [isMdPreview, setIsMdPreview] = useState(true);
   const [action, setAction] = useState(false);
 
-  const [gitHubDetail, setGitHubDetail] = useRecoilState(gitRepoDetails);
+  const [gitHubDetail, setGitHubDetail] = useRecoilState(gitHubDetails);
+  const [readmeRow, setIsReadmeRow] = useRecoilState(readmeRows);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
+  const [images, setImages] = useRecoilState(gitImages);
+  const [size, setSize] = useRecoilState(gitImagesSizes);
+  const [displayBadges, setDisplayBadges] = useRecoilState(gitBadge);
 
-  const [readmeRow, setIsReadmeRow] = useRecoilState(gitRepoDetails);
-  const [images, setImages] = useRecoilState(gitRepoDetails);
-  const [size, setSize] = useRecoilState(gitRepoDetails);
-  const [displayBadges, setDisplayBadges] = useRecoilState(gitRepoDetails);
+  const {
+    updateFirstElement,
+    updateSecondElement,
+    updateThirdElement,
+    updateFourthElement,
+    updateFifthElement,
+    updateSixthElement,
+  } = updateCurrentStateValue();
 
-  const { updateRepoDetailsLocalCash } = updateCurrentStateValue();
+  const [firstElement, setFirstElement] =
+    useState<GitHubTechStack>(gitHubTechStack);
+  const [secondElement, setSecondElement] =
+    useState<GitHubDetail>(gitHubDetail);
+  const [thirdElement, setThirdElement] = useState<ReadmeRow>(readmeRow);
+  const [fourthElement, setFourthElement] = useState<GitHubImages>(images);
+  const [fifthElement, setFifthElement] = useState<GitHubImagesSize>(size);
+  const [sixthElement, setSixthElement] = useState<GitBadges>(displayBadges);
 
-  const [allElement, setAllElement] = useState(gitHubDetail);
-
-  const KeepCacheUpdated = (repoDetailsElement: GitHubRepoDetails) => {
+  const KeepCacheUpdated = (
+    firstStore: GitHubTechStack,
+    secondStore: GitHubDetail,
+    thirdStore: ReadmeRow,
+    fourthStore: GitHubImages,
+    fifthStore: GitHubImagesSize,
+    sixthStore: GitBadges
+  ) => {
     localStorage.setItem(
       "repoCache",
       JSON.stringify({
-        repoDetailsElement,
+        firstStore,
+        secondStore,
+        thirdStore,
+        fourthStore,
+        fifthStore,
+        sixthStore,
       })
     );
 
@@ -55,15 +93,47 @@ function BodyContent({}: Props) {
       return;
     }
 
-    setAllElement(
-      cache.repoDetailsElement
-        ? { ...gitHubDetail, ...cache.repoDetailsElement }
-        : gitHubDetail
+    setFirstElement(
+      cache.firstStore
+        ? { ...gitHubTechStack, ...cache.firstStore }
+        : gitHubTechStack
+    );
+    setSecondElement(
+      cache.secondStore
+        ? { ...gitHubTechStack, ...cache.secondStore }
+        : gitHubTechStack
+    );
+    setThirdElement(
+      cache.thirdStore
+        ? { ...gitHubTechStack, ...cache.thirdStore }
+        : gitHubTechStack
+    );
+    setFourthElement(
+      cache.fourthStore
+        ? { ...gitHubTechStack, ...cache.fourthStore }
+        : gitHubTechStack
+    );
+    setFifthElement(
+      cache.fifthStore
+        ? { ...gitHubTechStack, ...cache.fifthStore }
+        : gitHubTechStack
+    );
+    setSixthElement(
+      cache.sixthStore
+        ? { ...gitHubTechStack, ...cache.sixthStore }
+        : gitHubTechStack
     );
   };
 
   const OnChangeAction = () => {
-    KeepCacheUpdated(gitHubDetail);
+    KeepCacheUpdated(
+      gitHubTechStack,
+      gitHubDetail,
+      readmeRow,
+      images,
+      size,
+      displayBadges
+    );
 
     setAction(true);
 
@@ -75,12 +145,16 @@ function BodyContent({}: Props) {
   };
 
   const updateAtom = () => {
-    updateRepoDetailsLocalCash(allElement, setGitHubDetail);
+    updateFirstElement(firstElement, setGitHubTechStack);
+    updateSecondElement(secondElement, setGitHubDetail);
+    updateThirdElement(thirdElement, setIsReadmeRow);
+    updateFourthElement(fourthElement, setImages);
+    updateFifthElement(fifthElement, setSize);
+    updateSixthElement(sixthElement, setDisplayBadges);
   };
 
   useEffect(() => {
     updateAtom();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isShow]);
 
   return (
@@ -113,7 +187,7 @@ function BodyContent({}: Props) {
                   <button
                     disabled={action}
                     onClick={OnChangeAction}
-                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-bounce"
+                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-2xl text-gray-900 font-bold font-mono px-6 py-6 animate-pulse focus:outline-none focus:shadow-outline shadow-2xl items-center italic"
                   >
                     Generate File
                     <AiOutlineDownload size={25} />

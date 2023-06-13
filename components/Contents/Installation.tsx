@@ -1,9 +1,9 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { AiFillSetting } from "react-icons/ai";
 import { useRecoilState } from "recoil";
 
@@ -20,7 +20,7 @@ function Installation({}: Props) {
     installationCommand: "",
   });
   const [listOfInstallation, setListOfInstallation] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChangeInstallation = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInstallationValue((prev) => ({
@@ -47,45 +47,39 @@ function Installation({}: Props) {
     }
   };
 
-  const updateState = useCallback(
-    (value: string[]) => {
-      if (!value) return;
+  const updateState = (value: string[]) => {
+    if (!value) return;
 
-      const unique = value.filter(onlyUnique).flat();
+    const unique = value.filter(onlyUnique).flat();
+
+    setGitHubTechStack((prev) => ({
+      ...prev,
+      installation: unique,
+    }));
+  };
+
+  const removeElement = (value: string, label: string) => {
+    if (value) {
+      const removeCurrentState = listOfInstallation.filter(
+        (element: any) => element[label] !== value
+      );
+
+      setListOfInstallation(removeCurrentState);
+
+      const removeItem = gitHubTechStack.installation.filter(
+        (element: any) => element[label] !== value
+      );
 
       setGitHubTechStack((prev) => ({
         ...prev,
-        installation: unique,
+        installation: removeItem,
       }));
-    },
-    [setGitHubTechStack]
-  );
-
-  const removeElement = useCallback(
-    (value: string, label: string) => {
-      if (value) {
-        const removeCurrentState = listOfInstallation.filter(
-          (element: any) => element[label] !== value
-        );
-
-        setListOfInstallation(removeCurrentState);
-
-        const removeItem = gitHubTechStack.installation.filter(
-          (element: any) => element[label] !== value
-        );
-
-        setGitHubTechStack((prev) => ({
-          ...prev,
-          installation: removeItem,
-        }));
-      }
-    },
-    [gitHubTechStack.installation, listOfInstallation, setGitHubTechStack]
-  );
+    }
+  };
 
   useEffect(() => {
     updateState(listOfInstallation);
-  }, [listOfInstallation, updateState]);
+  }, [listOfInstallation]);
 
   return (
     <div className="py-8">
