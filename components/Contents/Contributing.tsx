@@ -1,11 +1,10 @@
 "use client";
 
-import { gitHubDetails } from "@/atom/gitHubDetails";
-import { readmeRows } from "@/atom/readmeRow";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { HiClipboardDocumentList } from "react-icons/hi2";
 import { MdWavingHand } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -22,8 +21,8 @@ function Contributing({}: Props) {
     secondValue: "undo",
   });
   const [currentUpdateState, setCurrentUpdateState] =
-    useRecoilState(readmeRows);
-  const [gitHubDetail] = useRecoilState(gitHubDetails);
+    useRecoilState(gitRepoDetails);
+  const [gitHubDetail] = useRecoilState(gitRepoDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (gitHubDetail.gitRepoUrl) {
@@ -36,7 +35,7 @@ function Contributing({}: Props) {
     }
   };
 
-  const updateState = () => {
+  const updateState = useCallback(() => {
     if (contributingValue.firstValue && contributingValue.secondValue) {
       setCurrentUpdateState((prev) => ({
         ...prev,
@@ -44,11 +43,15 @@ function Contributing({}: Props) {
         codeOfConduct: contributingValue.secondValue,
       }));
     }
-  };
+  }, [
+    contributingValue.firstValue,
+    contributingValue.secondValue,
+    setCurrentUpdateState,
+  ]);
 
   useEffect(() => {
     updateState();
-  }, [contributingValue]);
+  }, [contributingValue, updateState]);
 
   return (
     <div className="py-8">
@@ -57,7 +60,7 @@ function Contributing({}: Props) {
           <Heading label="Contributing" icon={MdWavingHand} />
           <div className="flex justify-start gap-20 items-center">
             <div>
-              <p className="text-lg font-medium text-gray-300">
+              <p className="text-lg font-medium text-gray-300 dark:text-gray-600">
                 If you want add Contributions section
               </p>
             </div>
@@ -93,7 +96,7 @@ function Contributing({}: Props) {
           <Heading label="Code of Conduct" icon={HiClipboardDocumentList} />
           <div className="flex justify-start gap-20 items-center">
             <div>
-              <p className="text-lg font-medium text-gray-300">
+              <p className="text-lg font-medium text-gray-300 dark:text-gray-600">
                 If you want add Code of Conduct section
               </p>
             </div>

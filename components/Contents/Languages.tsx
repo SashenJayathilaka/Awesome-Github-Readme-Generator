@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { boxLabel } from "@/lib/boxLabel";
@@ -54,7 +55,7 @@ function Languages({
       return el.label === label;
     });
     setIsAtomValueExits(isExits);
-  }, [stateTechnologies]);
+  }, [label, stateTechnologies]);
 
   return (
     <div>

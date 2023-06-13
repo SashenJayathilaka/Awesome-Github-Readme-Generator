@@ -1,8 +1,9 @@
-import { gitHubDetails } from "@/atom/gitHubDetails";
-import { gitTechStack } from "@/atom/techStack";
+"use client";
+
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { BiRun } from "react-icons/bi";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -20,8 +21,8 @@ function RunLocally({}: Props) {
     runningCommand: "",
   });
   const [listOfRunLocallyValues, setListOfRunLocallyValues] = useState([]);
-  const [gitHubDetail] = useRecoilState(gitHubDetails);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
+  const [gitHubDetail] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRunLocallyValues((prev) => ({
@@ -54,16 +55,19 @@ function RunLocally({}: Props) {
     }
   };
 
-  const updateState = (value: string[]) => {
-    if (!value) return;
+  const updateState = useCallback(
+    (value: string[]) => {
+      if (!value) return;
 
-    const unique = value.filter(onlyUnique).flat();
+      const unique = value.filter(onlyUnique).flat();
 
-    setGitHubTechStack((prev) => ({
-      ...prev,
-      runLocally: unique,
-    }));
-  };
+      setGitHubTechStack((prev) => ({
+        ...prev,
+        runLocally: unique,
+      }));
+    },
+    [setGitHubTechStack]
+  );
 
   const removeElement = (value: string, label: string) => {
     if (value) {
@@ -86,7 +90,7 @@ function RunLocally({}: Props) {
 
   useEffect(() => {
     updateState(listOfRunLocallyValues);
-  }, [listOfRunLocallyValues]);
+  }, [listOfRunLocallyValues, updateState]);
 
   return (
     <div className="py-8">

@@ -1,8 +1,8 @@
 "use client";
 
-import { gitTechStack } from "@/atom/techStack";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FaChalkboardTeacher, FaDocker } from "react-icons/fa";
 import { GrGraphQl } from "react-icons/gr";
 import { SiMongodb } from "react-icons/si";
@@ -15,7 +15,7 @@ import Stack from "../Stack";
 type Props = {};
 
 function TechStack({}: Props) {
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
   const [techStackValue, setTechStackValue] = useState({
     clientName: "",
     clientUrl: "",
@@ -98,95 +98,117 @@ function TechStack({}: Props) {
     }
   };
 
-  const updateStateValue = (strandedLabel: string) => {
-    if (listOfClient && strandedLabel === "client") {
-      const unique = listOfClient.filter(onlyUnique).flat();
+  const updateStateValue = useCallback(
+    (strandedLabel: string) => {
+      if (listOfClient && strandedLabel === "client") {
+        const unique = listOfClient.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        client: unique,
-      }));
-    } else if (listOfServer && strandedLabel === "server") {
-      const unique = listOfServer.filter(onlyUnique).flat();
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          client: unique,
+        }));
+      } else if (listOfServer && strandedLabel === "server") {
+        const unique = listOfServer.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        server: unique,
-      }));
-    } else if (listOfDatabase && strandedLabel === "database") {
-      const unique = listOfDatabase.filter(onlyUnique).flat();
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          server: unique,
+        }));
+      } else if (listOfDatabase && strandedLabel === "database") {
+        const unique = listOfDatabase.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        database: unique,
-      }));
-    } else if (listOfDevOps && strandedLabel === "devOps") {
-      const unique = listOfDevOps.filter(onlyUnique).flat();
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          database: unique,
+        }));
+      } else if (listOfDevOps && strandedLabel === "devOps") {
+        const unique = listOfDevOps.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        devOps: unique,
-      }));
-    }
-  };
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          devOps: unique,
+        }));
+      }
+    },
+    [
+      listOfClient,
+      listOfDatabase,
+      listOfDevOps,
+      listOfServer,
+      setGitHubTechStack,
+    ]
+  );
 
-  const removeElement = (label: any, category: string) => {
-    if (category === "client") {
-      const removeCurrentState = listOfClient.filter(
-        (element: any) => element.clientName !== label.clientName
-      );
-      setListOfClient(removeCurrentState);
+  const removeElement = useCallback(
+    (label: any, category: string) => {
+      if (category === "client") {
+        const removeCurrentState = listOfClient.filter(
+          (element: any) => element.clientName !== label.clientName
+        );
+        setListOfClient(removeCurrentState);
 
-      const removeItem = gitHubTechStack.client.filter(
-        (element: any) => element.clientName !== label.clientName
-      );
+        const removeItem = gitHubTechStack.client.filter(
+          (element: any) => element.clientName !== label.clientName
+        );
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        client: removeItem,
-      }));
-    } else if (category === "server") {
-      const removeCurrentState = listOfServer.filter(
-        (element: any) => element.serverName !== label.serverName
-      );
-      setListOfServer(removeCurrentState);
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          client: removeItem,
+        }));
+      } else if (category === "server") {
+        const removeCurrentState = listOfServer.filter(
+          (element: any) => element.serverName !== label.serverName
+        );
+        setListOfServer(removeCurrentState);
 
-      const removeItem = gitHubTechStack.server.filter(
-        (element: any) => element.serverName !== label.serverName
-      );
+        const removeItem = gitHubTechStack.server.filter(
+          (element: any) => element.serverName !== label.serverName
+        );
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        server: removeItem,
-      }));
-    } else if (category === "database") {
-      const removeCurrentState = listOfDatabase.filter(
-        (element: any) => element.databaseName !== label.databaseName
-      );
-      setListOfDatabase(removeCurrentState);
-      const removeItem = gitHubTechStack.database.filter(
-        (element: any) => element.databaseName !== label.databaseName
-      );
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        database: removeItem,
-      }));
-    } else if (category === "devOps") {
-      const removeCurrentState = listOfDevOps.filter(
-        (element: any) => element.devOpsName !== label.devOpsName
-      );
-      setListOfDevOps(removeCurrentState);
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          server: removeItem,
+        }));
+      } else if (category === "database") {
+        const removeCurrentState = listOfDatabase.filter(
+          (element: any) => element.databaseName !== label.databaseName
+        );
+        setListOfDatabase(removeCurrentState);
+        const removeItem = gitHubTechStack.database.filter(
+          (element: any) => element.databaseName !== label.databaseName
+        );
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          database: removeItem,
+        }));
+      } else if (category === "devOps") {
+        const removeCurrentState = listOfDevOps.filter(
+          (element: any) => element.devOpsName !== label.devOpsName
+        );
+        setListOfDevOps(removeCurrentState);
 
-      const removeItem = gitHubTechStack.devOps.filter(
-        (element: any) => element.devOpsName !== label.devOpsName
-      );
+        const removeItem = gitHubTechStack.devOps.filter(
+          (element: any) => element.devOpsName !== label.devOpsName
+        );
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        devOps: removeItem,
-      }));
-    }
-  };
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          devOps: removeItem,
+        }));
+      }
+    },
+    [
+      gitHubTechStack.client,
+      gitHubTechStack.database,
+      gitHubTechStack.devOps,
+      gitHubTechStack.server,
+      listOfClient,
+      listOfDatabase,
+      listOfDevOps,
+      listOfServer,
+      setGitHubTechStack,
+    ]
+  );
 
   useEffect(() => {
     updateStateValue(currentStateLabel);
@@ -196,6 +218,7 @@ function TechStack({}: Props) {
     listOfDatabase,
     listOfDevOps,
     currentStateLabel,
+    updateStateValue,
   ]);
 
   return (

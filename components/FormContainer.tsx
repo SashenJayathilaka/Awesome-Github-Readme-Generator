@@ -24,7 +24,6 @@ import TechStack from "./Contents/TechStack";
 import DividerLine from "./DividerLine";
 import Heading from "./Heading";
 import InputField from "./InputField";
-import TechnologiesContent from "./TechnologiesContent";
 
 type Props = {
   setIsReadmeRow: (value: any) => void;
@@ -107,7 +106,7 @@ function FormContainer({
   useEffect(() => {
     updateCurrentValue();
     updateAtom();
-  }, [isStore]);
+  }, [isStore, updateAtom, updateCurrentValue]);
 
   return (
     <div>
@@ -240,19 +239,11 @@ function FormContainer({
           {/* EnvironmentVariables */}
           {/* GettingStarted */}
           <GettingStarted />
-          <Divider
-            orientation="horizontal"
-            variant="fullWidth"
-            flexItem
-            sx={{
-              backgroundColor: "#3795BD",
-              marginY: "10px",
-            }}
-          />
+          <DividerLine />
           {/* GettingStarted */}
           {/*  Technologies */}
-          <TechnologiesContent />
-          <DividerLine />
+          {/*     <TechnologiesContent />
+          <DividerLine /> */}
         </form>
       </div>
     </div>

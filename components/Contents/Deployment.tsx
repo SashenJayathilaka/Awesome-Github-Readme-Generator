@@ -1,9 +1,9 @@
 "use client";
 
-import { gitTechStack } from "@/atom/techStack";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { BsFillFlagFill } from "react-icons/bs";
 import { useRecoilState } from "recoil";
 
@@ -20,7 +20,7 @@ function Deployment({}: Props) {
     deploymentCommand: "",
   });
   const [listOfDeployment, setListOfDeployment] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDeploymentValue((prev) => ({
@@ -47,39 +47,45 @@ function Deployment({}: Props) {
     }
   };
 
-  const updateState = (value: string[]) => {
-    if (!value) return;
+  const updateState = useCallback(
+    (value: string[]) => {
+      if (!value) return;
 
-    const unique = value.filter(onlyUnique).flat();
-
-    setGitHubTechStack((prev) => ({
-      ...prev,
-      deployment: unique,
-    }));
-  };
-
-  const removeElement = (value: string, label: string) => {
-    if (value) {
-      const removeCurrentState = listOfDeployment.filter(
-        (element: any) => element[label] !== value
-      );
-
-      setListOfDeployment(removeCurrentState);
-
-      const removeItem = gitHubTechStack.deployment.filter(
-        (element: any) => element[label] !== value
-      );
+      const unique = value.filter(onlyUnique).flat();
 
       setGitHubTechStack((prev) => ({
         ...prev,
-        deployment: removeItem,
+        deployment: unique,
       }));
-    }
-  };
+    },
+    [setGitHubTechStack]
+  );
+
+  const removeElement = useCallback(
+    (value: string, label: string) => {
+      if (value) {
+        const removeCurrentState = listOfDeployment.filter(
+          (element: any) => element[label] !== value
+        );
+
+        setListOfDeployment(removeCurrentState);
+
+        const removeItem = gitHubTechStack.deployment.filter(
+          (element: any) => element[label] !== value
+        );
+
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          deployment: removeItem,
+        }));
+      }
+    },
+    [gitHubTechStack.deployment, listOfDeployment, setGitHubTechStack]
+  );
 
   useEffect(() => {
     updateState(listOfDeployment);
-  }, [listOfDeployment]);
+  }, [listOfDeployment, updateState]);
 
   return (
     <div className="py-8">

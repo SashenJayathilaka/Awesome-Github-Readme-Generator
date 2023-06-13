@@ -1,8 +1,8 @@
 "use client";
 
-import { gitTechStack } from "@/atom/techStack";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { DiMagento } from "react-icons/di";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -19,7 +19,7 @@ function Acknowledgements({}: Props) {
     acknowledgementsUrl: "",
   });
   const [listOfAcknowledgements, setListOfAcknowledgements] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAcknowledgementsValue((prev) => ({
@@ -53,16 +53,19 @@ function Acknowledgements({}: Props) {
     }
   };
 
-  const updateState = (value: string[]) => {
-    if (!value) return;
+  const updateState = useCallback(
+    (value: string[]) => {
+      if (!value) return;
 
-    const unique = value.filter(onlyUnique).flat();
+      const unique = value.filter(onlyUnique).flat();
 
-    setGitHubTechStack((prev) => ({
-      ...prev,
-      acknowledgements: unique,
-    }));
-  };
+      setGitHubTechStack((prev) => ({
+        ...prev,
+        acknowledgements: unique,
+      }));
+    },
+    [setGitHubTechStack]
+  );
 
   const removeElement = (value: string, label: string) => {
     if (value) {
@@ -85,7 +88,7 @@ function Acknowledgements({}: Props) {
 
   useEffect(() => {
     updateState(listOfAcknowledgements);
-  }, [listOfAcknowledgements]);
+  }, [listOfAcknowledgements, updateState]);
 
   return (
     <div className="py-8">

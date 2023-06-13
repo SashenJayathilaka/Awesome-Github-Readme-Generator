@@ -1,10 +1,10 @@
 "use client";
 
-import { readmeRows } from "@/atom/readmeRow";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AiOutlineWarning } from "react-icons/ai";
 import { useRecoilState } from "recoil";
 
@@ -15,20 +15,20 @@ type Props = {};
 function License({}: Props) {
   const { resolvedTheme } = useTheme();
   const [license, setLicense] = useState("undo");
-  const [stateValue, setStateValue] = useRecoilState(readmeRows);
+  const [stateValue, setStateValue] = useRecoilState(gitRepoDetails);
 
-  const updateState = () => {
+  const updateState = useCallback(() => {
     if (license) {
       setStateValue((prev) => ({
         ...prev,
         licenseValue: license,
       }));
     }
-  };
+  }, [license, setStateValue]);
 
   useEffect(() => {
     updateState();
-  }, [license]);
+  }, [license, updateState]);
 
   return (
     <div className="py-8">

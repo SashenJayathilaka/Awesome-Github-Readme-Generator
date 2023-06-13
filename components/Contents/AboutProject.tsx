@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { gitImages } from "@/atom/images";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { HiPhotograph } from "react-icons/hi";
 import { useRecoilState } from "recoil";
@@ -17,7 +18,7 @@ type Props = {};
 function AboutProject({}: Props) {
   const [demoImageLink, setDemoImageLink] = useState("");
   const [listOfDemoImages, setListOfDemoImage] = useState([]);
-  const [images, setImages] = useRecoilState(gitImages);
+  const [images, setImages] = useRecoilState(gitRepoDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDemoImageLink(event.target.value);
@@ -35,39 +36,45 @@ function AboutProject({}: Props) {
     }
   };
 
-  const updateCurrentState = (value: string[]) => {
-    if (!value) return;
+  const updateCurrentState = useCallback(
+    (value: string[]) => {
+      if (!value) return;
 
-    const unique = value.filter(onlyUnique).flat();
-
-    setImages((prev) => ({
-      ...prev,
-      demoImage: unique,
-    }));
-  };
-
-  const removeElement = (label: any) => {
-    if (images.demoImage.length > 0) {
-      const removeCurrentState = listOfDemoImages.filter(
-        (element: any) => element.demoImageLink !== label.demoImageLink
-      );
-
-      setListOfDemoImage(removeCurrentState);
-
-      const removeItem = images.demoImage.filter(
-        (element: any) => element.demoImageLink !== label.demoImageLink
-      );
+      const unique = value.filter(onlyUnique).flat();
 
       setImages((prev) => ({
         ...prev,
-        demoImage: removeItem,
+        demoImage: unique,
       }));
-    }
-  };
+    },
+    [setImages]
+  );
+
+  const removeElement = useCallback(
+    (label: any) => {
+      if (images.demoImage.length > 0) {
+        const removeCurrentState = listOfDemoImages.filter(
+          (element: any) => element.demoImageLink !== label.demoImageLink
+        );
+
+        setListOfDemoImage(removeCurrentState);
+
+        const removeItem = images.demoImage.filter(
+          (element: any) => element.demoImageLink !== label.demoImageLink
+        );
+
+        setImages((prev) => ({
+          ...prev,
+          demoImage: removeItem,
+        }));
+      }
+    },
+    [images.demoImage, listOfDemoImages, setImages]
+  );
 
   useEffect(() => {
     updateCurrentState(listOfDemoImages);
-  }, [listOfDemoImages]);
+  }, [listOfDemoImages, updateCurrentState]);
 
   return (
     <div className="mb-15 py-8">
