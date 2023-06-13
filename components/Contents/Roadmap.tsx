@@ -1,12 +1,12 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { boxLabel } from "@/lib/boxLabel";
 import { Checkbox } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { AiFillCompass } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -24,7 +24,7 @@ function Roadmap({}: Props) {
     roadMapCheck: "do",
   });
   const [listOfRoadMap, setListOfRoadMap] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRoadMapValue((prev) => ({
@@ -53,45 +53,39 @@ function Roadmap({}: Props) {
     }
   };
 
-  const updateState = useCallback(
-    (value: string[]) => {
-      if (!value) return;
+  const updateState = (value: string[]) => {
+    if (!value) return;
 
-      const unique = value.filter(onlyUnique).flat();
+    const unique = value.filter(onlyUnique).flat();
+
+    setGitHubTechStack((prev) => ({
+      ...prev,
+      roadMap: unique,
+    }));
+  };
+
+  const removeElement = (value: string, label: string) => {
+    if (value) {
+      const removeCurrentState = listOfRoadMap.filter(
+        (element: any) => element[label] !== value
+      );
+
+      setListOfRoadMap(removeCurrentState);
+
+      const removeItem = gitHubTechStack.roadMap.filter(
+        (element: any) => element[label] !== value
+      );
 
       setGitHubTechStack((prev) => ({
         ...prev,
-        roadMap: unique,
+        roadMap: removeItem,
       }));
-    },
-    [setGitHubTechStack]
-  );
-
-  const removeElement = useCallback(
-    (value: string, label: string) => {
-      if (value) {
-        const removeCurrentState = listOfRoadMap.filter(
-          (element: any) => element[label] !== value
-        );
-
-        setListOfRoadMap(removeCurrentState);
-
-        const removeItem = gitHubTechStack.roadMap.filter(
-          (element: any) => element[label] !== value
-        );
-
-        setGitHubTechStack((prev) => ({
-          ...prev,
-          roadMap: removeItem,
-        }));
-      }
-    },
-    [gitHubTechStack.roadMap, listOfRoadMap, setGitHubTechStack]
-  );
+    }
+  };
 
   useEffect(() => {
     updateState(listOfRoadMap);
-  }, [listOfRoadMap, updateState]);
+  }, [listOfRoadMap]);
 
   return (
     <div className="py-8">

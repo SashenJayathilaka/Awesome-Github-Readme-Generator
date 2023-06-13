@@ -1,9 +1,9 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import { motion } from "framer-motion";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { BiTestTube } from "react-icons/bi";
 import { useRecoilState } from "recoil";
 
@@ -20,7 +20,7 @@ function RunningTests({}: Props) {
     runningTestsCommand: "",
   });
   const [listOfRunningTests, setListOfRunningTests] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRunningTestsValue((prev) => ({
@@ -47,19 +47,16 @@ function RunningTests({}: Props) {
     }
   };
 
-  const updateState = useCallback(
-    (value: string[]) => {
-      if (!value) return;
+  const updateState = (value: string[]) => {
+    if (!value) return;
 
-      const unique = value.filter(onlyUnique).flat();
+    const unique = value.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        runningTests: unique,
-      }));
-    },
-    [setGitHubTechStack]
-  );
+    setGitHubTechStack((prev) => ({
+      ...prev,
+      runningTests: unique,
+    }));
+  };
 
   const removeElement = (value: string, label: string) => {
     if (value) {
@@ -82,7 +79,7 @@ function RunningTests({}: Props) {
 
   useEffect(() => {
     updateState(listOfRunningTests);
-  }, [listOfRunningTests, updateState]);
+  }, [listOfRunningTests]);
 
   return (
     <div className="py-8">

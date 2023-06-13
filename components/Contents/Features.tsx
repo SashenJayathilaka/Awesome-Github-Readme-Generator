@@ -1,8 +1,8 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitTechStack } from "@/atom/techStack";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { GiDart } from "react-icons/gi";
 import { useRecoilState } from "recoil";
 
@@ -15,7 +15,7 @@ type Props = {};
 function Features({}: Props) {
   const [featuresValue, setFeaturesValue] = useState("");
   const [listOfFeatures, setListOfFeatures] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
 
   const onChangeFeaturesValue = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -35,44 +35,38 @@ function Features({}: Props) {
     }
   };
 
-  const updateCurrentState = useCallback(
-    (value: string[]) => {
-      if (value) {
-        const unique = value.filter(onlyUnique).flat();
+  const updateCurrentState = (value: string[]) => {
+    if (value) {
+      const unique = value.filter(onlyUnique).flat();
 
-        setGitHubTechStack((prev) => ({
-          ...prev,
-          features: unique,
-        }));
-      }
-    },
-    [setGitHubTechStack]
-  );
+      setGitHubTechStack((prev) => ({
+        ...prev,
+        features: unique,
+      }));
+    }
+  };
 
-  const removeElement = useCallback(
-    (label: any) => {
-      if (gitHubTechStack.features.length > 0) {
-        const removeCurrentState = listOfFeatures.filter(
-          (element: any) => element.featuresValue !== label.featuresValue
-        );
-        setListOfFeatures(removeCurrentState);
+  const removeElement = (label: any) => {
+    if (gitHubTechStack.features.length > 0) {
+      const removeCurrentState = listOfFeatures.filter(
+        (element: any) => element.featuresValue !== label.featuresValue
+      );
+      setListOfFeatures(removeCurrentState);
 
-        const removeItem = gitHubTechStack.features.filter(
-          (element: any) => element.featuresValue !== label.featuresValue
-        );
+      const removeItem = gitHubTechStack.features.filter(
+        (element: any) => element.featuresValue !== label.featuresValue
+      );
 
-        setGitHubTechStack((prev) => ({
-          ...prev,
-          features: removeItem,
-        }));
-      }
-    },
-    [gitHubTechStack.features, listOfFeatures, setGitHubTechStack]
-  );
+      setGitHubTechStack((prev) => ({
+        ...prev,
+        features: removeItem,
+      }));
+    }
+  };
 
   useEffect(() => {
     updateCurrentState(listOfFeatures);
-  }, [listOfFeatures, updateCurrentState]);
+  }, [listOfFeatures]);
 
   return (
     <div className="py-8">

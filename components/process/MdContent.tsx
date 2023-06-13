@@ -1,15 +1,20 @@
 "use client";
 
-import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { gitBadge } from "@/atom/displayBadges";
+import { gitHubDetails } from "@/atom/gitHubDetails";
+import { gitImages } from "@/atom/images";
+import { readmeRows } from "@/atom/readmeRow";
+import { gitImagesSizes } from "@/atom/size";
+import { gitTechStack } from "@/atom/techStack";
 import { useRecoilState } from "recoil";
 
 const MdContent = () => {
-  const [gitHubDetail] = useRecoilState(gitRepoDetails);
-  const [readmeRow] = useRecoilState(gitRepoDetails);
-  const [images] = useRecoilState(gitRepoDetails);
-  const [size] = useRecoilState(gitRepoDetails);
-  const [displayBadges] = useRecoilState(gitRepoDetails);
-  const [gitHubTechStack] = useRecoilState(gitRepoDetails);
+  const [gitHubDetail] = useRecoilState(gitHubDetails);
+  const [readmeRow] = useRecoilState(readmeRows);
+  const [images] = useRecoilState(gitImages);
+  const [size] = useRecoilState(gitImagesSizes);
+  const [displayBadges] = useRecoilState(gitBadge);
+  const [gitHubTechStack] = useRecoilState(gitTechStack);
 
   const CenterStart = () => {
     const image = images.mainImage;
@@ -1138,9 +1143,8 @@ const MdContent = () => {
           {`## :handshake: Contact`}
           <br />
           <br />
-          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${
-            email && email
-          }`}
+          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${email && email
+            }`}
           <br />
           {`${projectLink && `Project Link: [${projectLink}](${projectLink})`}`}
         </>

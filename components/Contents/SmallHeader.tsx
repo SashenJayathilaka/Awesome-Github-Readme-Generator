@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { secondLine } from "@/lib/choose";
@@ -12,7 +11,7 @@ function SmallHeader({}: Props) {
 
   useEffect(() => {
     setFirstImageArr(secondLine[Math.floor(Math.random() * secondLine.length)]);
-  }, []);
+  }, [secondLine]);
 
   return (
     <div className="flex justify-center items-center px-4 py-2.5">
