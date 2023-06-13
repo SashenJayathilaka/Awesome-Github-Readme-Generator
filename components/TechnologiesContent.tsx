@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { gitImages } from "@/atom/images";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
 import request from "@/lib/request";
 import { useEffect, useState } from "react";
@@ -20,7 +20,6 @@ import {
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { useRecoilState } from "recoil";
-
 import Languages from "./Contents/Languages";
 import Heading from "./Heading";
 import ControlSwitch from "./Switch";
@@ -30,7 +29,8 @@ type Props = {};
 function TechnologiesContent({}: Props) {
   const { skills } = request();
   const [listOfTechnologies, setListOfTechnologies] = useState([]);
-  const [stateTechnologies, setStateTechnologies] = useRecoilState(gitImages);
+  const [stateTechnologies, setStateTechnologies] =
+    useRecoilState(gitRepoDetails);
 
   const updateState = (value: string[]) => {
     if (!value) return;
