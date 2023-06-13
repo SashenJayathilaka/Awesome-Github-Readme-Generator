@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from "framer-motion";
 
 type Props = {};
 
-function HowItWorks({ }: Props) {
+function HowItWorks({}: Props) {
   return (
     <div className="overflow-y-hidden bg-gradient-to-r from-slate-300 via-slate-100 to-[#06375f] dark:bg-gradient-to-r dark:from-[#191a47] dark:via-[#0d0d37] dark:to-[#06375f] shadow-2xl">
       <div className="mx-auto container f-f-p px-4 xl:px-0 py-24">

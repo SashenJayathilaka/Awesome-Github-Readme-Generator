@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { authModelState } from "@/atom/authModalAtom";
@@ -9,7 +10,7 @@ import { styled } from "@mui/material/styles";
 import { signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   AiFillGithub,
   AiOutlineCloseCircle,
@@ -84,7 +85,7 @@ function Navbar({}: Props) {
     }));
   };
 
-  const updateStateUser = () => {
+  const updateStateUser = useCallback(() => {
     if (!session) return;
 
     const userName = session.user.username;
@@ -97,11 +98,11 @@ function Navbar({}: Props) {
         reachName: userEmail!,
       }));
     }
-  };
+  }, [gitUser.github, session, setGitUser]);
 
   useEffect(() => {
     updateStateUser();
-  }, [session]);
+  }, [session, updateStateUser]);
 
   return (
     <>
