@@ -1,7 +1,7 @@
 "use client";
 
-import { readmeRows } from "@/atom/readmeRow";
-import { useEffect, useState } from "react";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
+import { useCallback, useEffect, useState } from "react";
 import { HexColorPicker } from "react-colorful";
 import { IoMdColorPalette } from "react-icons/io";
 import { useRecoilState } from "recoil";
@@ -16,7 +16,7 @@ function ColorReference({}: Props) {
   const [accentColor, setAccentColor] = useState("#00ADB5");
   const [textColor, setTextColor] = useState("#EEEEEE");
   const [hexColor, setHexColor] = useState("primaryColor");
-  const [readmeRow, setReadmeRow] = useRecoilState(readmeRows);
+  const [readmeRow, setReadmeRow] = useRecoilState(gitRepoDetails);
 
   const OnChangeHexColor = () => {
     if (hexColor === "primaryColor") {
@@ -30,11 +30,9 @@ function ColorReference({}: Props) {
     } else {
       return <HexColorPicker color={textColor} onChange={setTextColor} />;
     }
-
-    return null;
   };
 
-  const updateState = () => {
+  const updateState = useCallback(() => {
     if (primaryColor) {
       setReadmeRow((prev) => ({
         ...prev,
@@ -62,11 +60,11 @@ function ColorReference({}: Props) {
         textColor: textColor,
       }));
     }
-  };
+  }, [accentColor, primaryColor, secondaryColor, setReadmeRow, textColor]);
 
   useEffect(() => {
     updateState();
-  }, [primaryColor, secondaryColor, accentColor, textColor]);
+  }, [primaryColor, secondaryColor, accentColor, textColor, updateState]);
 
   return (
     <div className="py-8">

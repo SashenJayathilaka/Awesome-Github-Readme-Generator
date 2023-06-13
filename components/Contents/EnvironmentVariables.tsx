@@ -1,8 +1,8 @@
 "use client";
 
-import { gitTechStack } from "@/atom/techStack";
+import { gitRepoDetails } from "@/atom/repositoryAtom";
 import { onlyUnique } from "@/hook/onlyUniqueOne";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { FaKey } from "react-icons/fa";
 import { useRecoilState } from "recoil";
 
@@ -15,7 +15,7 @@ type Props = {};
 function EnvironmentVariables({}: Props) {
   const [envVariables, setEnvVariables] = useState("");
   const [listOfEnvVariables, setListOfEnvVariables] = useState([]);
-  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitTechStack);
+  const [gitHubTechStack, setGitHubTechStack] = useRecoilState(gitRepoDetails);
 
   const onChangeEnvVariables = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEnvVariables(event.target.value);
@@ -33,38 +33,48 @@ function EnvironmentVariables({}: Props) {
     }
   };
 
-  const updateCurrentState = (value: string[]) => {
-    if (value) {
-      const unique = value.filter(onlyUnique).flat();
+  const updateCurrentState = useCallback(
+    (value: string[]) => {
+      if (value) {
+        const unique = value.filter(onlyUnique).flat();
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        environmentVariables: unique,
-      }));
-    }
-  };
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          environmentVariables: unique,
+        }));
+      }
+    },
+    [setGitHubTechStack]
+  );
 
-  const removeElement = (label: any) => {
-    if (gitHubTechStack.environmentVariables.length > 0) {
-      const removeCurrentState = listOfEnvVariables.filter(
-        (element: any) => element.envVariables !== label.envVariables
-      );
-      setListOfEnvVariables(removeCurrentState);
+  const removeElement = useCallback(
+    (label: any) => {
+      if (gitHubTechStack.environmentVariables.length > 0) {
+        const removeCurrentState = listOfEnvVariables.filter(
+          (element: any) => element.envVariables !== label.envVariables
+        );
+        setListOfEnvVariables(removeCurrentState);
 
-      const removeItem = gitHubTechStack.environmentVariables.filter(
-        (element: any) => element.envVariables !== label.envVariables
-      );
+        const removeItem = gitHubTechStack.environmentVariables.filter(
+          (element: any) => element.envVariables !== label.envVariables
+        );
 
-      setGitHubTechStack((prev) => ({
-        ...prev,
-        environmentVariables: removeItem,
-      }));
-    }
-  };
+        setGitHubTechStack((prev) => ({
+          ...prev,
+          environmentVariables: removeItem,
+        }));
+      }
+    },
+    [
+      gitHubTechStack.environmentVariables,
+      listOfEnvVariables,
+      setGitHubTechStack,
+    ]
+  );
 
   useEffect(() => {
     updateCurrentState(listOfEnvVariables);
-  }, [listOfEnvVariables]);
+  }, [listOfEnvVariables, updateCurrentState]);
 
   return (
     <div className="py-8">
