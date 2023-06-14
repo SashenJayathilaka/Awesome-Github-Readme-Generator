@@ -163,6 +163,15 @@ export interface ProfileAtomDetails {
   endWelcomeSection: boolean;
 }
 
+export interface JsonDataType {
+  gitHubDetail: GitHubDetail;
+  gitHubTechStack: GitHubTechStack;
+  readmeRow: ReadmeRow;
+  images: GitHubImages;
+  size: GitHubImagesSize;
+  displayBadges: GitBadges;
+}
+
 /* export interface GitHubRepoDetails {
   websiteUpDown: string;
   websiteLink: string;

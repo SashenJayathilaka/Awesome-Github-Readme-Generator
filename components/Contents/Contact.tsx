@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { gitHubDetails } from "@/atom/gitHubDetails";
@@ -11,12 +12,13 @@ import InputField from "../InputField";
 type Props = {};
 
 function Contact({}: Props) {
-  const [contactValues, setContactsValue] = useState({
-    name: "",
-    twitter: "",
-    email: "",
-  });
   const [details, setDetails] = useRecoilState(gitHubDetails);
+
+  const [contactValues, setContactsValue] = useState({
+    name: details.name,
+    twitter: details.twitter,
+    email: details.email,
+  });
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setContactsValue((prev) => ({
