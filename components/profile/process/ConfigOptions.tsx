@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { profileAtomDetail } from "@/atom/profileDetailsAtom";
@@ -22,25 +23,28 @@ function ConfigOptions({}: Props) {
   const { updateStateValue, currentValue } = readJson(files!);
   const { updateProfileStore } = updateProfileValue();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const fileReader = new FileReader();
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const fileReader = new FileReader();
 
-    const fileType = event.target.files && event.target.files[0];
+      const fileType = event.target.files && event.target.files[0];
 
-    if (!fileType) return;
+      if (!fileType) return;
 
-    if (fileType.type === "application/json") {
-      setFileName(fileType.name);
-      fileReader.readAsText(fileType, "UTF-8");
-      fileReader.onload = (event) => {
-        const jasonData = JSON.parse(event.target?.result as string);
-        setFiles(jasonData);
-      };
-    } else {
-      toast.error("This File Type Not Supported");
-      setFileName(fileType.name);
-    }
-  };
+      if (fileType.type === "application/json") {
+        setFileName(fileType.name);
+        fileReader.readAsText(fileType, "UTF-8");
+        fileReader.onload = (event) => {
+          const jasonData = JSON.parse(event.target?.result as string);
+          setFiles(jasonData);
+        };
+      } else {
+        toast.error("This File Type Not Supported");
+        setFileName(fileType.name);
+      }
+    },
+    []
+  );
 
   const handleProcess = useCallback(
     (e: FormEvent) => {
