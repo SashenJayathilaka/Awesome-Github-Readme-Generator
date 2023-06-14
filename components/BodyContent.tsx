@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { gitBadge } from "@/atom/displayBadges";
@@ -203,6 +204,12 @@ function BodyContent({}: Props) {
               setIsShow={setIsShow}
               setIsMdPreview={setIsMdPreview}
               isMdPreview={isMdPreview}
+              gitHubDetail={gitHubDetail}
+              readmeRow={readmeRow}
+              gitHubTechStack={gitHubTechStack}
+              images={images}
+              size={size}
+              displayBadges={displayBadges}
             />
             {isMdPreview ? (
               <motion.div

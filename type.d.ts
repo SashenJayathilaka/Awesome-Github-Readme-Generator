@@ -163,7 +163,7 @@ export interface ProfileAtomDetails {
   endWelcomeSection: boolean;
 }
 
-export interface GitHubRepoDetails {
+/* export interface GitHubRepoDetails {
   websiteUpDown: string;
   websiteLink: string;
   maintained: string;
@@ -207,3 +207,4 @@ export interface GitHubRepoDetails {
   faqSection: string[]; //done
   acknowledgements: string[]; // done
 }
+ */
