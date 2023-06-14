@@ -182,14 +182,12 @@ const MdContent = () => {
             </>
           )}
 
-          {name ||
-            twitter ||
-            (email && (
-              <>
-                {`- [Contact](#handshake-contact)`}
-                <br />
-              </>
-            ))}
+          {(name || twitter || email) && (
+            <>
+              {`- [Contact](#handshake-contact)`}
+              <br />
+            </>
+          )}
 
           {acknowledgements.length > 0 && (
             <>
@@ -1143,8 +1141,10 @@ const MdContent = () => {
           {`## :handshake: Contact`}
           <br />
           <br />
-          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${email && email
-            }`}
+          {`${name && name} - ${twitter && `[@twitter_handle](${twitter})`} - ${
+            email && email
+          }`}
+          <br />
           <br />
           {`${projectLink && `Project Link: [${projectLink}](${projectLink})`}`}
         </>
