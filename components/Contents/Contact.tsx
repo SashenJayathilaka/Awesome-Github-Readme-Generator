@@ -52,21 +52,21 @@ function Contact({}: Props) {
             label="Your Name"
             type="text"
             name="name"
-            value={contactValues.name}
+            value={details.name}
           />
           <InputField
             onChange={onChange}
             label="Your Twitter Profile Link"
             type="text"
             name="twitter"
-            value={contactValues.twitter}
+            value={details.twitter}
           />
           <InputField
             onChange={onChange}
             label="Your Email Address"
             type="text"
             name="email"
-            value={contactValues.email}
+            value={details.email}
           />
         </div>
       </div>
