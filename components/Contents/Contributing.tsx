@@ -69,7 +69,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.firstValue === "do"}
+                  checked={currentUpdateState.contributing === "do"}
                   value="do"
                   name="firstValue"
                 />
@@ -81,7 +81,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.firstValue === "undo"}
+                  checked={currentUpdateState.contributing === "undo"}
                   value="undo"
                   name="firstValue"
                 />
@@ -105,7 +105,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.secondValue === "do"}
+                  checked={currentUpdateState.codeOfConduct === "do"}
                   value="do"
                   name="secondValue"
                 />
@@ -117,7 +117,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.secondValue === "undo"}
+                  checked={currentUpdateState.codeOfConduct === "undo"}
                   value="undo"
                   name="secondValue"
                 />
