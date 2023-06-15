@@ -1,13 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
-type Props = {
-  setPath: (value: string) => void;
-};
+type Props = {};
 
-function MiddleChoose({ setPath }: Props) {
+function MiddleChoose({}: Props) {
+  const router = useRouter();
+
   return (
     <div>
       <section className="px-6 xl:px-0">
@@ -46,7 +46,7 @@ function MiddleChoose({ setPath }: Props) {
                         You can use Github Profile README.md Generator
                       </p>
                       <button
-                        onClick={() => setPath("profile")}
+                        onClick={() => router.push("/profile")}
                         className="mt-5 w-full bg-gray-200 hover:bg-gray-300 focus:outline-none transition duration-150 ease-in-out rounded text-indigo-700 px-8 py-3 text-base font-semibold"
                       >
                         Choose
@@ -78,7 +78,7 @@ function MiddleChoose({ setPath }: Props) {
                         You can use Github Repository README.md Generator
                       </p>
                       <button
-                        onClick={() => setPath("repo")}
+                        onClick={() => router.push("/repo")}
                         className="mt-5 w-full text-indigo-700 focus:outline-none transition duration-150 ease-in-out rounded bg-white hover:bg-gray-100 px-8 py-3 text-base font-semibold3"
                       >
                         Choose
