@@ -65,14 +65,14 @@ function ButtonActions({ setIsShow, setIsMdPreview, isMdPreview }: Props) {
     <div className="flex justify-between items-center py-2.5">
       <button
         onClick={() => setIsShow(true)}
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+        className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         <BiArrowBack size={20} />
         <span>Back To Edit</span>
       </button>
       <button
         onClick={(e: any) => handleCopyToClipboard(e)}
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+        className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         {isCopy ? (
           <>
@@ -88,7 +88,7 @@ function ButtonActions({ setIsShow, setIsMdPreview, isMdPreview }: Props) {
       </button>
       <button
         onClick={(e: any) => handleDownloadMarkdown(e)}
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+        className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         <AiOutlineDownload size={20} />
         <span>Download Markdown</span>
@@ -104,7 +104,7 @@ function ButtonActions({ setIsShow, setIsMdPreview, isMdPreview }: Props) {
         onClick={() =>
           isMdPreview ? setIsMdPreview(false) : setIsMdPreview(true)
         }
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+        className="bg-gray-700 text-gray-300 hover:bg-slate-600 dark:bg-gray-300 dark:hover:bg-gray-400 dark:text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center gap-2"
       >
         {isMdPreview ? (
           <>

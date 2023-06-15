@@ -187,7 +187,7 @@ function BodyContent({}: Props) {
                   <button
                     disabled={action}
                     onClick={OnChangeAction}
-                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-bounce"
+                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-2xl text-gray-900 font-bold font-mono px-6 py-6 animate-pulse focus:outline-none focus:shadow-outline shadow-2xl items-center italic"
                   >
                     Generate File
                     <AiOutlineDownload size={25} />
