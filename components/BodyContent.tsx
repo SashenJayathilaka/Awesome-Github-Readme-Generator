@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { gitBadge } from "@/atom/displayBadges";
@@ -27,12 +26,10 @@ import ActionLode from "./ActionLode";
 import ButtonActions from "./ButtonActions";
 import ConfettiSection from "./ConfettiSection";
 import SmallHeader from "./Contents/SmallHeader";
-import DividerLine from "./DividerLine";
 import FeedBackForm from "./FeedBackForm";
 import FormContainer from "./FormContainer";
 import Markdown from "./markdown/Markdown";
 import MarkdownPreview from "./markdown/MarkdownPreview";
-import ConfigOptions from "./process/ConfigOptions";
 
 type Props = {};
 
@@ -190,14 +187,12 @@ function BodyContent({}: Props) {
                   <button
                     disabled={action}
                     onClick={OnChangeAction}
-                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-2xl text-gray-900 font-bold font-mono px-6 py-6 animate-pulse focus:outline-none focus:shadow-outline shadow-2xl items-center italic"
+                    className="flex justify-center gap-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-auto rounded-xl text-xl font-bold px-6 py-6 animate-bounce"
                   >
                     Generate File
                     <AiOutlineDownload size={25} />
                   </button>
                 </div>
-                <DividerLine />
-                <ConfigOptions />
               </>
             )}
           </>
@@ -208,12 +203,6 @@ function BodyContent({}: Props) {
               setIsShow={setIsShow}
               setIsMdPreview={setIsMdPreview}
               isMdPreview={isMdPreview}
-              gitHubDetail={gitHubDetail}
-              readmeRow={readmeRow}
-              gitHubTechStack={gitHubTechStack}
-              images={images}
-              size={size}
-              displayBadges={displayBadges}
             />
             {isMdPreview ? (
               <motion.div

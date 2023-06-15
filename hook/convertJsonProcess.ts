@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { profileAtomDetail } from "@/atom/profileDetailsAtom";
 import { ProfileAtomDetails } from "@/type";
 import { useCallback, useEffect, useState } from "react";

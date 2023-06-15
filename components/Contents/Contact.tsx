@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { gitHubDetails } from "@/atom/gitHubDetails";
@@ -12,13 +11,12 @@ import InputField from "../InputField";
 type Props = {};
 
 function Contact({}: Props) {
-  const [details, setDetails] = useRecoilState(gitHubDetails);
-
   const [contactValues, setContactsValue] = useState({
-    name: details.name,
-    twitter: details.twitter,
-    email: details.email,
+    name: "",
+    twitter: "",
+    email: "",
   });
+  const [details, setDetails] = useRecoilState(gitHubDetails);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setContactsValue((prev) => ({
@@ -52,21 +50,21 @@ function Contact({}: Props) {
             label="Your Name"
             type="text"
             name="name"
-            value={details.name}
+            value={contactValues.name}
           />
           <InputField
             onChange={onChange}
             label="Your Twitter Profile Link"
             type="text"
             name="twitter"
-            value={details.twitter}
+            value={contactValues.twitter}
           />
           <InputField
             onChange={onChange}
             label="Your Email Address"
             type="text"
             name="email"
-            value={details.email}
+            value={contactValues.email}
           />
         </div>
       </div>

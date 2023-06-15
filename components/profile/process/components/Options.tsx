@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { JsonDataType, ProfileAtomDetails } from "@/type";
+import { ProfileAtomDetails } from "@/type";
 import { motion } from "framer-motion";
 import { FormEvent } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
