@@ -15,7 +15,7 @@ function ClientController({}: Props) {
 
   return (
     <>
-      {path === "home" ? (
+      {/*  {path === "home" ? (
         <HomeComponents
           isShow={isShow}
           setIsShow={setIsShow}
@@ -31,7 +31,10 @@ function ClientController({}: Props) {
             <BodyContent />
           </ClientOnly>
         )
-      )}
+      )} */}
+      <ClientOnly>
+        <ProfileContent />
+      </ClientOnly>
     </>
   );
 }
