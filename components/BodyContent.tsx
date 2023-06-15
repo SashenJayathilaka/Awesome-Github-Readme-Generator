@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { gitBadge } from "@/atom/displayBadges";
@@ -26,10 +27,12 @@ import ActionLode from "./ActionLode";
 import ButtonActions from "./ButtonActions";
 import ConfettiSection from "./ConfettiSection";
 import SmallHeader from "./Contents/SmallHeader";
+import DividerLine from "./DividerLine";
 import FeedBackForm from "./FeedBackForm";
 import FormContainer from "./FormContainer";
 import Markdown from "./markdown/Markdown";
 import MarkdownPreview from "./markdown/MarkdownPreview";
+import ConfigOptions from "./process/ConfigOptions";
 
 type Props = {};
 
@@ -193,6 +196,8 @@ function BodyContent({}: Props) {
                     <AiOutlineDownload size={25} />
                   </button>
                 </div>
+                <DividerLine />
+                <ConfigOptions />
               </>
             )}
           </>
@@ -203,6 +208,12 @@ function BodyContent({}: Props) {
               setIsShow={setIsShow}
               setIsMdPreview={setIsMdPreview}
               isMdPreview={isMdPreview}
+              gitHubDetail={gitHubDetail}
+              readmeRow={readmeRow}
+              gitHubTechStack={gitHubTechStack}
+              images={images}
+              size={size}
+              displayBadges={displayBadges}
             />
             {isMdPreview ? (
               <motion.div

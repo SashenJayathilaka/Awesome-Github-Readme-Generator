@@ -48,6 +48,7 @@ function Contributing({}: Props) {
 
   useEffect(() => {
     updateState();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contributingValue]);
 
   return (
@@ -57,7 +58,7 @@ function Contributing({}: Props) {
           <Heading label="Contributing" icon={MdWavingHand} />
           <div className="flex justify-start gap-20 items-center">
             <div>
-              <p className="text-lg font-medium text-gray-300">
+              <p className="text-lg font-medium dark:text-gray-300 text-gray-600">
                 If you want add Contributions section
               </p>
             </div>
@@ -68,7 +69,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.firstValue === "do"}
+                  checked={currentUpdateState.contributing === "do"}
                   value="do"
                   name="firstValue"
                 />
@@ -80,7 +81,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.firstValue === "undo"}
+                  checked={currentUpdateState.contributing === "undo"}
                   value="undo"
                   name="firstValue"
                 />
@@ -93,7 +94,7 @@ function Contributing({}: Props) {
           <Heading label="Code of Conduct" icon={HiClipboardDocumentList} />
           <div className="flex justify-start gap-20 items-center">
             <div>
-              <p className="text-lg font-medium text-gray-300">
+              <p className="text-lg font-medium dark:text-gray-300 text-gray-600">
                 If you want add Code of Conduct section
               </p>
             </div>
@@ -104,7 +105,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.secondValue === "do"}
+                  checked={currentUpdateState.codeOfConduct === "do"}
                   value="do"
                   name="secondValue"
                 />
@@ -116,7 +117,7 @@ function Contributing({}: Props) {
                   onChange={onChange}
                   sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
                   color="default"
-                  checked={contributingValue.secondValue === "undo"}
+                  checked={currentUpdateState.codeOfConduct === "undo"}
                   value="undo"
                   name="secondValue"
                 />

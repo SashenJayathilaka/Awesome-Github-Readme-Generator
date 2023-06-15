@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { profileAtomDetail } from "@/atom/profileDetailsAtom";
@@ -67,7 +68,7 @@ function ProfileContent({}: Props) {
       setIsShow(false);
       setAction(false);
       toast.success("Generate Successfully");
-    }, 3000);
+    }, 2000);
   };
 
   const updateAtom = () => {

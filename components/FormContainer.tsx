@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import {
@@ -15,7 +16,6 @@ import { MdRestore } from "react-icons/md";
 import { TbWorldWww } from "react-icons/tb";
 
 import AboutProject from "./Contents/AboutProject";
-import Badges from "./Contents/Badges";
 import ColorReference from "./Contents/ColorReference";
 import EnvironmentVariables from "./Contents/EnvironmentVariables";
 import Features from "./Contents/Features";
@@ -207,8 +207,8 @@ function FormContainer({
               name="websiteLink"
               value={displayBadges.websiteLink}
             />
-            <DividerLine />
-            <Badges onChangeGitHubBadges={onChangeGitHubBadges} />
+            {/* <DividerLine />
+            <Badges onChangeGitHubBadges={onChangeGitHubBadges} /> */}
           </div>
           <DividerLine />
           <AboutProject />
@@ -240,8 +240,9 @@ function FormContainer({
           {/* GettingStarted */}
           <GettingStarted />
           <DividerLine />
-          {/* GettingStarted */}s{/*  Technologies */}
-          {/*  <TechnologiesContent />
+          {/* GettingStarted */}
+          {/*  Technologies */}
+          {/* <TechnologiesContent />
           <DividerLine /> */}
         </form>
       </div>

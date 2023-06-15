@@ -44,7 +44,7 @@ function License({}: Props) {
               onChange={(e) => setLicense(e.target.value)}
               sx={{ color: resolvedTheme === "dark" ? "#fff" : "#000" }}
               color="default"
-              checked={license === "do"}
+              checked={stateValue.licenseValue === "do"}
               value="do"
               name="firstValue"
             />
