@@ -1,16 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { JsonDataType, ProfileAtomDetails } from "@/type";
+import { JsonDataType } from "@/type";
 import { motion } from "framer-motion";
 import { FormEvent } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 type Props = {
-  files: ProfileAtomDetails | null;
+  files: JsonDataType | null;
   fileName: string;
   isLoading: boolean;
-  setFiles: (value: ProfileAtomDetails | null) => void;
+  setFiles: (value: JsonDataType | null) => void;
   setFileName: (value: string) => void;
   handleProcess: (event: FormEvent) => void;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
