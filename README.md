@@ -202,6 +202,6 @@ Distributed under the no License. See LICENSE.txt for more information.
 
 ## :handshake: Contact
 
-Your Name - [Sashen Jayathilaka](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
+My Name - [Sashen Jayathilaka](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
 
 Project Link: [https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git](https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git)
