@@ -33,7 +33,7 @@ You can easily and quickly create a readme file for your github profile or git h
 </p>
    
 <h4>
-    <a href="https://git-readme-generator.vercel.app">View Demo</a>
+    <a href="https://www.genreadme.cloud">View Demo</a>
   <span> · </span>
     <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/blob/main/README.md">Documentation</a>
   <span> · </span>
@@ -42,6 +42,15 @@ You can easily and quickly create a readme file for your github profile or git h
     <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/issues/">Request Feature</a>
   </h4>
 </div>
+
+<br />
+
+### 💻: Support Web Browser
+
+| <a href=""><img alt="allow" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width="30"></a>      | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width="30"></a>                                                               | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width="30"></a>           | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width=30></a>           | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width=30></a>          | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width=30></a>                                                                              |
+| ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/ysnbzzggpchkgmj/R%20%281%29.png" width="70"></a> | <a href="gui-tool-tutorials/github-windows-vs2017-tutorial.md"><img alt="" src="https://dl.dropboxusercontent.com/s/lmelfwuzwern3or/R%20%282%29.png" width="70"></a> | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/7jse0uey2ftitnw/R%20%283%29.png" width="70"></a> | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/72ba19otqbovwh7/R%20%286%29.png" width=70></a> | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/kc9qmb8yzjv6pss/Brave_logo.png" width=70></a> | <a href="gui-tool-tutorials/github-windows-intellij-tutorial.md"><img alt="IntelliJ IDEA" src="https://dl.dropboxusercontent.com/s/0oxrf3pld35mxgh/R%20%285%29.png" width=70></a> |
+| Edge                                                                                                             | Firefox                                                                                                                                                              | Chrome                                                                                                           | Opera                                                                                                          | Brave                                                                                                         | Safari                                                                                                                                                                            |
 
 <br />
 

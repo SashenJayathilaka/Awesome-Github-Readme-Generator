@@ -1,23 +1,19 @@
 "use client";
 
-import { secondLine } from "@/lib/choose";
-import { useEffect, useState } from "react";
 import { AiOutlineFork, AiOutlineStar } from "react-icons/ai";
 
 type Props = {};
 
 function SmallHeader({}: Props) {
-  const [firstImageArr, setFirstImageArr] = useState<string | null>(null);
-
-  useEffect(() => {
-    setFirstImageArr(secondLine[Math.floor(Math.random() * secondLine.length)]);
-  }, [secondLine]);
-
   return (
     <div className="flex justify-center items-center px-4 py-2.5">
       <div className="flex flex-col justify-between">
         <div className="flex flex-col justify-between items-center">
-          <img className="w-36" src={firstImageArr!} alt="" />
+          <img
+            className="w-36"
+            src="https://dl.dropboxusercontent.com/scl/fi/n38m6skphjqktvxruhed7/5b85ea21472c504d5e2b8257fae9.png?rlkey=05tm180nt0qfxk35hxk9fisp2&dl=0"
+            alt=""
+          />
           <p className="text-xl font-medium">
             Awesome Github Repository README.md Generator
           </p>
