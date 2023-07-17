@@ -42,7 +42,7 @@ function GlobalLoading({ isLoading }: Props) {
         >
           <div className="flex justify-center">
             <img
-              src="https://www.dropbox.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp?dl=1"
+              src="https://dl.dropboxusercontent.com/scl/fi/n38m6skphjqktvxruhed7/5b85ea21472c504d5e2b8257fae9.png?rlkey=05tm180nt0qfxk35hxk9fisp2&dl=0"
               alt="img"
               className="w-[300px] items-center"
             />
