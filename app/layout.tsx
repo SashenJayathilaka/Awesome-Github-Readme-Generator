@@ -11,10 +11,10 @@ import { getServerSession } from "next-auth";
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "Readme Generator",
+  title: "AGRG: Awesome Github Readme Generator",
   description: "Github Readme File Generator",
   icons:
-    "https://dl.dropboxusercontent.com/s/aklsvt4qfwm3num/1_ufCgi2UDlcFzeNsekK1dPA.webp",
+    "https://dl.dropboxusercontent.com/scl/fi/n38m6skphjqktvxruhed7/5b85ea21472c504d5e2b8257fae9.png?rlkey=05tm180nt0qfxk35hxk9fisp2&dl=0",
 };
 
 export default async function RootLayout({
