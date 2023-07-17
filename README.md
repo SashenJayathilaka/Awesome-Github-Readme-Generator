@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://user-images.githubusercontent.com/99184393/235164394-a1865b60-6506-488a-a666-bd55d2e009cb.png" alt="logo" width="300" height="auto" />
+  <img src="https://dl.dropboxusercontent.com/scl/fi/n38m6skphjqktvxruhed7/5b85ea21472c504d5e2b8257fae9.png?rlkey=05tm180nt0qfxk35hxk9fisp2&dl=0" alt="logo" width="300" height="auto" />
   <h1>
 Awesome Github Readme Generator
 </h1>
@@ -42,6 +42,15 @@ You can easily and quickly create a readme file for your github profile or git h
     <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/issues/">Request Feature</a>
   </h4>
 </div>
+
+<br />
+
+### 💻: Support Web Browser
+
+| <a href=""><img alt="allow" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width="30"></a>      | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width="30"></a>                                                               | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width="30"></a>           | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width=30></a>           | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width=30></a>          | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/0gs6j6nwogux046/R.png" width=30></a>                                                                              |
+| ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/ysnbzzggpchkgmj/R%20%281%29.png" width="70"></a> | <a href="gui-tool-tutorials/github-windows-vs2017-tutorial.md"><img alt="" src="https://dl.dropboxusercontent.com/s/lmelfwuzwern3or/R%20%282%29.png" width="70"></a> | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/7jse0uey2ftitnw/R%20%283%29.png" width="70"></a> | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/72ba19otqbovwh7/R%20%286%29.png" width=70></a> | <a href=""><img alt="" src="https://dl.dropboxusercontent.com/s/kc9qmb8yzjv6pss/Brave_logo.png" width=70></a> | <a href="gui-tool-tutorials/github-windows-intellij-tutorial.md"><img alt="IntelliJ IDEA" src="https://dl.dropboxusercontent.com/s/0oxrf3pld35mxgh/R%20%285%29.png" width=70></a> |
+| Edge                                                                                                             | Firefox                                                                                                                                                              | Chrome                                                                                                           | Opera                                                                                                          | Brave                                                                                                         | Safari                                                                                                                                                                            |
 
 <br />
 
@@ -204,4 +213,4 @@ Distributed under the no License. See LICENSE.txt for more information.
 
 My Name - [Sashen Jayathilaka](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git](https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git)                                                                                                                    
+Project Link: [https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git](https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator.git)
