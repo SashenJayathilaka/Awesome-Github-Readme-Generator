@@ -33,7 +33,7 @@ You can easily and quickly create a readme file for your GitHub profile or git h
 </p>
    
 <h4>
-    <a href="https://www.genreadme.cloud">View Demo</a>
+    <a href="https://git-readme-generator.vercel.app">View Demo</a>
   <span> · </span>
     <a href="https://github.com/SashenJayathilaka/Awesome-Github-Readme-Generator/blob/main/README.md">Documentation</a>
   <span> · </span>
